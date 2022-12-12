@@ -1,2 +1,0 @@
-# yejo
-Proyecto DAW Tienda
