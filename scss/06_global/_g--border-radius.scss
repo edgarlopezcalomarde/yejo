@@ -1,0 +1,13 @@
+@each $key in getBorderRadiusKeys(){
+    .g--border-radius-#{$key}{
+        border-radius: getBorderRadius($key);
+    }
+}
+
+
+
+// @for $i from 1 to length($border-radius){
+//     .g--border-radius-#{$i - 1}{
+//         border-radius: nth($border-radius,$i);
+//     }
+// }

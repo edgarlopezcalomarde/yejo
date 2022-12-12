@@ -1,0 +1,20 @@
+@mixin borderChanger($size,$type, $color) {
+    border: $size $type $color;
+}
+
+
+@mixin box-shadow($profundidad) {
+    -webkit-box-shadow:getShadow($profundidad);
+    -moz-box-shadow: getShadow($profundidad);
+    box-shadow: getShadow($profundidad);
+}
+
+
+@mixin custom-style(){
+    border-radius: getBorderRadius(0);
+    border: 0;
+    background-color: #f8f8f8;
+    border-bottom:  2px solid black;
+    padding: getPadding(2);
+}
+

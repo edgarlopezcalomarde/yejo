@@ -1,0 +1,23 @@
+.c-menu{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: getGap(5);
+
+    padding-left: getPadding(17);
+    padding-right: getPadding(17);
+
+    padding-top: getPadding(5);
+    padding-bottom: getPadding(5);
+
+
+    &__item--right{
+        margin-right: auto;
+    }
+
+    &__item--left{
+        margin-left: auto;
+    }
+
+}

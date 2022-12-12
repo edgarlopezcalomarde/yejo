@@ -1,0 +1,7 @@
+@each $colortype in getColorKeys() {
+    @for $contador from 0 to getColorVariants($colortype){
+        .g--color-#{$colortype}-#{$contador}{
+            color: getColor($colortype,$contador); 
+        }
+    }
+}

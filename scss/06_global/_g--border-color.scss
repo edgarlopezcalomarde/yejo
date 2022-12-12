@@ -1,0 +1,8 @@
+@each $colortype in getColorKeys() {
+    @for $contador from 0 to  getColorVariants($colortype){
+        .g--border-color-#{$colortype}-#{$contador}{
+           border-color: getColor($colortype, $contador); 
+        }
+    }
+}
+

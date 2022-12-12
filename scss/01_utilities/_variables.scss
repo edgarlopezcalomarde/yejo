@@ -1,0 +1,39 @@
+$colors: (
+    "principal": (#1E3B8A, #1E3FAE, #1D4FD7, #2463EB, #3C83F6, #61A6FA, #91C3FD, #BEDBFE, #DCEBFE),
+    "alternativo":(#76350F, #91400D, #B35309, #DB7706, #F59F0A, #FBBD23, #FCD44F, #FDE68B, #FEF3C8),
+    "gris":(#171717, #292929, #454545, #5E5E5E, #7A7A7A, #949494, #B0B0B0, #C9C9C9, #E6E6E6),
+    "blanco":(#EBEBEB, #EDEDED, #F0F0F0, #F2F2F2, #F5F5F5, #F7F7F7, #FAFAFA, #FCFCFC, #FFFFFF),
+    "rojo": (#811D1D, #981B1B, #BA1C1C, #DC2828, #EF4343, #F87272, #FCA6A6, #FEC8C8, #FFFFFF),
+    "verde": (#064C39, #066046, #047756, #059467, #10B77F, #36D399, #6EE7B7, #A5F3CF, #D1FAE5),
+    "azul": (#1E3B8A, #1E3FAE, #1D4FD7, #2463EB, #3C83F6, #61A6FA, #91C3FD, #BEDBFE, #DCEBFE),
+    "turquesa":(#011619, #01323C, #015165, #00678A, #007CAD, #008BD1, #019EF9, #22A1FC, #47AAFA),
+    "morado":(#4c1d95, #5b21b6, #6d28d9, #7c3aed, #8b5cf6, #a78bfa, #c4b5fd, #ddd6fe, #ede9fe),
+    "amarillo": (#76350F, #91400D, #B35309, #DB7706, #F59F0A, #FBBD23, #FCD44F, #FDE68B, #FEF3C8),
+    "rosas":(#811842, #9B174C, #BF185D, #DB2979, #EC4699, #F471B5, #F9A9D5, #FBD0E8, #FCE8F4)
+);
+
+$weights:(100,200,300,400,500,600,700,800,900);
+$border-radius: (0px,2px,4px,6px,8px,16px,32px,64px);
+
+
+$padding: (0px,4px,6px,8px,10px,12px,16px,20px,24px,32px,40px,48px,64px,80px,96px,128px,160px,192px,224px,256px,320px,480px,640px);
+$margins:(0px,4px,6px,8px,10px,12px,16px,20px,24px,32px,40px,48px,64px,80px,96px,128px,160px,192px,224px,256px,320px,480px,640px);
+
+$gap:(0px,4px,6px,8px,10px,12px,16px,20px,24px,32px,40px,48px,64px,80px,96px,128px,160px,192px,224px,256px,320px,480px,640px);
+
+$font-sizes: (
+    "xxs":10px,
+    "xs":12px, 
+    "s":14px, 
+    "m":16px, 
+    "l":18px, 
+    "xl":20px, 
+    "2xl":24px, 
+    "3xl":30px, 
+    "4xl":36px, 
+    "5xl":48px, 
+    "6xl":64px
+);
+
+
+$profundidades:("0 1px 3px hsla(0, 0%, .2)" , "0 4px 6px hsla(0, 0%, .2)" , "0 4px 6px hsla(0, 0%, .2)", "0 10px 24px hsla(0, 0%, .2)", "0 15px 35px hsla(0, 0%, .2)", "0 3px 6px 0 rgb(0 0 0 / 16%)");

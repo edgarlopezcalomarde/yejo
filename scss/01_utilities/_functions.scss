@@ -1,0 +1,181 @@
+@function getBorderSize($size){
+    @return $size *10px;
+}
+
+
+//Colors
+
+@function getColorVariants($key) {
+    @return length(map-get($colors,""+$key));
+}
+
+   
+@function getColor($key,$index) {
+    @return nth(map-get($colors,$key),$index + 1);
+}
+
+@function getColorKeys() {
+    @return map-keys($colors);
+}
+
+
+
+//Shadow Keys
+
+@function getShadowKeys(){
+    $resultado:();
+    @for $key from 0 to length($profundidades) {
+        $resultado:append($resultado, $key + 1);
+    }
+
+    @return $resultado;
+
+}
+
+@function getShadow($profun){
+    @return unquote(nth($profundidades, $profun));
+}
+
+
+
+
+
+
+//Border-radius
+
+@function  getBorderRadiusKeys(){
+    $resultado:();
+    @for $i from 0 to length($border-radius){
+        $resultado:append($resultado, $i);
+    }
+
+    @return $resultado;
+}
+
+
+@function getBorderRadius($key){
+    @return nth($border-radius, $key + 1);
+}
+
+
+
+//Margin
+
+@function getMarginKeys(){
+    $resultado:();
+
+    @for $i from 0 to length($margins){
+        $resultado:append($resultado, $i)
+    }
+
+    @return $resultado;
+}
+
+
+@function getMargin($key) {
+    @return nth($margins, $key + 1);
+}
+
+
+
+//Gap Lorenzo Muy Pro
+
+@function getGapKeys() {
+    $resultado:();
+    @for $i from 0 to length($gap) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+}
+
+
+@function getGap($key){
+    @return nth($gap, $key+1);
+}
+
+
+
+//Padding
+
+@function getPadding($key) {
+    @return nth($padding, $key + 1);
+}
+  
+@function getPaddingKeys() {
+    $resultado:();
+    @for $i from 0 to length($padding) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+  
+}
+
+//Font Weight
+@function getFontWeight($key){
+    @return nth($weights, $key);
+}
+
+//Font Size
+
+@function getFontSize($key){
+    @return map-get($font-sizes,$key);
+}
+
+
+
+
+// @function pow($number, $exponent) {
+//     $value: 1;
+  
+//     @if $exponent > 0 {
+//       @for $i from 1 through $exponent {
+//         $value: $value * $number;
+//       }
+//     } @else if $exponent < 0 {
+//       @for $i from 1 through -$exponent {
+//         $value: calc($value / $number);
+//       }
+//     }
+  
+//     @return $value;
+// }
+
+
+// @function getFontSizePro($index) {
+//     @return pow(1.2, $index) * 16px;
+// }
+
+// @for $i from 0 to 6 {
+//     @if $i == 0{
+//         .g--font-size{
+//             font-size: getFontSizePro($i);
+//         }
+//     }@else{
+//         .g--font-size-#{$i}s{
+//             font-size: getFontSizePro(-$i);
+//         }
+//         .g--font-size-#{$i}l{
+//             font-size: getFontSizePro($i);
+//         }
+//     }
+// }
+
+
+// @for $var from -3 to 7 {
+//     $name:"";
+//     @if $var<0 {
+//       $name:$var+"s";
+//     }
+//     @if $var==0 {
+//       $name:"";
+//     }
+//     @if $var>0 {
+//       $name:"-"+$var+"l";
+//     }
+//     .g--fonts-size#{$name}{
+//       font-size: getFontSize2($var);
+//     }
+//   }
+

@@ -1,0 +1,70 @@
+.c-button{
+
+    border-radius: getBorderRadius(3);
+
+    padding-left: getPadding(6);
+    padding-right: getPadding(6);
+    padding-top: getPadding(2);
+    padding-bottom: getPadding(2);
+
+    cursor: pointer;
+
+  
+    &--primaria-normal{
+        background-color: getColor("principal", 3);
+        color: getColor("blanco", 8);
+    }
+
+    &--primaria-alternativa{
+        background-color: getColor("alternativo", 3);
+        color: getColor("blanco", 8);
+    }
+
+    &--primaria-peligrosa{
+        background-color: getColor("rojo", 3);
+        color: getColor("blanco", 8);
+    }
+
+
+    &--secundaria-normal{
+        border: 2px solid  getColor("principal", 3);
+        background-color: getColor("blanco", 8);
+        color:  getColor("principal", 3);
+    }
+
+    &--secundaria-alternativa{
+        border: 2px solid getColor("alternativo", 3);;
+        background-color: getColor("blanco", 8);
+        color: getColor("alternativo", 3);
+    }
+
+    &--secundaria-peligrosa{
+        border: 2px solid getColor("rojo", 3) ;
+        background-color: getColor("blanco", 8);
+        color: getColor("rojo", 3);
+    }
+
+    &--terciaria-normal{
+        background-color: getColor("blanco", 8);
+        color: getColor("principal", 3);
+    }
+
+    &--terciaria-alternativa{
+        background-color: getColor("blanco", 8);
+        color:  getColor("alternativo", 3);
+    }
+
+    &--terciaria-peligrosa{
+        background-color: getColor("blanco", 8);
+        color:  getColor("rojo", 3);
+    }
+
+    &--search{
+        @include custom-style();
+        font-weight: getFontWeight(5);
+        text-decoration: none;
+    }
+
+
+}
+
