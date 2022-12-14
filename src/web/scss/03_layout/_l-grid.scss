@@ -4,9 +4,22 @@
         grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
     }
 
-    &--gap-5 {
-        gap: 16px;
+
+    @each $gap in getGapKeys() {
+        &--gap-#{$gap}{
+            gap: getGap($gap);
+        }
+
+        &--horizontal-gap-#{$gap}{
+            row-gap: getGap($gap);
+        }
+
+        &--vertical-gap-#{$gap}{
+            column-gap: getGap($gap);
+        }
     }
+
+  
 
    @for $i from 1 to 9{
         &--columns-#{$i}{

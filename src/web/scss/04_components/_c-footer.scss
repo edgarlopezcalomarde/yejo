@@ -1,0 +1,16 @@
+.c-footer{
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+
+   
+
+    &__body{
+        background-color: getColor("principal", 5);
+        padding-left: getPadding(17);
+        padding-right: getPadding(17);
+    }
+
+}

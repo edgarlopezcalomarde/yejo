@@ -4,26 +4,29 @@
     user-select: none;
     outline: none;
 
+    font-family: 'Nunito', sans-serif;
+
+    font-weight: 700;
 
     &--add-cart{
-        background-color: getColor("verde", 3);
+        background-color: getColor("principal",4);
         padding: 10px 20px;
-        color: white;
+        color: getColor("negro",5);
         border-radius: 6px;
         display: inline-block;
     }
 
     &--quantity-plus{
         border-radius: 50%;
-        padding: 10px 15px;
-        background-color: getColor("verde",4);
+        padding: 10px 14px;
+        background-color: getColor("principal",4);
         color: getColor("blanco",8);
     }
 
     &--quantity-minus{
         border-radius: 50%;
-        padding: 10px 15px;
-        background-color: getColor("verde",4);
+        padding: 10px 14px;
+        background-color: getColor("principal",4);
         color: getColor("blanco",8);
     }
 
@@ -32,9 +35,9 @@
     }
 
     &--buy{
-        background-color: getColor("verde",4);
+        background-color: getColor("principal",4);
         padding: 10px 20px;
-        color: white;
+        color: getColor("negro",5);
         border-radius: 6px;
     }
 

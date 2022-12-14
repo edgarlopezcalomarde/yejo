@@ -68,11 +68,21 @@ function dialogo2() {
         </form>
         <button id="pagar" class="c-boton c-button--primaria-normal g--margin-top-4">TERMINAR PAGO</button>
     </div>`;
-    document.getElementById("cerrar").onclick = () => { dialogo.close() }
-    document.getElementById("pagar").onclick = () => { dialogo.close() }
+
+    document.getElementById("cerrar").onclick = () => {dialogo.close()}
+    document.getElementById("pagar").onclick = () => {dialogo.close()}
+
     dialogo.showModal();
 }
-window.onload = () => {
-    document.getElementById("boton").addEventListener("click", dialogo);
-    document.getElementById("boton2").addEventListener("click", dialogo2);
+
+window.onload = ()=>{
+
+    document.getElementById("boton").addEventListener("click",()=>{
+        dialogo()
+    });
+    
+    document.getElementById("boton2").addEventListener("click", ()=>{
+        dialogo2()
+    });
+    
 }

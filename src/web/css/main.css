@@ -363,8 +363,212 @@ table {
 .l-grid--columns-auto {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+.l-grid--gap-0 {
+  gap: 0px;
+}
+.l-grid--horizontal-gap-0 {
+  row-gap: 0px;
+}
+.l-grid--vertical-gap-0 {
+  column-gap: 0px;
+}
+.l-grid--gap-1 {
+  gap: 4px;
+}
+.l-grid--horizontal-gap-1 {
+  row-gap: 4px;
+}
+.l-grid--vertical-gap-1 {
+  column-gap: 4px;
+}
+.l-grid--gap-2 {
+  gap: 6px;
+}
+.l-grid--horizontal-gap-2 {
+  row-gap: 6px;
+}
+.l-grid--vertical-gap-2 {
+  column-gap: 6px;
+}
+.l-grid--gap-3 {
+  gap: 8px;
+}
+.l-grid--horizontal-gap-3 {
+  row-gap: 8px;
+}
+.l-grid--vertical-gap-3 {
+  column-gap: 8px;
+}
+.l-grid--gap-4 {
+  gap: 10px;
+}
+.l-grid--horizontal-gap-4 {
+  row-gap: 10px;
+}
+.l-grid--vertical-gap-4 {
+  column-gap: 10px;
+}
 .l-grid--gap-5 {
+  gap: 12px;
+}
+.l-grid--horizontal-gap-5 {
+  row-gap: 12px;
+}
+.l-grid--vertical-gap-5 {
+  column-gap: 12px;
+}
+.l-grid--gap-6 {
   gap: 16px;
+}
+.l-grid--horizontal-gap-6 {
+  row-gap: 16px;
+}
+.l-grid--vertical-gap-6 {
+  column-gap: 16px;
+}
+.l-grid--gap-7 {
+  gap: 20px;
+}
+.l-grid--horizontal-gap-7 {
+  row-gap: 20px;
+}
+.l-grid--vertical-gap-7 {
+  column-gap: 20px;
+}
+.l-grid--gap-8 {
+  gap: 24px;
+}
+.l-grid--horizontal-gap-8 {
+  row-gap: 24px;
+}
+.l-grid--vertical-gap-8 {
+  column-gap: 24px;
+}
+.l-grid--gap-9 {
+  gap: 32px;
+}
+.l-grid--horizontal-gap-9 {
+  row-gap: 32px;
+}
+.l-grid--vertical-gap-9 {
+  column-gap: 32px;
+}
+.l-grid--gap-10 {
+  gap: 40px;
+}
+.l-grid--horizontal-gap-10 {
+  row-gap: 40px;
+}
+.l-grid--vertical-gap-10 {
+  column-gap: 40px;
+}
+.l-grid--gap-11 {
+  gap: 48px;
+}
+.l-grid--horizontal-gap-11 {
+  row-gap: 48px;
+}
+.l-grid--vertical-gap-11 {
+  column-gap: 48px;
+}
+.l-grid--gap-12 {
+  gap: 64px;
+}
+.l-grid--horizontal-gap-12 {
+  row-gap: 64px;
+}
+.l-grid--vertical-gap-12 {
+  column-gap: 64px;
+}
+.l-grid--gap-13 {
+  gap: 80px;
+}
+.l-grid--horizontal-gap-13 {
+  row-gap: 80px;
+}
+.l-grid--vertical-gap-13 {
+  column-gap: 80px;
+}
+.l-grid--gap-14 {
+  gap: 96px;
+}
+.l-grid--horizontal-gap-14 {
+  row-gap: 96px;
+}
+.l-grid--vertical-gap-14 {
+  column-gap: 96px;
+}
+.l-grid--gap-15 {
+  gap: 128px;
+}
+.l-grid--horizontal-gap-15 {
+  row-gap: 128px;
+}
+.l-grid--vertical-gap-15 {
+  column-gap: 128px;
+}
+.l-grid--gap-16 {
+  gap: 160px;
+}
+.l-grid--horizontal-gap-16 {
+  row-gap: 160px;
+}
+.l-grid--vertical-gap-16 {
+  column-gap: 160px;
+}
+.l-grid--gap-17 {
+  gap: 192px;
+}
+.l-grid--horizontal-gap-17 {
+  row-gap: 192px;
+}
+.l-grid--vertical-gap-17 {
+  column-gap: 192px;
+}
+.l-grid--gap-18 {
+  gap: 224px;
+}
+.l-grid--horizontal-gap-18 {
+  row-gap: 224px;
+}
+.l-grid--vertical-gap-18 {
+  column-gap: 224px;
+}
+.l-grid--gap-19 {
+  gap: 256px;
+}
+.l-grid--horizontal-gap-19 {
+  row-gap: 256px;
+}
+.l-grid--vertical-gap-19 {
+  column-gap: 256px;
+}
+.l-grid--gap-20 {
+  gap: 320px;
+}
+.l-grid--horizontal-gap-20 {
+  row-gap: 320px;
+}
+.l-grid--vertical-gap-20 {
+  column-gap: 320px;
+}
+.l-grid--gap-21 {
+  gap: 480px;
+}
+.l-grid--horizontal-gap-21 {
+  row-gap: 480px;
+}
+.l-grid--vertical-gap-21 {
+  column-gap: 480px;
+}
+.l-grid--gap-22 {
+  gap: 640px;
+}
+.l-grid--horizontal-gap-22 {
+  row-gap: 640px;
+}
+.l-grid--vertical-gap-22 {
+  column-gap: 640px;
 }
 .l-grid--columns-1 {
   grid-template-columns: repeat(1, 1fr);
@@ -709,33 +913,35 @@ table {
   text-decoration: none;
   user-select: none;
   outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
 }
 .c-button--add-cart {
-  background-color: #059467;
+  background-color: #A4D6B9;
   padding: 10px 20px;
-  color: white;
+  color: #352938;
   border-radius: 6px;
   display: inline-block;
 }
 .c-button--quantity-plus {
   border-radius: 50%;
-  padding: 10px 15px;
-  background-color: #10B77F;
+  padding: 10px 14px;
+  background-color: #A4D6B9;
   color: #FFFFFF;
 }
 .c-button--quantity-minus {
   border-radius: 50%;
-  padding: 10px 15px;
-  background-color: #10B77F;
+  padding: 10px 14px;
+  background-color: #A4D6B9;
   color: #FFFFFF;
 }
 .c-button--remove {
   color: #DC2828;
 }
 .c-button--buy {
-  background-color: #10B77F;
+  background-color: #A4D6B9;
   padding: 10px 20px;
-  color: white;
+  color: #352938;
   border-radius: 6px;
 }
 
@@ -749,7 +955,7 @@ table {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;;
 }
 .c-modal__total {
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 20pt;
   text-align: right;
@@ -780,7 +986,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  border-top: 3px solid #10B77F;
+  border-top: 3px solid #A4D6B9;
   text-align: end;
 }
 .c-modal__btn {
@@ -802,7 +1008,6 @@ table {
   flex-direction: row;
   gap: 50px;
   justify-content: space-between;
-  font-family: "Poppins", sans-serif;
 }
 .c-article__img {
   width: 100px;
@@ -810,6 +1015,7 @@ table {
   object-fit: cover;
 }
 .c-article__name {
+  font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-size: 18pt;
 }
@@ -820,7 +1026,8 @@ table {
   width: 100px;
 }
 .c-article__description {
-  font-size: 10pt;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
 }
 .c-article__quantity {
   display: flex;
@@ -835,8 +1042,14 @@ table {
   text-align: right;
 }
 .c-article__category {
-  color: #047756;
-  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  color: #41BE69;
+  font-weight: 600;
+}
+.c-article__price {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
 }
 
 .c-history {
@@ -857,11 +1070,24 @@ table {
   object-fit: cover;
 }
 .c-product-preview__name {
+  font-family: "Libre Baskerville", serif;
   font-weight: 700;
+  font-size: 28px;
+}
+.c-product-preview__description {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
 }
 .c-product-preview__category {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  color: #047756;
+  color: #41BE69;
+}
+.c-product-preview__price {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
 }
 .c-product-preview__body {
   display: flex;
@@ -873,8 +1099,9 @@ table {
 .c-menu {
   display: flex;
   flex-direction: row;
+  margin-top: 12px;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   padding-left: 192px;
   padding-right: 192px;
   padding-top: 12px;
@@ -886,12 +1113,26 @@ table {
 .c-menu__item--left {
   margin-left: auto;
 }
+.c-menu__item {
+  padding: 10px 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.c-menu__item:hover {
+  background-color: #C8C5C1;
+  border-radius: 50%;
+  padding: 10px 12px;
+}
 
 .c-card {
   background-color: #FFFFFF;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
 }
 .c-card__img {
   height: 300px;
@@ -902,17 +1143,27 @@ table {
 }
 .c-card__body {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .c-card__name {
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 28px;
 }
 .c-card__description {
   font-family: "Nunito", sans-serif;
+  font-size: 18px;
 }
 .c-card__price {
   font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+}
+.c-card__btn {
+  display: block;
+  margin-left: auto;
 }
 
 .c-formulario {
@@ -943,6 +1194,77 @@ table {
 }
 .c-img__tarjetas {
   width: 200px;
+}
+
+.c-icon {
+  width: 30px;
+}
+
+.c-category {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  justify-content: center;
+  padding-left: 192px;
+  padding-right: 192px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #352938;
+  background-color: #A4D6B9;
+  font-family: "Libre Baskerville", serif;
+  font-size: 18px;
+}
+.c-category__item {
+  cursor: pointer;
+  border-bottom: 2px solid #A4D6B9;
+  border-top: 2px solid #A4D6B9;
+}
+.c-category__item:hover {
+  border-bottom: 2px solid #352938;
+}
+
+.c-logo {
+  width: 250px;
+  cursor: pointer;
+}
+
+.c-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FDEAA5;
+  border-radius: 4px;
+}
+.c-banner__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-banner__text {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-size: 38pt;
+  width: 60%;
+  text-align: center;
+  user-select: none;
+}
+.c-banner__img {
+  transform: scaleX(-1);
+  object-fit: cover;
+  width: 488px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.c-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.c-footer__body {
+  background-color: #BAE3CE;
+  padding-left: 192px;
+  padding-right: 192px;
 }
 
 .c-input {

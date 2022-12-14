@@ -5,7 +5,6 @@
     gap: 50px;
 
     justify-content: space-between;
-    font-family: 'Poppins', sans-serif;
 
     &__img{
         width: 100px;
@@ -14,6 +13,7 @@
     }
 
     &__name{
+        font-family: 'Libre Baskerville', serif;
         font-weight: 700;
         font-size: 18pt;   
     }
@@ -27,7 +27,8 @@
     }
 
     &__description{
-        font-size: 10pt;
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
     }
 
     &__quantity{
@@ -46,8 +47,16 @@
     }
 
     &__category{
-        color: getColor("verde",2);
-        font-weight: 500;
+        font-family: 'Nunito', sans-serif;
+        color: getColor("principal",1);
+        font-weight: 600;
+
+    }
+
+    &__price{
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
     }
 
 

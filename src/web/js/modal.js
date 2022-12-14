@@ -9,7 +9,7 @@ btnCloseModal.addEventListener("click", () => {
 });
 
 /* ---------- Product Modal -------------- */
-const products = document.querySelectorAll(".c-product");
+const products = document.querySelectorAll(".c-card");
 
 products.forEach((product) => {
   product.addEventListener("click", () => {
@@ -20,11 +20,11 @@ products.forEach((product) => {
                         <div class="c-product-preview__body">
                             <div class="c-product-preview__name">ECODERMA</div>
                             <div class="c-product-preview__category">Champu</div>
-                            <div class="c-product-preview__price">79,95 € IVA incluido</div>
+                            <div class="c-product-preview__price">79,95 € </div>
 
                             <div class="c-product-preview__description"> El Champú Suave Hidratante e Iluminador de Ecoderma, está elaborado con ingredientes de origen natural respetuosos con la piel y el medio ambiente.
                             Su fórmula, con extracto de Bambú y Aceite de Arroz, proporciona una hidratación excepcional, dejando el cabello suave e increíblemente brillante desde la primera aplicación.
-                            Fórmula fácilmente biodegradable. 0% Colorantes, Parabenos, Aceites derivados del petróleo y ftalatos</div>
+                            Fórmula fácilmente biodegradable. 0% Colorantes, Parabenos, Aceites derivados del petróleo y ftalatos.</div>
                         </div>
                     </div>
         `;
@@ -111,8 +111,8 @@ btnCart.addEventListener("click", () => {
 
   footerModal.innerHTML = 
     `
-    <div class="c-modal__total">Total: 24,39</div>
-    <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Comprar</a></div>
+    <div class="c-modal__total">Total: 24,39€</div>
+    <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Realizar pedido</a></div>
     
     `;
 

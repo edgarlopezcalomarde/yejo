@@ -2,8 +2,10 @@
     display: flex;
     flex-direction: row;
 
+    margin-top: getMargin(5);
+
     align-items: center;
-    gap: getGap(5);
+    gap: getGap(8);
 
     padding-left: getPadding(17);
     padding-right: getPadding(17);
@@ -11,7 +13,7 @@
     padding-top: getPadding(5);
     padding-bottom: getPadding(5);
 
-
+    
     &__item--right{
         margin-right: auto;
     }
@@ -20,4 +22,20 @@
         margin-left: auto;
     }
 
+    &__item{
+        padding: 10px 12px;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+
+        cursor: pointer;
+    }
+
+    &__item:hover {
+        background-color: getColor("gris", 6);
+        border-radius: 50%;
+        padding: 10px 12px;
+    }
+
+    
+    
 }

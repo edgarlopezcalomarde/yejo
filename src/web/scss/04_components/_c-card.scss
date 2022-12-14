@@ -2,8 +2,11 @@
     background-color: getColor("blanco", 8);
     border-radius: 10px;
 
+
     display: flex;
     flex-direction: column;
+
+    @include box-shadow(5);
 
     &__img {
         height: 300px;
@@ -15,25 +18,32 @@
 
     &__body{
         padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     &__name {
         font-family: 'Libre Baskerville', serif;
         font-weight: 700;
-        font-size: 18px;
+        font-size: 28px;
         //font-family: 'Nunito', sans-serif;
         //font-family: 'Oswald', sans-serif;
     }
 
     &__description {
-        //font-family: 'Libre Baskerville', serif;
         font-family: 'Nunito', sans-serif;
-        //font-family: 'Oswald', sans-serif;
+        font-size: 18px;
     }
 
     &__price {
-        //font-family: 'Libre Baskerville', serif;
         font-family: 'Nunito', sans-serif;
-        //font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+    }
+
+    &__btn {
+        display: block;
+        margin-left: auto;
     }
 }

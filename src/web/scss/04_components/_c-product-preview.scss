@@ -14,12 +14,27 @@
     }
 
     &__name{
+        font-family: 'Libre Baskerville', serif;
         font-weight: 700;
+        font-size: 28px;
+    }
+
+    &__description {
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
     }
 
     &__category{
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
         font-weight: 500;
-        color: getColor("verde", 2);
+        color: getColor("principal", 1);
+    }
+
+    &__price{
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
     }
 
     &__body{

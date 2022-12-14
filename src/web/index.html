@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,58 +11,66 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   
 </head>
-
 <body class="g--background-color-blanco-3">
-    <header class="c-header l-grid l-grid--column-3">
-        <div class="c-logo"></div>
-        <div class="c-categoria">
-            <div class="c-categoria__item">MUJER</div>
-            <div class="c-categoria__item">HOMBRE</div>
-            <div class="c-categoria__item">NIÑOS</div>
+    <header class="c-header">
+
+        <div class="c-menu"> <!--20px por logo-->
+
+            <img class="c-logo" src="./assets/img/logo.png">
+
+            <div class="c-menu__item c-menu__item--left">
+                <img class="c-icon" id="boton" src="./assets/img/perfil.png" alt="perfil">
+            </div>
+            <div class="c-menu__item">
+                <img class= "c-icon" id="boton2" src="./assets/img/heartwhite.png" alt="favoritos">
+            </div>
+            <div class="c-menu__item">
+                <img class="c-icon" id="btnHistory" src="./assets/img/order.png"  alt="compra">
+            </div>
+            <div class="c-menu__item">
+                <img class="c-icon" id="btnCart" src="./assets/img/bag.png" alt="compra">
+            </div>
+
         </div>
-        <div class="c-icon"> <!--20px por logo-->
-            <div class="c-icon__item">
-                <img class="logo" src="./assets/perfil.png" alt="perfil">
-            </div>
-            <div class="c-icon__item">
-                <img class= "logo" src="./assets/heartwhite.png" alt="favoritos">
-            </div>
-            <div class="c-icon__item">
-                <img class="logo" src="./assets/bag.png" alt="compra">
-            </div>
+
+        <div class="c-category">
+            <div class="c-category__item">Skincare</div>
+            <div class="c-category__item">Haircare</div>
+            <div class="c-category__item">Bodycare</div>
+            <div class="c-category__item">Packs</div>
         </div>
+
     </header>
-    <section>
+    <section class="g--padding-horizontal-17  g--margin-vertical-9">
 
-        <button id="btnCart">Carrito</button>
+        <div class="c-banner">
+            <img class="c-banner__img" src="https://drive.google.com/uc?export=view&id=1_O3fxdmhXRIWFhw6Fp6tCm-njlD2WcjX" alt="banner1">
 
-        <div class="c-product">producto</div>
-        <div class="c-product">producto</div>
-        <div id="btnHistory">historial</div>
+            <div class="c-banner__body">
+                <div class="c-banner__text">
+                    Cuídate con nosotros,
+                    nosotros cuidamos 
+                    el medio ambiente.
+                </div>
+            </div>
+        </div>
 
-        <button id="boton">login</button>
-        <button id="boton2">pago</button>
-        <dialog id="dialog" class="box">
-
-        <div class="c-banner"></div>
-        
-        <!-- OFERTAS-->
-        <!-- NOVEDADES : Nueva Coleccion-->
 
     </section>
-    <section class="l-grid l-grid--columns-auto l-grid--gap-5">
+
+    <section class="l-grid l-grid--columns-auto l-grid--gap-10 g--padding-horizontal-17">
 
         <div class="c-card">
             <div class="c-card__header">
-                <img src="https://drive.google.com/uc?export=view&id=17JY1lZ3t4D2koJT6QSXZMgxeymQ-xl4I" alt="" class="c-card__img">
+                <img src="https://drive.google.com/uc?export=view&id=1VZ3VQ06Y1aM1reCi5wtxNgRT7idYN77M" alt="" class="c-card__img">
                 <img src="#" alt="" class="c-card__like">
             </div>
-        
+            
             <div class="c-card__body">
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -76,7 +84,7 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -90,7 +98,7 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -104,7 +112,7 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -118,7 +126,7 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -132,7 +140,7 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
             </div>
         </div>
         
@@ -146,14 +154,27 @@
                 <div class="c-card__name">Ecoderma</div>
                 <div class="c-card__description">Hidratante e iluminador 500ML</div>
                 <div class="c-card__price">4,49 €</div>
-                <a href="#" class="c-button c-button--add-cart">🛒</a>
-            </div>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
         </div>
 
     </section>
+
+   
     <footer class="c-footer">
-        <div>Legal</div> 
-        <div>Contacto</div>
+        <div class="c-footer__decoration">
+            <svg viewBox="0 -30 700 50" height="100%" width="100%" preserveAspectRatio="none"><path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#BAE3CE" /></svg>
+        </div>
+    
+        <div class="c-footer__body">
+            <div>Legal</div> 
+            <div>Contacto</div>
+            <div>UWU</div>
+            <div>UWU</div>
+            <div>UWU</div>
+            <div>UWU</div>
+            <div>UWU</div>
+            <div>UWU</div>
+        </div>
     </footer>
 
 
@@ -166,6 +187,8 @@
         <div class="c-modal__body"></div>
         <div class="c-modal__footer"></div>
     </dialog>
+
+    <dialog id="dialog"></dialog>
     
 
     <script src="./js/modal.js"></script>

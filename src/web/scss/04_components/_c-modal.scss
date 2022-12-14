@@ -7,8 +7,9 @@
     padding: getPadding(9);
 
     @include box-shadow(3);
+    
     &__total{
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Nunito', sans-serif;
         
         font-weight: 700;
         font-size: 20pt;
@@ -51,7 +52,7 @@
         flex-direction: column;
         justify-content: end;
 
-        border-top: 3px solid getColor("verde",4);
+        border-top: 3px solid getColor("principal",4);
         text-align: end;
     }
 
