@@ -1,0 +1,12 @@
+.c-icon{
+    width: 20px;
+    padding-left: getPadding(2);
+    padding-right: getPadding(2);
+    padding-top: getPadding(2);
+    padding-bottom: getPadding(2);
+
+    &:hover {
+        background-color: getColor("gris", 6);
+    }
+
+}
