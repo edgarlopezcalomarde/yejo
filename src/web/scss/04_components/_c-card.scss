@@ -1,0 +1,39 @@
+.c-card {
+    background-color: getColor("blanco", 8);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &__body{
+        padding: 16px;
+    }
+
+    &__name {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: 700;
+        font-size: 18px;
+        //font-family: 'Nunito', sans-serif;
+        //font-family: 'Oswald', sans-serif;
+    }
+
+    &__description {
+        //font-family: 'Libre Baskerville', serif;
+        font-family: 'Nunito', sans-serif;
+        //font-family: 'Oswald', sans-serif;
+    }
+
+    &__price {
+        //font-family: 'Libre Baskerville', serif;
+        font-family: 'Nunito', sans-serif;
+        //font-family: 'Oswald', sans-serif;
+    }
+}

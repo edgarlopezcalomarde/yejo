@@ -1,10 +1,13 @@
-
 .l-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
+    &--columns-auto {
+        grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
+    }
 
+    &--gap-5 {
+        gap: 16px;
+    }
 
-   
    @for $i from 1 to 9{
         &--columns-#{$i}{
             grid-template-columns: repeat($i, 1fr);
