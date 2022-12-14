@@ -1,0 +1,18 @@
+.c-formulario {
+    display: flex;
+    flex-direction: column;
+    padding-top: getPadding(5);
+    padding-bottom: getPadding(5);
+    &__titulo {
+        text-align: center;
+        padding-top: getPadding(7);
+        padding-bottom: getPadding(5);
+        font-size: getFontSize("2xl");
+        font-weight: getFontWeight(9);
+    }
+    &__texto {
+        font-size: getFontSize("m");
+            padding-top: getPadding(6);
+            padding-bottom: getPadding(3);
+    }
+}

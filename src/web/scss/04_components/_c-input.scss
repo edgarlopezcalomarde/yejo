@@ -1,0 +1,8 @@
+.c-input{
+    border-radius: getBorderRadius(2);
+    align-items: center;
+    font-size: getFontSize("s");
+    padding: getPadding(1);
+    color: black;
+    background-color: getColor("blanco",0);
+}
