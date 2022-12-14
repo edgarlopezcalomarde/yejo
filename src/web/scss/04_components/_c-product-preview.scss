@@ -1,0 +1,32 @@
+.c-product-preview{
+    display: flex;
+    flex-direction: row;
+
+    gap: 16px;
+
+    font-family: 'Poppins', sans-serif;
+
+
+    &__img{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    &__name{
+        font-weight: 700;
+    }
+
+    &__category{
+        font-weight: 500;
+        color: getColor("verde", 2);
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;       
+    }
+
+}

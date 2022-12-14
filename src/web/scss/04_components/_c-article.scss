@@ -1,0 +1,54 @@
+.c-article{
+
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+
+    &__img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    &__name{
+        font-weight: 700;
+        font-size: 18pt;   
+    }
+
+    &__info{
+        width: 400px;
+    }
+
+    &__options{
+        width: 100px;
+    }
+
+    &__description{
+        font-size: 10pt;
+    }
+
+    &__quantity{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__price{
+        font-weight: 700;
+        font-size: 18pt;
+    }
+
+    &__options{
+        text-align: right;
+    }
+
+    &__category{
+        color: getColor("verde",2);
+        font-weight: 500;
+    }
+
+
+}

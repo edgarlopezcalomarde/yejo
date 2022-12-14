@@ -1,0 +1,64 @@
+.c-modal{
+
+    border-radius: 6px;
+    border: 0px;
+
+    background-color: getColor("blanco", 8);
+    padding: getPadding(9);
+
+    @include box-shadow(3);
+    &__total{
+        font-family: 'Poppins', sans-serif;
+        
+        font-weight: 700;
+        font-size: 20pt;
+    
+       
+        text-align: right;
+        padding-top: 10px;
+    }
+
+   
+    &__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__title{
+        font-weight: 400;
+        font-size: getFontSize("m");
+    }
+
+    &__close{
+        font-weight: 800;
+        font-size: getFontSize("3xl");
+        cursor: pointer;
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        padding-right: getPadding(8);
+        overflow-y: auto;
+    }
+
+
+
+    &__footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        border-top: 3px solid getColor("verde",4);
+        text-align: end;
+    }
+
+    &__btn{
+        margin-top: 16px;
+    }
+
+   
+
+}
