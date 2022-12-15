@@ -1,5 +1,7 @@
 
 const productsBox = document.getElementById("products")
+const productsBestSellerBox = document.getElementById("bestseller")
+
 const bannerSection = document.getElementById("banner")
 
 const btnHaircare = document.getElementById("haircare")
@@ -154,12 +156,42 @@ const generarCartas = (category) =>{
     productsBox.innerHTML = cartas
 
 
-
-    
-
     productModal()
 
 }
+
+
+
+const generarCartasBestSeller = () =>{
+    const productsCopy = [...productos].sort((a, b) => 0.5 - Math.random());
+    const productosBestSeller =  productsCopy.slice(3)
+
+    let cartas = ""
+
+    productosBestSeller.forEach(product=>{
+        cartas+=`
+        <div class="c-card" idproduct = "${product.id}">
+            <div class="c-card__header">
+                <img src="./assets/img/${product.id}.png" alt="" class="c-card__img">
+                <img src="#" alt="" class="c-card__like">
+            </div>
+            
+            <div class="c-card__body">
+                <div class="c-card__name">${product.name}</div>
+                <div class="c-card__description">${product.sort_description}</div>
+                <div class="c-card__price">${product.price}€</div>
+                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
+            </div>
+        </div>
+        `
+    })
+
+
+    productsBestSellerBox.innerHTML = cartas
+
+}
+
+generarCartasBestSeller()
 
 
 btnSkincare.addEventListener("click",()=>{
