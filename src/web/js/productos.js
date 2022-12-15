@@ -14,6 +14,7 @@ const productos = [
 
     {
         id: "2jpn8l5kptpga4qge24ipch",
+        complementary:"14ghol5b3flhq64octf6lol",
         category: "skincare",
         name: "Super green concentrated",
         sort_description: "Sérum super nutritivo que ayuda a equilibrar pieles con rojeces o acné.",
@@ -32,6 +33,7 @@ const productos = [
 
     {
         id: "35820h75phr68dn0d8m33mg",
+        complementary:"9drnei4pe6p4f2mftc76erl",
         category: "skincare",
         name: "Rescue face mist",
         sort_description: "Bruma facial hidratante, antioxidante  y nutritiva que refresca la piel y aporta sensación de confort a cualquier hora del día.",
@@ -49,6 +51,7 @@ const productos = [
     },
     {
         id: "q1hc977cmf92gidqq1l8tfo",
+        complementary:"mib0k4nca769gl2en5dtabf",
         category: "skincare",
         name: "Urban face mist",
         sort_description: "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día.",
@@ -65,6 +68,7 @@ const productos = [
     },
     {
         id: "1ssaee7q71m84d79jppaka1",
+        complementary:"26q55i6q9mflnc3jb82dqe7",
         category: "skincare",
         name: "Glowy cleansing gel",
         sort_description: "Limpiador facial hidratante e iluminador.",
@@ -81,8 +85,9 @@ const productos = [
     },
     {
         id: "29m4trfo2q97maa0e3sip2",
+        complementary:"14ghol5b3flhq64octf6lol",
         category: "bodycare",
-        name: "Hyaluronic Energy Body Serum",
+        name: "Hyaluronic Energy Serum",
         sort_description: "Sérum corporal piernas cansadas",
         big_description: `
         Sérum en formato de gel. Su fórmula aporta una sensación de alivio y confort inmediatos gracias a 8 activos vegetales: goldenrod, el alga roja, ácido hialurónico vegano, potentes activos naturales marinos.
@@ -97,6 +102,7 @@ const productos = [
     },
     {
         id: "30l5sm5ffiqmar9jofriai7",
+        complementary:"14ghol5b3flhq64octf6lol",
         category: "bodycare",
         name: "Hyaluronic Energy Body Serum",
         sort_description: "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa.",
@@ -178,6 +184,7 @@ const generarCartasBestSeller = () =>{
             
             <div class="c-card__body">
                 <div class="c-card__name">${product.name}</div>
+                <div class="c-card__category">${product.category}</div>
                 <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
                 <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>

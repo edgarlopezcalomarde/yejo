@@ -1168,6 +1168,11 @@ table {
   margin-left: auto;
   margin-top: auto;
 }
+.c-card__category {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #41BE69;
+}
 
 .c-title {
   font-weight: 700;

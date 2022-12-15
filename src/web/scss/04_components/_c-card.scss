@@ -48,7 +48,12 @@
         display: block;
         margin-left: auto;
         margin-top: auto;
+    }
 
-       
+    &__category{
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        color: getColor("principal", 1);
+
     }
 }
