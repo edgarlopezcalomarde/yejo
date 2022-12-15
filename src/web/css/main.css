@@ -1258,17 +1258,74 @@ table {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 10px;
   margin-top: 12px;
   padding-left: 192px;
   padding-right: 192px;
   background-color: #BAE3CE;
   margin-top: auto;
+  height: 100vh;
+}
+.c-footer__section {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.c-footer__section--top {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: auto;
+}
+.c-footer__section--middle {
+  flex-direction: row;
+  gap: 12px;
+  margin-top: auto;
+}
+.c-footer__section--bottom {
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .c-basket {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
+}
+
+.c-list {
+  margin-left: auto;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+.c-list__header {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.c-list__item {
+  margin-top: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c-newsletter {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.c-newsletter__title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.c-newsletter__description {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
 }
 
 .c-input {

@@ -4,7 +4,7 @@
     flex-direction: column;
 
     gap: getGap(5);
-    padding: getPadding(4);
+
 
     margin-top: getMargin(5);
     padding-left: getPadding(17);
@@ -12,6 +12,42 @@
     background-color: getColor("principal", 5);
 
     margin-top: auto;
+
+    height: 100vh;
+
+    &__section{
+        display: flex;
+        padding-top: getPadding(7);
+        padding-bottom: getPadding(7);
+
+        &--top{
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: getGap(10);
+            margin-top: auto;
+
+        }
+
+        &--middle{
+            flex-direction: row;
+            gap: getGap(5);
+            margin-top: auto;
+
+        }
+
+        &--bottom{
+            
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            
+        }
+
+    }
+
+
 
 
 

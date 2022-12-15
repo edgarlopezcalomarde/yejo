@@ -1,0 +1,24 @@
+.c-list{
+    
+    margin-left: auto;
+    width: 240px;
+
+    display: flex;
+    flex-direction: column;
+   
+
+    
+    &__header{
+        font-family: 'Libre Baskerville', serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    &__item{
+        margin-top: 8px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+}
