@@ -1136,7 +1136,7 @@ table {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
 }
 .c-card__img {
-  height: 300px;
+  height: 240px;
   width: 100%;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -1146,16 +1146,17 @@ table {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 .c-card__name {
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 20px;
 }
 .c-card__description {
   font-family: "Nunito", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  height: 90px;
 }
 .c-card__price {
   font-family: "Nunito", sans-serif;
@@ -1165,6 +1166,7 @@ table {
 .c-card__btn {
   display: block;
   margin-left: auto;
+  margin-top: auto;
 }
 
 .c-title {
@@ -1239,8 +1241,9 @@ table {
 
 .c-banner {
   width: 100%;
-  max-height: 500px;
+  max-height: 520px;
   border-radius: 4px;
+  object-fit: fill;
 }
 
 .c-footer {
@@ -1252,6 +1255,7 @@ table {
   padding-left: 192px;
   padding-right: 192px;
   background-color: #BAE3CE;
+  margin-top: auto;
 }
 
 .c-input {
