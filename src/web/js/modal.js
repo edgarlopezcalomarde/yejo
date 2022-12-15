@@ -15,19 +15,19 @@ const productModal = () =>{
     const products = document.querySelectorAll(".c-card");
 
     products.forEach((product) => {
-    product.addEventListener("click", () => {
+    product.addEventListener("click", (e) => {
+
+        const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
+   
         bodyModal.innerHTML = `
             <div class="c-product-preview">
-                            <img class="c-product-preview__img"src="https://www.druni.es/media/catalog/product/a/4/a4b60d7d00d0b1babad7d5e196e3ce8e76a85fbad4099445902818e2c1fec134c22b188c6c816b3f0a903ea4accdeb312bf9c5a90f02962e0fdaf1aebb04374e.jpg?quality=80&fit=bounds&height=600&width=600&canvas=600:600" alt="productimg" class="c-preview">
+                            <img class="c-product-preview__img" src="./assets/img/${productData.id}.png" alt="productimg" class="c-preview">
                             
                             <div class="c-product-preview__body">
-                                <div class="c-product-preview__name">ECODERMA</div>
-                                <div class="c-product-preview__category">Champu</div>
-                                <div class="c-product-preview__price">79,95 € </div>
-
-                                <div class="c-product-preview__description"> El Champú Suave Hidratante e Iluminador de Ecoderma, está elaborado con ingredientes de origen natural respetuosos con la piel y el medio ambiente.
-                                Su fórmula, con extracto de Bambú y Aceite de Arroz, proporciona una hidratación excepcional, dejando el cabello suave e increíblemente brillante desde la primera aplicación.
-                                Fórmula fácilmente biodegradable. 0% Colorantes, Parabenos, Aceites derivados del petróleo y ftalatos.</div>
+                                <div class="c-product-preview__name">${productData.name}</div>
+                                <div class="c-product-preview__category">${productData.category}</div>
+                                <div class="c-product-preview__price">${productData.price}</div>
+                                <div class="c-product-preview__description"> ${productData.big_description}</div>
                             </div>
                         </div>
             `;

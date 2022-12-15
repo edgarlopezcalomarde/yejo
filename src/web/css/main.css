@@ -983,6 +983,7 @@ table {
   overflow-y: auto;
 }
 .c-modal__footer {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -1068,6 +1069,7 @@ table {
   width: 400px;
   height: 400px;
   object-fit: cover;
+  border-radius: 4px;
 }
 .c-product-preview__name {
   font-family: "Libre Baskerville", serif;

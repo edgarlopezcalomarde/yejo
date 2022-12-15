@@ -5,6 +5,7 @@
 
     background-color: getColor("blanco", 8);
     padding: getPadding(9);
+    
 
     @include box-shadow(3);
     
@@ -48,6 +49,7 @@
 
 
     &__footer{
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         justify-content: end;

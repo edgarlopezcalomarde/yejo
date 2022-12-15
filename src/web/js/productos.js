@@ -137,7 +137,9 @@ const btnOperations = (btn,id) =>{
 
     console.log("uwu")
     const item = productos.find(it => it.id == id)
-    btn.addEventListener("click", ()=>{cart.addItem(item)})
+    btn.addEventListener("click", (e)=>{
+        cart.addItem(item)
+    })
 }
 
 
@@ -169,7 +171,9 @@ const generarCartas = (category) =>{
     productsBox.innerHTML = cartas
 
 
-    document.querySelectorAll("c-button--add-cart").forEach( btn =>{
+    document.querySelectorAll(".c-button--add-cart").forEach( btn =>{
+        
+        console.log("uwu")
 
         btnOperations(btn,btn.parentNode.parentNode.parentNode.atributtes.idproduct.value)
 
