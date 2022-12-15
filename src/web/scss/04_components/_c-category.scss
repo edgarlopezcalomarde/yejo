@@ -19,8 +19,10 @@
 
     &__item{
         cursor: pointer;
-       border-bottom: 2px solid getColor("principal",4);
-       border-top: 2px solid getColor("principal",4);
+        user-select: none;
+
+        border-bottom: 2px solid getColor("principal",4);
+        border-top: 2px solid getColor("principal",4);
     }
 
     &__item:hover{
