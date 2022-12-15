@@ -34,7 +34,7 @@ const productModal = () =>{
         footerModal.innerHTML = `
             <div class="c-modal__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la cesta</a></div>
             `;
-
+            
         modal.showModal();
     });
     });
@@ -49,6 +49,9 @@ productModal()
 const btnCart = document.querySelector("#btnCart");
 
 btnCart.addEventListener("click", () => {
+
+    console.log(cart)
+
   bodyModal.innerHTML = `
     <div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">
         <div class="c-article"> 
@@ -125,8 +128,17 @@ btnCart.addEventListener("click", () => {
     
     `;
 
+    
+
+
+
+
   modal.showModal();
 });
+
+
+
+
 
 /* ---------- History Modal -------------- */
 

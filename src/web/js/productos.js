@@ -1,4 +1,3 @@
-
 const productsBox = document.getElementById("products")
 const productsBestSellerBox = document.getElementById("bestseller")
 
@@ -9,6 +8,8 @@ const btnBodycare = document.getElementById("bodycare")
 const btnOthers = document.getElementById("others")
 const btnSkincare = document.getElementById("skincare")
 
+
+let cart = new Cart()
 
 const productos = [
 
@@ -132,6 +133,12 @@ let plantilla =    {
     price: 0
 }
 
+const btnOperations = (btn,id) =>{
+
+    console.log("uwu")
+    const item = productos.find(it => it.id == id)
+    btn.addEventListener("click", ()=>{cart.addItem(item)})
+}
 
 
 const generarCartas = (category) =>{
@@ -162,6 +169,13 @@ const generarCartas = (category) =>{
     productsBox.innerHTML = cartas
 
 
+    document.querySelectorAll("c-button--add-cart").forEach( btn =>{
+
+        btnOperations(btn,btn.parentNode.parentNode.parentNode.atributtes.idproduct.value)
+
+    })
+
+    
     productModal()
 
 }
