@@ -7,14 +7,14 @@ class Cart{
     }
 
     addItem(item){
-        const itemAlreadyExist = this.cart.find(it=> it.id == item.id)
+        
+        if(this.cart.includes(item)){
+			this.cart.find(art=> art.id == item.id).unidades +=1
+		}else{
+			item.unidades = 1
+			this.cart.push(item)	
+		}
 
-        if(itemAlreadyExist){
-            itemAlreadyExist.unidades++
-        }else{
-            item.unidades = 0
-            this.cart.push(item)
-        }
 
     }
 

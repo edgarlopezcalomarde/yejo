@@ -16,6 +16,7 @@ const productModal = () =>{
 
     products.forEach((product) => {
     product.addEventListener("click", (e) => {
+    
 
         const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
    
@@ -41,99 +42,58 @@ const productModal = () =>{
 
 }
 
-productModal()
 
 
 
 /* ---------- Cart Modal -------------- */
 const btnCart = document.querySelector("#btnCart");
 
+
 btnCart.addEventListener("click", () => {
 
+    let cartBox = ""
     console.log(cart)
 
-  bodyModal.innerHTML = `
-    <div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">
-        <div class="c-article"> 
-            <img src="https://www.druni.es/media/catalog/product/a/4/a4b60d7d00d0b1babad7d5e196e3ce8e76a85fbad4099445902818e2c1fec134c22b188c6c816b3f0a903ea4accdeb312bf9c5a90f02962e0fdaf1aebb04374e.jpg?quality=80&fit=bounds&height=300&width=300&canvas=300:300" alt="articleimg" class="c-article__img">
-            <div class="c-article__info">
-                <div class="c-article__name">ECODERMA</div>
-                <div class="c-article__category">Champu</div>
-                <div class="c-article__description">Hidratante E Iluminador 500ML</div>
+
+    cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">'
+        cart.cart.forEach(art=>{
+            cartBox +=`
+            <div class="c-article"> 
+                <img src="./assets/img/${art.complementary}.png" alt="articleimg" class="c-article__img">
+                <div class="c-article__info">
+                    <div class="c-article__name">${art.name}</div>
+                    <div class="c-article__category">${art.category}</div>
+                    <div class="c-article__description">${art.sort_description}</div>
+                </div>
+
+                <div class="c-article__quantity">
+                    <a class="c-button c-button--quantity-minus" id="removeOne"><i class="fa-solid fa-minus"></i></a>
+                    <div id="quantity">${art.unidades}</div>
+                    <a class="c-button c-button--quantity-plus" id="addOne"><i class="fa-solid fa-plus"></i></a>
+                </div>
+
+                <div class="c-article__options">
+                    <div class="c-article__price">${art.price}</div>
+                    <a class="c-button c-button--remove">Eliminar</a>
+                </div>  
+
             </div>
+            `
+        })
 
-            <div class="c-article__quantity">
-                <a class="c-button c-button--quantity-minus" id="removeOne"><i class="fa-solid fa-minus"></i></a>
-                <div id="quantity">2</div>
-                <a class="c-button c-button--quantity-plus" id="addOne"><i class="fa-solid fa-plus"></i></a>
-            </div>
-
-            <div class="c-article__options">
-                <div class="c-article__price">4,49€</div>
-                <a class="c-button c-button--remove">Eliminar</a>
-            </div>  
-
-        </div>
-
-        <div class="c-article"> 
-            <img src="https://www.druni.es/media/catalog/product/d/4/d45e4a977d9964f18b9bb5c34413c4fa0a079cc88d7c334397ed29cfcff0b7fd8fdadca277bdd7dd93d8dc9d9236ff1d8377f832bd0b478ec7b0b23eae2b958f.jpg?quality=80&fit=bounds&height=300&width=300&canvas=300:300" alt="articleimg" class="c-article__img">
-            <div class="c-article__info">
-                <div class="c-article__name">ORGANIC SHOP</div>
-                <div class="c-article__category">Mascarilla</div>
-                <div class="c-article__description">Repara el cabello, perfeccionando su apariencia y cuerpo dándole un aspecto sedoso y haciendo que deslumbres. </div>
-            </div>
-
-            <div class="c-article__quantity">
-                <a class="c-button c-button--quantity-minus" id="removeOne"><i class="fa-solid fa-minus"></i></a>
-                <div id="quantity">1</div>
-                <a class="c-button c-button--quantity-plus" id="addOne"><i class="fa-solid fa-plus"></i></a>
-            </div>
-
-            <div class="c-article__options">
-                <div class="c-article__price">2,95€</div>
-                <a class="c-button c-button--remove">Eliminar</a>
-            </div>
-         
-        </div>
-
-
-        <div class="c-article"> 
-            <img src="https://www.druni.es/media/catalog/product/5/0/5030297.jpg?quality=80&fit=bounds&height=300&width=300&canvas=300:300" alt="articleimg" class="c-article__img">
-            <div class="c-article__info">
-                <div class="c-article__name">WELEDA</div>
-                <div class="c-article__category">Aceite</div>
-                <div class="c-article__description">Aceite De Abedul Para La Celulitis | 100ML </div>
-            </div>
-
-            <div class="c-article__quantity">
-                <a class="c-button c-button--quantity-minus" id="removeOne"><i class="fa-solid fa-minus"></i></a>
-                <div id="quantity">1</div>
-                <a class="c-button c-button--quantity-plus" id="addOne"><i class="fa-solid fa-plus"></i></a>
-            </div>
-
-            <div class="c-article__options">
-                <div class="c-article__price">16,95€</div>
-                <a class="c-button c-button--remove">Eliminar</a>
-            </div>
-     
-        </div>  
-
-    </div>
-    `;
-
-  footerModal.innerHTML = 
-    `
-    <div class="c-modal__total">Total: 24,39€</div>
-    <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Realizar pedido</a></div>
-    
-    `;
-
+    cartBox += '</div>'
     
 
+    bodyModal.innerHTML = cartBox
 
+    footerModal.innerHTML = 
+        `
+        <div class="c-modal__total">Total: 24,39€</div>
+        <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Realizar pedido</a></div>
+        
+        `;
 
-
-  modal.showModal();
+    modal.showModal();
 });
 
 

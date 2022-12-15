@@ -105,7 +105,7 @@ const productos = [
         id: "30l5sm5ffiqmar9jofriai7",
         complementary:"14ghol5b3flhq64octf6lol",
         category: "bodycare",
-        name: "Hyaluronic Energy Body Serum",
+        name: "Hyaluronic Energy Serum",
         sort_description: "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa.",
         big_description: `
         Contribuye al bienestar de la piel dejándola suave e hidratada, sin sensación de pegajosidad, una vez absorbida. Actúa como agente calmante de acción rápida. Ayuda a la piel a reducir la pérdida de agua epidérmica. Es altamente nutritiva.
@@ -133,14 +133,6 @@ let plantilla =    {
     price: 0
 }
 
-const btnOperations = (btn,id) =>{
-
-    console.log("uwu")
-    const item = productos.find(it => it.id == id)
-    btn.addEventListener("click", (e)=>{
-        cart.addItem(item)
-    })
-}
 
 
 const generarCartas = (category) =>{
@@ -161,7 +153,7 @@ const generarCartas = (category) =>{
                 <div class="c-card__name">${product.name}</div>
                 <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
-                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
+                <div class="c-card__btn"><button  class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
             </div>
         </div>
         `
@@ -172,15 +164,18 @@ const generarCartas = (category) =>{
 
 
     document.querySelectorAll(".c-button--add-cart").forEach( btn =>{
+        const item = productos.find(it => it.id == btn.parentNode.parentNode.parentNode.attributes.idproduct.value)
+        btn.addEventListener("click", (e)=>{
+            e.preventDefault()
+            e.stopPropagation()
+            cart.addItem(item)
+        })
         
-        console.log("uwu")
-
-        btnOperations(btn,btn.parentNode.parentNode.parentNode.atributtes.idproduct.value)
-
     })
 
-    
     productModal()
+
+    
 
 }
 
@@ -205,21 +200,37 @@ const generarCartasBestSeller = () =>{
                 <div class="c-card__category">${product.category}</div>
                 <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
-                <div class="c-card__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la bolsa</a></div>
+                <div class="c-card__btn"><button class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
             </div>
         </div>
         `
     })
 
-
     productsBestSellerBox.innerHTML = cartas
+  
+    const btnsAddCart = document.querySelectorAll(".c-button--add-cart")
+    btnsAddCart.forEach(btn=>{
+      
+        const item = productos.find(it => it.id == btn.parentNode.parentNode.parentNode.attributes.idproduct.value)
+        btn.addEventListener("click", (e)=>{
+            e.preventDefault()
+            e.stopPropagation()
+            cart.addItem(item)
+        })
+    })
+
+    productModal()
 
 }
 
 generarCartasBestSeller()
 
 
+
+
 btnSkincare.addEventListener("click",()=>{
+
+    btnSkincare.checked = true
 
     bannerSection.style.display = 'none'
     btnSkincare.style.borderBottom ='2px solid black'
