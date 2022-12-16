@@ -58,6 +58,13 @@
         border-radius: 6px;
     }
 
+    &--newsletter{
+        padding: 10px 14px;
+        background-color: getColor("principal",3);
+        color: getColor("negro",8   );
+        border-radius: 0px;
+    }
+
   
 }
 

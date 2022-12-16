@@ -17,4 +17,16 @@
         font-size: 14px;
     }
 
+    &__input{
+        background-color: getColor("principal",3);
+        color: getColor("negro",3);
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;    
+        border: 0;
+        height: 100%;
+        outline: none;
+        padding: 0px 20px;
+        width: 260px;
+    }
+
 }

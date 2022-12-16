@@ -8,16 +8,20 @@ btnCloseModal.addEventListener("click", () => {
   modal.close();
 });
 
+modal.addEventListener("close", ()=>{
+    document.body.style.overflow = "auto"
+})
+
 /* ---------- Product Modal -------------- */
 
 const productModal = () =>{
 
-    
 
     const products = document.querySelectorAll(".c-card");
 
     products.forEach((product) => {
     product.addEventListener("click", (e) => {
+        document.body.style.overflow = "hidden"
 
         const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
    
@@ -28,7 +32,12 @@ const productModal = () =>{
                             <div class="c-product-preview__body">
                                 <div class="c-product-preview__name">${productData.name}</div>
                                 <div class="c-product-preview__category">${productData.category}</div>
-                                <div class="c-product-preview__price">${productData.price}€</div>
+                               
+                                <div class="c-product-preview__refs">
+                                    <div class="c-product-preview__price">${productData.price}€</div>
+                                    <div class="c-product-preview__quantity">${productData.quantity}</div>
+                                </div>
+                                
                                 <div class="c-product-preview__description"> ${productData.big_description}</div>
                             </div>
                         </div>
@@ -51,6 +60,7 @@ const btnCart = document.querySelector("#btnCart");
 
 
 btnCart.addEventListener("click", () => {
+    document.body.style.overflow = "hidden"
 
     let cartBox = ""
 
@@ -114,6 +124,8 @@ btnCart.addEventListener("click", () => {
 const btnHistory = document.querySelector("#btnHistory");
     
 btnHistory.addEventListener("click", () => {
+    document.body.style.overflow = "hidden"
+
   bodyModal.innerHTML = `
   <table class="c-table">
   <thead class="c-table__header">

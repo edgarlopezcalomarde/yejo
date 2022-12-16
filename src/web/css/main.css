@@ -957,6 +957,12 @@ table {
   color: #503852;
   border-radius: 6px;
 }
+.c-button--newsletter {
+  padding: 10px 14px;
+  background-color: #87C9A2;
+  color: #503852;
+  border-radius: 0px;
+}
 
 .c-modal {
   border-radius: 6px;
@@ -1123,6 +1129,17 @@ table {
   width: 400px;
   height: 400px;
   overflow-y: auto;
+  padding-right: 24px;
+}
+.c-product-preview__refs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #151117;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+.c-product-preview__quantity {
+  margin-top: auto;
 }
 
 .c-menu {
@@ -1355,6 +1372,17 @@ table {
 .c-newsletter__description {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
+}
+.c-newsletter__input {
+  background-color: #87C9A2;
+  color: #231C26;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  border: 0;
+  height: 100%;
+  outline: none;
+  padding: 0px 20px;
+  width: 260px;
 }
 
 .c-input {
