@@ -945,6 +945,18 @@ table {
   color: #352938;
   border-radius: 6px;
 }
+.c-button--pay {
+  padding: 10px 14px;
+  background-color: #A4D6B9;
+  color: #352938;
+  border-radius: 6px;
+}
+.c-button--delete {
+  padding: 10px 14px;
+  background-color: #FEC8C8;
+  color: #503852;
+  border-radius: 6px;
+}
 
 .c-modal {
   border-radius: 6px;
@@ -983,6 +995,12 @@ table {
   padding-right: 24px;
   overflow-y: auto;
 }
+.c-modal__body--preview {
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
+  height: 400px;
+}
 .c-modal__footer {
   margin-top: 10px;
   display: flex;
@@ -997,12 +1015,15 @@ table {
 
 .c-table__header {
   text-align: left;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
 }
 .c-table__body {
   text-align: center;
 }
 .c-table__item {
-  padding: 10px;
+  font-family: "Nunito", sans-serif;
+  padding: 15px;
 }
 
 .c-article {
@@ -1010,6 +1031,9 @@ table {
   flex-direction: row;
   gap: 50px;
   justify-content: space-between;
+}
+.c-article--void {
+  width: 70vw;
 }
 .c-article__img {
   width: 100px;
@@ -1097,6 +1121,8 @@ table {
   flex-direction: column;
   gap: 10px;
   width: 400px;
+  height: 400px;
+  overflow-y: auto;
 }
 
 .c-menu {
@@ -1309,8 +1335,10 @@ table {
 }
 .c-list__item {
   margin-top: 8px;
-  text-decoration: underline;
   cursor: pointer;
+}
+.c-list__item:hover {
+  text-decoration: underline;
 }
 
 .c-newsletter {

@@ -29,6 +29,7 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.        
         `,
         ingredients: "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
+        quantity:"500ML",
         price: 21.50
     },
 
@@ -48,6 +49,7 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
         `,
         ingredients: "VEGAN, PEG-FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE",
+        quantity:"1000ML",
         price: 27.95
     },
     {
@@ -65,6 +67,7 @@ const productos = [
         *Eficacia subjetiva en 22 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.        
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
+        quantity:"500ML",
         price: 26.30
     },
     {
@@ -82,6 +85,7 @@ const productos = [
         *Eficacia subjetiva en 21 consumidores, 2 veces al día durante 4 semanas de uso.
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, SULFATE FREE",
+        quantity:"700ML",
         price: 28
     },
     {
@@ -99,6 +103,7 @@ const productos = [
             96% ingredientes de origen natural / Apto para pieles sensibles y atópicas / Apto para embarazadas 
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE, PEG FREE, MEA FREE, TEA FREE,  SILICONE FREE, ALCOHOL FREE, MINERAL OILS FREE",
+        quantity:"600ML",
         price: 26
     },
     {
@@ -112,6 +117,7 @@ const productos = [
         `,
         efficacy: `96% ingredientes de origen natural / Apto para todo tipo de pieles: grasas, sensibles o mixtas`,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
+        quantity:"650ML",
         price: 16
     }
         

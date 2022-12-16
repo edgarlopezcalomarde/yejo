@@ -46,6 +46,13 @@
         overflow-y: auto;
     }
 
+    &__body--preview{
+        display: flex;
+        flex-direction: column;
+        padding-right: getPadding(8);
+        height: 400px;
+    }
+
 
 
     &__footer{

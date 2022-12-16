@@ -17,8 +17,11 @@
 
     &__item{
         margin-top: 8px;
-        text-decoration: underline;
         cursor: pointer;
+    }
+
+    &__item:hover{
+        text-decoration: underline;
     }
 
 }

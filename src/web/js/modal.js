@@ -12,11 +12,12 @@ btnCloseModal.addEventListener("click", () => {
 
 const productModal = () =>{
 
+    
+
     const products = document.querySelectorAll(".c-card");
 
     products.forEach((product) => {
     product.addEventListener("click", (e) => {
-    
 
         const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
    
@@ -27,7 +28,7 @@ const productModal = () =>{
                             <div class="c-product-preview__body">
                                 <div class="c-product-preview__name">${productData.name}</div>
                                 <div class="c-product-preview__category">${productData.category}</div>
-                                <div class="c-product-preview__price">${productData.price}</div>
+                                <div class="c-product-preview__price">${productData.price}€</div>
                                 <div class="c-product-preview__description"> ${productData.big_description}</div>
                             </div>
                         </div>
@@ -52,10 +53,18 @@ const btnCart = document.querySelector("#btnCart");
 btnCart.addEventListener("click", () => {
 
     let cartBox = ""
-    console.log(cart)
 
+    bodyModal.innerHTML = 
 
     cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">'
+
+        console.log(cart.cart.length < 0)
+
+        if(cart.cart.length < 1){
+            cartBox += "<div class='c-article c-article--void'>Carrito Vacio</div>"
+        }
+       
+
         cart.cart.forEach(art=>{
             cartBox +=`
             <div class="c-article"> 
@@ -73,7 +82,7 @@ btnCart.addEventListener("click", () => {
                 </div>
 
                 <div class="c-article__options">
-                    <div class="c-article__price">${art.price}</div>
+                    <div class="c-article__price">${art.price} €</div>
                     <a class="c-button c-button--remove">Eliminar</a>
                 </div>  
 
@@ -123,8 +132,8 @@ btnHistory.addEventListener("click", () => {
           <td class="c-table__item">45,34€</td>
           <td class="c-table__item">Pendiente de pago</td>    
           <td class="c-table__item">
-              <a href="#" class="c-button--delete">Eliminar</a>
-              <a href="#" class="c-button--pay">Pagar</a>
+              <a href="#" class="c-button c-button--pay">Pagar</a>
+              <a href="#" class="c-button c-button--delete">Eliminar</a>
           </td>
       </tr>
       <tr class="c-table__row">
@@ -133,8 +142,8 @@ btnHistory.addEventListener("click", () => {
           <td class="c-table__item">45,34€</td>
           <td class="c-table__item">Pendiente de pago</td>
           <td class="c-table__item">
-              <a href="#" class="c-button--delete">Eliminar</a>
-              <a href="#" class="c-button--pay">Pagar</a>
+              <a href="#" class="c-button c-button--pay">Pagar</a>
+              <a href="#" class="c-button c-button--delete">Eliminar</a>
           </td>
       </tr>
   </tbody>

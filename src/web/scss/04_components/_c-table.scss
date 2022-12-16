@@ -1,9 +1,11 @@
 .c-table{
 
-    
 
     &__header{
         text-align: left;
+        font-family: 'Libre Baskerville', serif;
+        font-weight: 700 ;
+
     }
 
 
@@ -12,8 +14,8 @@
     }
     
     &__item{
-       
-       padding: 10px; 
+        font-family: 'Nunito', sans-serif;
+        padding:15px; 
         
     }
 }
