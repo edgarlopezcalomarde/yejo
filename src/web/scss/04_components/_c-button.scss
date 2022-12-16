@@ -6,10 +6,7 @@
     border: 0px;
 
     font-family: 'Nunito', sans-serif;
-
     font-weight: 700;
-
-    
 
     &--add-cart{
         background-color: getColor("principal",4);
@@ -66,6 +63,12 @@
         border-radius: 0px;
     }
 
+    &--login{
+        padding: 10px 40px;
+        background-color: getColor("alternativo",3);
+        color: getColor("verde", 2);
+        border-radius: 4px;
+    }
   
 }
 

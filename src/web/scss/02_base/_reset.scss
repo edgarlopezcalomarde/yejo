@@ -13,7 +13,21 @@
     box-sizing: border-box;
 
   }
-  
+
+  dialog[open] {
+    -webkit-animation: show 1s ease normal;
+  }
+
+  @-webkit-keyframes show{
+      from {
+          transform: translateY(-110%);
+      }
+      to {
+          transform: translateY(0%);
+      }
+  }
+
+ 
 
   *, *:before, *:after {
     box-sizing: inherit;

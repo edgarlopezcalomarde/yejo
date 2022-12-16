@@ -67,7 +67,7 @@ btnCart.addEventListener("click", () => {
 
     bodyModal.innerHTML = 
 
-    cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">'
+    cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6 g--padding-right-10">'
 
         console.log(cart.cart.length < 0)
 
@@ -131,11 +131,11 @@ btnHistory.addEventListener("click", () => {
   <table class="c-table">
   <thead class="c-table__header">
       <tr class="c-table__row">
-          <th class="c-table__item">ID pedido</th>
-          <th class="c-table__item">Fecha</th>
-          <th class="c-table__item">Total</th>
-          <th class="c-table__item">Estado</th>
-          <th class="c-table__item">Operaciones</th>
+          <th class="c-table__head">ID pedido</th>
+          <th class="c-table__head">Fecha</th>
+          <th class="c-table__head">Total</th>
+          <th class="c-table__head">Estado</th>
+          <th class="c-table__head">Operaciones</th>
       </tr>
   </thead>
   <tbody class="c-table__body">
@@ -167,4 +167,37 @@ btnHistory.addEventListener("click", () => {
   footerModal.innerHTML = ``;
 
   modal.showModal();
+});
+
+
+/* ---------- Login Modal --------------*/ 
+const btnLogin = document.querySelector("#btnLogin");
+
+btnLogin.addEventListener("click", () => {
+    bodyModal.innerHTML =
+        `
+        <div class="c-login">
+            <div class="c-login__header">
+                <img src="./assets/img/img_login.png" alt="login" id="login" class="c-login__img">
+            </div>
+            <div class="c-login__body">
+
+                <div class="c-login__input">
+                    <label for="email" class="c-login__label" >Correo electrónico: </label>
+                    <input type="text" name="correo" class="c-input c-input--login" id="correo" placeholder="pepe@gmail.com">
+                </div>
+                
+                <div class="c-login__input">
+                    <label for="password" class="c-login__label">Contraseña: </label>
+                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
+                </div>
+
+            </div>
+
+            <button id="login" class="c-button c-button--login">Login</button>
+
+        </div>
+        `;
+        footerModal.innerHTML = ``;
+    modal.showModal();
 });

@@ -1,8 +1,26 @@
 .c-input{
-    border-radius: getBorderRadius(2);
-    align-items: center;
+    border-radius: getBorderRadius(1);
+    border: 0;
+    outline: none;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
     font-size: getFontSize("s");
     padding: getPadding(1);
+
     color: black;
-    background-color: getColor("blanco",0);
+   
+    
+    &--login{
+        padding: 10px 20px;
+        background-color: getColor("gris",6);
+        color: getColor("negro", 3);
+
+    }
+
+
+
+    
 }
