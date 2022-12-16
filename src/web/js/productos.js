@@ -31,6 +31,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
         quantity_type: "ML",
+        company: "UWU",
         quantity: 100,
         price: 21.00 
     },
@@ -54,6 +55,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
         quantity_type: "ML",
+        company: "UWO",
         quantity: 200,
         price: 21.00  
     },
@@ -77,6 +79,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, SULFATE FREE",
         quantity_type: "ML",
+        company: "UWO",
         quantity: 200,
         price: 28.00   
     },
@@ -100,6 +103,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG-FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE",
         quantity_type: "ML",
+        company: "UWO",
         quantity: 100,
         price: 21.00    
     },
@@ -148,6 +152,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
         cuantity_type: "ML",
+        company: "UWO",
         cuantity: 200,
         price: 16.00
     },
@@ -171,6 +176,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PALM OIL FREE",
         quantity_type: "GR",
+        company: "UWu",
         quantity: 125, 
         price: 0
     },
@@ -193,6 +199,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
         quantity_type: "ML",
+        company: "UWO",
         quantity: 30,
         price: 10.00
     }
@@ -234,6 +241,7 @@ const generarCartas = (category) =>{
             
             <div class="c-card__body">
                 <div class="c-card__name">${product.name}</div>
+                <div class="c-card__company">${product.company}</div>
                 <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
                 <div class="c-card__btn"><button  class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
