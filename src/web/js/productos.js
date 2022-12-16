@@ -382,7 +382,6 @@ btnHaircare.addEventListener("click",()=>{
 
     generarCartas("haircare")
 
-
 })
 
 
