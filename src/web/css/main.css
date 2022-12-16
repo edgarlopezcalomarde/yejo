@@ -923,6 +923,7 @@ table {
   color: #352938;
   border-radius: 6px;
   display: inline-block;
+  margin-top: auto;
 }
 .c-button--quantity-plus {
   border-radius: 50%;
@@ -960,7 +961,7 @@ table {
 .c-button--newsletter {
   padding: 10px 14px;
   background-color: #87C9A2;
-  color: #503852;
+  color: #047756;
   border-radius: 0px;
 }
 
@@ -1165,6 +1166,8 @@ table {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: flex-end;
 }
 .c-menu__item:hover {
   background-color: #C8C5C1;
@@ -1375,7 +1378,7 @@ table {
 }
 .c-newsletter__input {
   background-color: #87C9A2;
-  color: #231C26;
+  color: #F1FEF9;
   font-family: "Nunito", sans-serif;
   font-size: 14px;
   border: 0;
@@ -1383,6 +1386,10 @@ table {
   outline: none;
   padding: 0px 20px;
   width: 260px;
+}
+.c-newsletter__input::placeholder {
+  color: #047756;
+  font-weight: 600;
 }
 
 .c-input {

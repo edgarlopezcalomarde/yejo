@@ -30,8 +30,8 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
-        cuantity_type: "ML",
-        cuantity: 100,
+        quantity_type: "ML",
+        quantity: 100,
         price: 21.00 
     },
 
@@ -53,8 +53,8 @@ const productos = [
         *Eficacia subjetiva en 22 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
-        cuantity_type: "ML",
-        cuantity: 200,
+        quantity_type: "ML",
+        quantity: 200,
         price: 21.00  
     },
 
@@ -76,8 +76,8 @@ const productos = [
         *Eficacia subjetiva en 21 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, SULFATE FREE",
-        cuantity_type: "ML",
-        cuantity: 200,
+        quantity_type: "ML",
+        quantity: 200,
         price: 28.00   
     },
 
@@ -99,12 +99,12 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
         `,
         ingredients: "VEGAN, PEG-FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE",
-        cuantity_type: "ML",
-        cuantity: 100,
+        quantity_type: "ML",
+        quantity: 100,
         price: 21.00    
     },
     {
-    id: "q1hc977cmf92gidqq1l8tfo",
+    id: "29m4trfo2q97maa0e3sip2",
     category: "bodycare",
     name: "Hyaluronic Energy Body Serum",
     sort_description: "Sérum corporal piernas cansadas",
@@ -124,12 +124,12 @@ const productos = [
     *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
     `,
     ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE, PEG FREE, MEA FREE, TEA FREE,  SILICONE FREE, ALCOHOL FREE, MINERAL OILS FREE",
-    cuantity_type: "ML",
-    cuantity: 200,
+    quantity_type: "ML",
+    quantity: 200,
     price: 38.00
     },
     {
-        id: "q1hc977cmf92gidqq1l8tfo",
+        id: "30l5sm5ffiqmar9jofriai7",
         category: "bodycare",
         name: "Balance body",
         sort_description: "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa. Contiene además niacinamida y aceite de aguacate.",
@@ -152,7 +152,7 @@ const productos = [
         price: 16.00
     },
     {
-        id: "q1hc977cmf92gidqq1l8tfo",
+        id: "pmjg7dso8q925cqhm71n7e",
         category: "bodycare",
         name: "Exfoliating body soap",
         sort_description: "Jabón corporal exfoliante con aroma a almendras y limón.",
@@ -170,12 +170,12 @@ const productos = [
         *Eficacia subjetiva en 21 consumidores, 2 veces a la semana durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PALM OIL FREE",
-        cuantity_type: "GR",
-        cuantity: 125, 
+        quantity_type: "GR",
+        quantity: 125, 
         price: 0
     },
     {
-        id: "q1hc977cmf92gidqq1l8tfo",
+        id: "qi7i4im3gg9j0d9qf0pt39",
         category: "bodycare",
         name: "Skin Food Light",
         sort_description: "Nutrición intensiva de textura cremosa y rápida absorción para piel seca.",
@@ -192,10 +192,10 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        cuantity_type: "ML",
-        cuantity: 30,
+        quantity_type: "ML",
+        quantity: 30,
         price: 10.00
-    },
+    }
 
 ]
 

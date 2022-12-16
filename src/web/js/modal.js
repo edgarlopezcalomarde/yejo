@@ -35,7 +35,7 @@ const productModal = () =>{
                                
                                 <div class="c-product-preview__refs">
                                     <div class="c-product-preview__price">${productData.price}€</div>
-                                    <div class="c-product-preview__quantity">${productData.quantity}</div>
+                                    <div class="c-product-preview__quantity">${productData.quantity} ${productData.quantity_type}</div>
                                 </div>
                                 
                                 <div class="c-product-preview__description"> ${productData.big_description}</div>

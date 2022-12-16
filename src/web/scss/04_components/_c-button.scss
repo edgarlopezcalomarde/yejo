@@ -17,6 +17,7 @@
         color: getColor("negro",5);
         border-radius: 6px;
         display: inline-block;
+        margin-top: auto;
     }
 
     &--quantity-plus{
@@ -61,7 +62,7 @@
     &--newsletter{
         padding: 10px 14px;
         background-color: getColor("principal",3);
-        color: getColor("negro",8   );
+        color: getColor("verde", 2);
         border-radius: 0px;
     }
 

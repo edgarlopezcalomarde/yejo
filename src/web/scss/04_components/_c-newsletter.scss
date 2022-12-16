@@ -19,7 +19,7 @@
 
     &__input{
         background-color: getColor("principal",3);
-        color: getColor("negro",3);
+        color: getColor("principal", 8);
         font-family: 'Nunito', sans-serif;
         font-size: 14px;    
         border: 0;
@@ -27,6 +27,11 @@
         outline: none;
         padding: 0px 20px;
         width: 260px;
+    }
+
+    &__input::placeholder{
+        color: getColor("verde", 2);
+        font-weight: 600;
     }
 
 }
