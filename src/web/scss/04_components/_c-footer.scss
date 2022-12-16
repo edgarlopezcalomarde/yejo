@@ -6,14 +6,18 @@
     gap: getGap(5);
 
 
-    margin-top: getMargin(5);
+    padding-top: getMargin(5);
     padding-left: getPadding(17);
     padding-right: getPadding(17);
+
+
+
+
     background-color: getColor("principal", 5);
 
     margin-top: auto;
 
-    height: 100vh;
+   
 
     &__section{
         display: flex;
@@ -24,15 +28,14 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: getGap(10);
-            margin-top: auto;
+           
 
         }
 
         &--middle{
             flex-direction: row;
             gap: getGap(5);
-            margin-top: auto;
-
+           
         }
 
         &--bottom{

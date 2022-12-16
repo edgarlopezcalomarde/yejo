@@ -15,6 +15,7 @@ const productos = [
     
     {
         id: "2jpn8l5kptpga4qge24ipch",
+        complementary: "sort2jpn8l5kptpga4qge24ipch",
         category: "skincare",
         name: "Super green concentrated",
         sort_description: "Sérum super nutritivo que ayuda a equilibrar pieles con rojeces o acné.",
@@ -31,13 +32,14 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
         quantity_type: "ML",
-        company: "UWU",
+        company: "Amapola",
         quantity: 100,
         price: 21.00 
     },
 
     {
         id: "35820h75phr68dn0d8m33mg",
+        complementary: "sort35820h75phr68dn0d8m33mg",
         category: "skincare",
         name: "Urban face mist",
         sort_description: "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día.",
@@ -55,13 +57,14 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
         quantity_type: "ML",
-        company: "UWO",
+        company: "Secretos del agua",
         quantity: 200,
         price: 21.00  
     },
 
     {
         id: "1ssaee7q71m84d79jppaka1",
+        complementary: "sort29m4trfo2q97maa0e3sip2",
         category: "skincare",
         name: "Glowy cleansing gel",
         sort_description: "Limpiador facial hidratante e iluminador.",
@@ -79,13 +82,14 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, SULFATE FREE",
         quantity_type: "ML",
-        company: "UWO",
+        company: "Ecco Verde",
         quantity: 200,
         price: 28.00   
     },
 
     {
         id: "q1hc977cmf92gidqq1l8tfo",
+        complementary: "sort30l5sm5ffiqmar9jofriai7",
         category: "skincare",
         name: "Rescue face mist",
         sort_description: "Bruma facial hidratante, antioxidante  y nutritiva que refresca la piel y aporta sensación de confort a cualquier hora del día.",
@@ -103,14 +107,16 @@ const productos = [
         `,
         ingredients: "VEGAN, PEG-FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE",
         quantity_type: "ML",
-        company: "UWO",
+        company: "Secretos del agua",
         quantity: 100,
         price: 21.00    
     },
     {
     id: "29m4trfo2q97maa0e3sip2",
+    complementary: "sort29m4trfo2q97maa0e3sip2",
+
     category: "bodycare",
-    name: "Hyaluronic Energy Body Serum",
+    name: "Hyaluronic Energy Serum",
     sort_description: "Sérum corporal piernas cansadas",
     big_description: `
     Sérum en formato de gel. Su fórmula aporta una sensación de alivio y confort inmediatos gracias a 8 activos vegetales: goldenrod, el alga roja, ácido hialurónico vegano, potentes activos naturales marinos.
@@ -129,14 +135,16 @@ const productos = [
     `,
     ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE, PEG FREE, MEA FREE, TEA FREE,  SILICONE FREE, ALCOHOL FREE, MINERAL OILS FREE",
     quantity_type: "ML",
+    company: "KenzaOil",
     quantity: 200,
     price: 38.00
     },
     {
         id: "30l5sm5ffiqmar9jofriai7",
+        complementary: "sort30l5sm5ffiqmar9jofriai7",
         category: "bodycare",
         name: "Balance body",
-        sort_description: "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa. Contiene además niacinamida y aceite de aguacate.",
+        sort_description: "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa. ",
         big_description: `
         Contribuye al bienestar de la piel dejándola suave e hidratada, sin sensación de pegajosidad, una vez absorbida. Actúa como agente calmante de acción rápida. Ayuda a la piel a reducir la pérdida de agua epidérmica. Es altamente nutritiva.
 
@@ -152,12 +160,13 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
         cuantity_type: "ML",
-        company: "UWO",
+        company: "Fisaude",
         cuantity: 200,
         price: 16.00
     },
     {
         id: "pmjg7dso8q925cqhm71n7e",
+        complementary: "sortpmjg7dso8q925cqhm71n7e",
         category: "bodycare",
         name: "Exfoliating body soap",
         sort_description: "Jabón corporal exfoliante con aroma a almendras y limón.",
@@ -176,12 +185,14 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PALM OIL FREE",
         quantity_type: "GR",
-        company: "UWu",
+        company: "KenzaOil",
         quantity: 125, 
-        price: 0
+        price: 8
     },
     {
         id: "qi7i4im3gg9j0d9qf0pt39",
+        complementary: "sortqi7i4im3gg9j0d9qf0pt39",
+
         category: "bodycare",
         name: "Skin Food Light",
         sort_description: "Nutrición intensiva de textura cremosa y rápida absorción para piel seca.",
@@ -199,7 +210,7 @@ const productos = [
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
         quantity_type: "ML",
-        company: "UWO",
+        company: "Yepoda",
         quantity: 30,
         price: 10.00
     }
@@ -373,6 +384,13 @@ btnHaircare.addEventListener("click",()=>{
 
 
 })
+
+
+
+const logo = document.querySelector(".c-logo")
+
+logo.addEventListener("click", ()=>{location.href = location.pathname})
+
 
 
 

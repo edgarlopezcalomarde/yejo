@@ -1315,12 +1315,11 @@ table {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 12px;
+  padding-top: 12px;
   padding-left: 192px;
   padding-right: 192px;
   background-color: #BAE3CE;
   margin-top: auto;
-  height: 100vh;
 }
 .c-footer__section {
   display: flex;
@@ -1331,12 +1330,10 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
-  margin-top: auto;
 }
 .c-footer__section--middle {
   flex-direction: row;
   gap: 12px;
-  margin-top: auto;
 }
 .c-footer__section--bottom {
   flex-direction: row;
