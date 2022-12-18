@@ -64,16 +64,20 @@ btnCart.addEventListener("click", () => {
     document.body.style.overflow = "hidden"
 
     let cartBox = ""
+    if(cart.cart.length < 1){
 
-    bodyModal.innerHTML = 
+        cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">'
 
-    cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6 g--padding-right-10">'
-
-        console.log(cart.cart.length < 0)
-
-        if(cart.cart.length < 1){
-            cartBox += "<div class='c-article c-article--void'>Carrito Vacio</div>"
-        }
+    
+        cartBox += `
+        <div class='c-article c-article--void'>
+            <svg class="c-article__voidimg" width="1em" height="1em" viewBox="0 0 20 25" width="200" height="100" focusable="false" role="presentation" aria-hidden="true" name="" class="box__Box-sc-1fis1rt-0 _icon-constructor__Svg-sc-1rjim1r-0 flAoqd ekyULb"><path fill="currentColor"  d="M2,22.5L3,8.3h2.2v3.4c0,0.5,0.4,0.8,0.9,0.8s0.9-0.4,0.9-0.8V8.3h6.5v3.4c0,0.5,0.4,0.8,0.9,0.8 c0.5,0,0.9-0.4,0.9-0.8V8.3h2.1l1,14.2H2z M6.8,5c0-1.7,1.4-3.1,3.2-3.1s3.2,1.4,3.2,3.1v1.7H6.8V5z M18.8,7.3L18.8,7.3L18.8,7.3 c0-0.5-0.4-0.8-0.9-0.8h-3V4.8C15,2.2,12.7,0,10,0C7.2,0,5,2.2,5,4.8v1.7H2c-0.4,0-0.8,0.3-0.9,0.8L0,23.3c0,0.2,0.1,0.4,0.2,0.6 c0.1,0.2,0.4,0.3,0.7,0.3h18.3c0.3,0,0.5-0.1,0.6-0.2c0.2-0.2,0.3-0.4,0.2-0.6L18.8,7.3z"></path></svg>
+            <div class="c-article__voidtitle">Tu cesta está vacía</div>
+            <div class="c-article__voiddescription">¡Parece un buen momento para empezar a comprar!</div>
+        </div>`   
+    }else{
+        cartBox = '<div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6 g--padding-right-10">'
+    }
        
 
         cart.cart.forEach(art=>{
@@ -106,11 +110,14 @@ btnCart.addEventListener("click", () => {
 
     bodyModal.innerHTML = cartBox
 
-    footerModal.innerHTML = 
+    if(!cart.cart.length < 1) {
+        footerModal.innerHTML = 
         `
         <div class="c-modal__total">Total: 24,39€</div>
         <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Tramitar pedido</a></div>
         `;
+    }
+  
 
     modal.showModal();
 });
@@ -171,39 +178,6 @@ btnHistory.addEventListener("click", () => {
 
 /* ---------- Login Modal --------------*/ 
 const btnLogin = document.querySelector("#btnLogin");
-
-btnLogin.addEventListener("click", () => {
-    bodyModal.innerHTML =
-        `
-        <div class="c-login">
-            <div class="c-login__header">
-                <img src="./assets/img/img_login.png" alt="login" id="login" class="c-login__img">
-            </div>
-            <div class="c-login__body">
-
-                <div class="c-login__input">
-                    <label for="email" class="c-login__label" >Correo electrónico: </label>
-                    <input type="text" name="correo" class="c-input c-input--login" id="correo" placeholder="pepe@gmail.com">
-                </div>
-                
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
-                </div>
-
-            </div>
-
-            <button id="login" class="c-button c-button--login">Login</button>
-
-        </div>
-        `;
-        footerModal.innerHTML = ``;
-    modal.showModal();
-});
-
-
-/* ---------- Card- Modal --------------*/ 
-const btnCard = document.querySelector("#btnCard");
 
 btnLogin.addEventListener("click", () => {
     bodyModal.innerHTML =
