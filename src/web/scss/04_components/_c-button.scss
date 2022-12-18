@@ -69,6 +69,13 @@
         color: getColor("negro", 5);
         border-radius: 4px;
     }
-  
+    
+    &--pagar{
+        background-color: getColor("principal", 4);
+        padding: 10px 20px;
+        margin-top: 10px;
+        color: getColor("negro", 5);
+        border-radius: 4px;
+    }
 }
 

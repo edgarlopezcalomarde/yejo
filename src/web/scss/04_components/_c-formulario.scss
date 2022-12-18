@@ -1,7 +1,66 @@
-.c-formulario{
+.c-formulario {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    // color:white;
+    // background: linear-gradient(90deg, rgba(0, 30, 198, 0.826) 0%, rgba(0, 67, 168, 0.735) 20%, rgba(0, 115, 255, 0.74) 100%,rgba(0, 170, 255, 0.74) 100%);
+    border-radius: getBorderRadius(5);
+    padding: getPadding(8) getPadding(10);
+    margin: 30px;
+    // margin-top: getMargin(4);
+    @include box-shadow(3);
 
-    &__img{
-        width: 125px;
-        padding: 5px 10px 20px 10px;
+    &__titulo {
+        font-weight: getFontWeight(9);
+        font-size: getFontSize("4xl");
+        padding-bottom: getPadding(6);
+        color: getColor("blanco", 8);
     }
+
+    &__metodo {
+        font-weight: getFontWeight(9);
+        font-size: getFontSize("l");
+        color: getColor("blanco", 8);
+        padding-right: getPadding(6);
+
+    }
+
+    &__texto {
+        font-family: 'Nunito', sans-serif;
+        font-weight: getFontWeight(9);
+        color: getColor("negro", 2);
+        font-size: getFontSize("m");
+        padding: 6px 0 3px 0;
+    }
+
+    &__img {
+        width: 70px;
+        padding-bottom: getPadding(6);
+    }
+
+    &__input {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+        margin-bottom: getMargin(4);
+        background: rgba(217, 217, 217, 0.039);
+        border: 1px transparent solid;
+        outline: none;
+        padding: getPadding(4);
+        font-size: getFontSize("m");
+        border-radius: 10px;
+        box-shadow: inset 0 -5px 45px rgba(143, 143, 143, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+        -webkit-transition: box-shadow .5s ease;
+        -moz-transition: box-shadow .5s ease;
+        -o-transition: box-shadow .5s ease;
+        -ms-transition: box-shadow .5s ease;
+        transition: box-shadow .5s ease;
+        transition: all 0.5s ease;
+
+        border: 2px transparent solid;
+    }
+}
+
+.c-formulario__input:focus {
+    border: 2px solid getColor("principal", 5);
 }

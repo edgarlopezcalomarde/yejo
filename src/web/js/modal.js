@@ -207,3 +207,53 @@ btnLogin.addEventListener("click", () => {
         footerModal.innerHTML = ``;
     modal.showModal();
 });
+
+const btnPagar = document.querySelector("#boton2");
+
+btnPagar.addEventListener("click", ()=>{
+    modal.style.background = "#FDEAA5";
+    bodyModal.innerHTML = `
+    <div class="l-flex l-flex--direction-column l-flex--align-items-center">
+        <div class="l-flex l-flex--direction-row l-flex--align-items-center">
+            <input type="radio" name="pago" id="iconVisa" value="visa.png" checked><img src="./assets/img/visa.png"
+                alt="icono visa" class="c-icon__visa">
+            <input type="radio" name="pago" id="iconMastercard" value="mastercard.png"><img
+                src="./assets/img/mastercard.png" alt="icono mastercard" class="c-icon__mastercard">
+        </div>
+        <form id="formu" class="c-formulario">
+            <img id="imagenTarjeta" name="imagenTarjeta" class="c-formulario__img" src="./assets/img/visa.png" alt="icono tarjeta">
+            <label for="numeroTarjeta" class="c-formulario__texto">Número de tarjeta</label>
+            <input type="text" maxlength="16" name="numeroTarjeta" id="numeroTarjeta" class="c-formulario__input" placeholder="1234 6969 8400 6755">
+            <label for="titular" class="c-formulario__texto">Titular de la tarjeta</label>
+            <input type="text" name="titular" id="titular" class="c-formulario__input" placeholder="Paolo Mongez">
+            <div class="l-flex l-flex--direction-row">
+                <div class="l-flex l-flex--direction-column">
+                    <label for="mes" class="c-formulario__texto">Fecha de expiración</label>
+                    <input type="date" name="expirar" id="expirar" class="c-formulario__input">
+                </div>
+                <div class="l-flex l-flex--direction-column g--padding-left-10 pruebas">
+                    <label for="cvc" class="c-formulario__texto">CVC</label>
+                    <input type="password" name="cvc" id="cvc" class="c-formulario__input" placeholder="***"  maxlength="3">
+                </div>
+            </div>
+        </form>
+    </div>
+    `;
+    footerModal.innerHTML = `
+    <div class="l-flex l-flex--justify-content-end">
+    <button id="login" class="c-button c-button--pagar">Realizar Pago ( 1500€ )</button>
+    </div>
+    `;
+    let imagen = document.getElementById("imagenTarjeta");
+    let metodoPago = document.getElementsByName("pago");
+    for (let post = 0; post < metodoPago.length; post++) {
+        metodoPago[post].onclick = function() {
+            imagen.setAttribute("src", "./assets/img/"+this.value);
+            }      
+    }
+    modal.showModal();
+});
+
+modal.addEventListener("close",()=>{
+    modal.style.backgroundColor = "#FFFFFF";
+});
