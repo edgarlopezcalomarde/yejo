@@ -24,6 +24,7 @@
         font-family: 'Libre Baskerville', serif;
         font-weight: 700;
         font-size: getFontSize("m");
+        color: getColor("negro", 5);
     }
 
     &__img{

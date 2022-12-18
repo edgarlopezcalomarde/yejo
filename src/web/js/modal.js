@@ -109,8 +109,7 @@ btnCart.addEventListener("click", () => {
     footerModal.innerHTML = 
         `
         <div class="c-modal__total">Total: 24,39€</div>
-        <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Realizar pedido</a></div>
-        
+        <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Tramitar pedido</a></div>
         `;
 
     modal.showModal();
@@ -172,6 +171,39 @@ btnHistory.addEventListener("click", () => {
 
 /* ---------- Login Modal --------------*/ 
 const btnLogin = document.querySelector("#btnLogin");
+
+btnLogin.addEventListener("click", () => {
+    bodyModal.innerHTML =
+        `
+        <div class="c-login">
+            <div class="c-login__header">
+                <img src="./assets/img/img_login.png" alt="login" id="login" class="c-login__img">
+            </div>
+            <div class="c-login__body">
+
+                <div class="c-login__input">
+                    <label for="email" class="c-login__label" >Correo electrónico: </label>
+                    <input type="text" name="correo" class="c-input c-input--login" id="correo" placeholder="pepe@gmail.com">
+                </div>
+                
+                <div class="c-login__input">
+                    <label for="password" class="c-login__label">Contraseña: </label>
+                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
+                </div>
+
+            </div>
+
+            <button id="login" class="c-button c-button--login">Login</button>
+
+        </div>
+        `;
+        footerModal.innerHTML = ``;
+    modal.showModal();
+});
+
+
+/* ---------- Card- Modal --------------*/ 
+const btnCard = document.querySelector("#btnCard");
 
 btnLogin.addEventListener("click", () => {
     bodyModal.innerHTML =
