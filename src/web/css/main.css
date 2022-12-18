@@ -1287,6 +1287,9 @@ table {
 .c-icon {
   width: 30px;
 }
+.c-icon__footer {
+  width: 20px;
+}
 
 .c-category {
   display: flex;
@@ -1327,7 +1330,7 @@ table {
 .c-footer {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 64px;
   padding-top: 12px;
   padding-left: 192px;
   padding-right: 192px;
@@ -1366,6 +1369,7 @@ table {
   width: 240px;
   display: flex;
   flex-direction: column;
+  align-content: flex-end;
 }
 .c-list__header {
   font-family: "Libre Baskerville", serif;
@@ -1373,9 +1377,19 @@ table {
   font-weight: 700;
   margin-bottom: 16px;
 }
+.c-list__subheader {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
 .c-list__item {
   margin-top: 8px;
   cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 }
 .c-list__item:hover {
   text-decoration: underline;
@@ -1407,15 +1421,41 @@ table {
   width: 200px;
 }
 
+.c-compromiso {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: flex-start;
+  width: 500px;
+  gap: 16px;
+}
+.c-compromiso__item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 240px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.c-compromiso__header {
+  width: 100%;
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .c-newsletter {
   width: 500px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 .c-newsletter__title {
   font-family: "Libre Baskerville", serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 .c-newsletter__description {
