@@ -243,10 +243,10 @@ const productos = [
         price: 10.00
     },
     {
-        id: "",
-        complementary: "",
+        id: "1gto3r4e03jfldk40jl809",
+        complementary: "sort1gto3r4e03jfldk40jl809",
         category: "others",
-        name: "",
+        name: "Copa menstrual",
         sort_description: "",
         big_description: ``,
         efficacy: ``,
@@ -257,10 +257,10 @@ const productos = [
         price: 10.00
     },
     {
-        id: "",
-        complementary: "",
+        id: "3ql2pd332fcdt89rgdfcbg",
+        complementary: "sort3ql2pd332fcdt89rgdfcbg",
         category: "others",
-        name: "",
+        name: "Esponja",
         sort_description: "",
         big_description: ``,
         efficacy: ``,
@@ -270,62 +270,97 @@ const productos = [
         quantity: 30,
         price: 10.00
     },
-    {
-        id: "",
-        complementary: "",
-        category: "haircare",
-        name: "",
-        sort_description: "",
-        big_description: ``,
-        efficacy: ``,
-        ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
-        company: "Yepoda",
-        quantity: 30,
-        price: 10.00
-    },
-    {
-        id: "",
-        complementary: "",
-        category: "haircare",
-        name: "",
-        sort_description: "",
-        big_description: ``,
-        efficacy: ``,
-        ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
-        company: "Yepoda",
-        quantity: 30,
-        price: 10.00
-    },
-    {
-        id: "",
-        complementary: "",
-        category: "haircare",
-        name: "",
-        sort_description: "",
-        big_description: ``,
-        efficacy: ``,
-        ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
-        company: "Yepoda",
-        quantity: 30,
-        price: 10.00
-    },
-    {
-        id: "",
-        complementary: "",
-        category: "haircare",
-        name: "",
-        sort_description: "",
-        big_description: ``,
-        efficacy: ``,
-        ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
-        company: "Yepoda",
-        quantity: 30,
-        price: 10.00
-    }
+            {
+            id: "cds",
+            complementary: "",
+            category: "haircare",
+            name: "Ultra soothed scalp shampoo",
+            sort_description: "Shampoo ultra nutritivo y calmante para cabello graso y cuero cabelludo alterado.",
+            big_description: `Shampoo formulado con tensioactivos suaves para la limpieza y cuidado del cabello y cuero cabelludo. Combina agua floral de Cannabis Sativa (extraída del tallo y las hojas mediante destilación por vapor) con agentes acondicionadores del cabello que le aportan suavidad y D-panthenol o provitamina B5, reconocido por sus propiedades hidratantes y nutritivas. Ayuda a regula y equilibrar el cuero cabelludo y el exceso de sebo, prevenir la rotura del cabello, engrosar la estructura y reducir las puntas abiertas. Actúa como protector de polución y de calor.
+
+            89% ingredientes de origen natural / Apto para todo tipo de cabellos / Testado dermatológicamente
+            
+            `,
+            efficacy: `
+            null
+            `,
+            ingredients: "VEGAN, PARABEN FREE, SULFATE FREE, NON TOXIC",
+            quantity_type: "ML",
+            quantity: 300,
+            company: "Yepoda",
+            price: 22.00
+        },
+
+        {
+            id: "vfd",
+            category: "haircare",
+            complementary: "",
+            name: "Silky restoring shampoo",
+            sort_description: "Shampoo formulado para controlar el encrespamiento y  aportar una alta dosis de hidratación en cabellos frágiles y dañados.",
+            big_description: `
+            Shampoo formulado con tensioactivos suaves para la limpieza y cuidado del cabello y cuero cabelludo. Contiene ácido hialurónico de diferentes pesos moleculares y extracto de algodón. 
+
+Ayuda a reparar y equilibrar cabellos secos y castigados por factores externos, ya sean ambientales, térmicos o químicos. Actúa como protector de la cutícula del cabello, mejorando su aspecto y aportando hidratación y flexibilidad.
+
+Apto para todo tipo de cabellos / Testado dermatológicamente
+            `,
+            efficacy: `
+            null
+            `,
+            ingredients: "VEGAN, SULFATE FREE",
+            quantity_type: "ML",
+            quantity: 300,
+            company: "Yepoda",
+            price: 18.00
+        },
+
+        {
+            id: "2cem55rpe77mbo9fa8pr68d",
+            complementary: "sort2cem55rpe77mbo9fa8pr68d",
+            category: "haircare",
+            name: "Intensive repair mask",
+            sort_description: "Mascarilla capilar hidratante y reestructurante para cabellos frágiles y dañados.",
+            big_description: `
+            Aporta a tu cabello una dosis extra de volumen, brillo y fuerza. Nuestra mascarilla es el tratamiento perfecto para cabellos frágiles y dañados, debido a la exposición a factores externos ambientales, térmicos y químicos, que ayuda retener la humedad del cabello aportando densidad, plenitud, suavidad y grosor. Contiene una alta concentración de ácido hialurónico de diferentes pesos moleculares, manteca de mango y aceite de semilla de uva.
+
+Apto para todo tipo de cabellos / Testado dermatológicamente  
+            `,
+            efficacy: `
+            null
+            `,
+            ingredients: "VEGAN",
+            quantity_type: "ML",
+            company: "Yepoda",
+            quantity: 300,
+            price: 21.00
+        },
+
+        {
+            id: "btrs",
+            category: "haircare",
+            complementary: "",
+            name: "Superfood hairoil",
+            sort_description: "Aporta brillo, elasticidad y suavidad al cabello de manera natural.",
+            big_description: `
+            Aporta brillo, elasticidad y suavidad al cabello de manera natural.
+
+ 
+
+Nuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabello. Formulado con una combinación de aceite de semilla de cáñamo, rico en omega 3 y 6, aceite de abisinia, rico en omega 9 y un emoliente biodegradable de origen natural, que le aporta un extraordinario brillo, elasticidad y suavidad al cabello de manera natural, sobre todo a cabellos secos y apagados. Forma un ligero film nutritivo que ayuda a protegerlo de las agresiones mecánicas o ambientales como el exceso de calor o el agua del mar, convirtiéndose en un imprescindible en tu rutina de belleza capilar
+
+ 
+
+99% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente  
+            `,
+            efficacy: `
+            null
+            `,
+            ingredients: "VEGAN, PARABEN FREE, PEG-FREE, SILICONE FREE",
+            quantity_type: "ML",
+            company: "Fisaude",
+            quantity: 50,
+            price:16.00
+        }
 
 ]
 
