@@ -271,8 +271,8 @@ const productos = [
         price: 10.00
     },
             {
-            id: "cds",
-            complementary: "",
+            id: "413eit74fehsrtt0sg2agl",
+            complementary: "sort413eit74fehsrtt0sg2agl",
             category: "haircare",
             name: "Ultra soothed scalp shampoo",
             sort_description: "Shampoo ultra nutritivo y calmante para cabello graso y cuero cabelludo alterado.",
@@ -292,9 +292,9 @@ const productos = [
         },
 
         {
-            id: "vfd",
+            id: "79b6mencq4phtpnda1rpaq",
             category: "haircare",
-            complementary: "",
+            complementary: "sort79b6mencq4phtpnda1rpaq",
             name: "Silky restoring shampoo",
             sort_description: "Shampoo formulado para controlar el encrespamiento y  aportar una alta dosis de hidratación en cabellos frágiles y dañados.",
             big_description: `
@@ -315,8 +315,8 @@ Apto para todo tipo de cabellos / Testado dermatológicamente
         },
 
         {
-            id: "2cem55rpe77mbo9fa8pr68d",
-            complementary: "sort2cem55rpe77mbo9fa8pr68d",
+            id: "1hmhes90gcs2rmpflhnr3eq",
+            complementary: "sort1hmhes90gcs2rmpflhnr3eq",
             category: "haircare",
             name: "Intensive repair mask",
             sort_description: "Mascarilla capilar hidratante y reestructurante para cabellos frágiles y dañados.",
@@ -336,9 +336,9 @@ Apto para todo tipo de cabellos / Testado dermatológicamente
         },
 
         {
-            id: "btrs",
+            id: "6b4sefp881egp0aa46ej0o3",
             category: "haircare",
-            complementary: "",
+            complementary: "sort6b4sefp881egp0aa46ej0o3",
             name: "Superfood hairoil",
             sort_description: "Aporta brillo, elasticidad y suavidad al cabello de manera natural.",
             big_description: `
