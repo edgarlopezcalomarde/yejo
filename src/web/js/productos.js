@@ -215,10 +215,10 @@ const productos = [
         price: 10.00
     },
     {
-        id: "",
-        complementary: "",
+        id: "1645obrbcfsbio4mejg97fn",
+        complementary: "sort1645obrbcfsbio4mejg97fn",
         category: "others",
-        name: "",
+        name: "Bombas de baño",
         sort_description: "",
         big_description: ``,
         efficacy: ``,
@@ -229,10 +229,10 @@ const productos = [
         price: 10.00
     },
     {
-        id: "",
-        complementary: "",
+        id: "1jrfmdn4fi7f8s2olhltngf",
+        complementary: "sort1jrfmdn4fi7f8s2olhltngf",
         category: "others",
-        name: "",
+        name: "Cepillo de dientes",
         sort_description: "",
         big_description: ``,
         efficacy: ``,
