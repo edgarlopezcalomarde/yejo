@@ -116,6 +116,14 @@ btnCart.addEventListener("click", () => {
         <div class="c-modal__total">Total: 24,39€</div>
         <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Tramitar pedido</a></div>
         `;
+
+
+        const btnPagar = document.querySelector(".c-button--buy")
+        btnPagar.addEventListener("click", ()=>{
+            modal.close()
+            modalPagar()
+
+        })
     }
   
 
@@ -240,10 +248,16 @@ btnLogin.addEventListener("click", () => {
     modal.showModal();
 });
 
+
+/* ---------- Pagar Modal --------------*/ 
+
+
 const btnPagar = document.querySelector("#boton2");
 
-btnPagar.addEventListener("click", ()=>{
-    modal.style.background = "#FDEAA5";
+const modalPagar = () =>{
+    
+    modal.style.backgroundColor = "#FDEAA5";
+
     bodyModal.innerHTML = `
     <div class="l-flex l-flex--direction-column l-flex--align-items-center">
         <div class="l-flex l-flex--direction-row l-flex--align-items-center">
@@ -284,8 +298,17 @@ btnPagar.addEventListener("click", ()=>{
             }      
     }
     modal.showModal();
-});
 
-modal.addEventListener("close",()=>{
-    modal.style.backgroundColor = "#FFFFFF";
-});
+    btnCloseModal.addEventListener("click", ()=>{
+        modal.style.backgroundColor = "#FFFFFF";
+
+    })
+
+    modal.addEventListener("keydown", (e)=>{
+        console.log(e.key)
+        if(e.key == "Escape"){
+            modal.style.backgroundColor = "#FFFFFF";
+        }
+    })
+}
+
