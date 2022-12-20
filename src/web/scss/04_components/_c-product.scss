@@ -1,0 +1,38 @@
+.c-product{
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    border-radius: 4px;
+
+    gap: 16px;
+  
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &__name{
+        font-family: 'Libre Baskerville', serif;
+
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+   
+
+    &__img{
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        width: 240px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    
+
+}

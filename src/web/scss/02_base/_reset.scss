@@ -18,6 +18,7 @@
     -webkit-animation: show 1s ease normal;
   }
 
+
   @-webkit-keyframes show{
       from {
           transform: translateY(-110%);
@@ -26,6 +27,15 @@
           transform: translateY(0%);
       }
   }
+
+  @-webkit-keyframes unshow{
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-110%);
+    }
+}
 
  
 

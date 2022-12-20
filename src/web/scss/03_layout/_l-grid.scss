@@ -5,6 +5,11 @@
     }
 
 
+    &--columns-3 {
+        grid-template-columns: repeat(auto-fit, minmax( 300px, 3fr));
+    }
+
+
     @each $gap in getGapKeys() {
         &--gap-#{$gap}{
             gap: getGap($gap);

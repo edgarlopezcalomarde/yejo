@@ -9,6 +9,8 @@ const btnOthers = document.getElementById("others")
 const btnSkincare = document.getElementById("skincare")
 
 
+const randomProductsSection = document.getElementById("randomProducts")
+
 let cart = new Cart()
 
 const productos = [
@@ -31,7 +33,7 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Amapola",
         quantity: 100,
         price: 21.00 
@@ -56,7 +58,7 @@ const productos = [
         *Eficacia subjetiva en 22 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Secretos del agua",
         quantity: 200,
         price: 21.00  
@@ -81,7 +83,7 @@ const productos = [
         *Eficacia subjetiva en 21 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PEG FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, SULFATE FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Ecco Verde",
         quantity: 200,
         price: 28.00   
@@ -106,7 +108,7 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
         `,
         ingredients: "VEGAN, PEG-FREE, PARABEN FREE, SILICONE FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Secretos del agua",
         quantity: 100,
         price: 21.00    
@@ -134,7 +136,7 @@ const productos = [
     *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.
     `,
     ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE, PEG FREE, MEA FREE, TEA FREE,  SILICONE FREE, ALCOHOL FREE, MINERAL OILS FREE",
-    quantity_type: "ML",
+    quantity_type: "ml",
     company: "KenzaOil",
     quantity: 200,
     price: 38.00
@@ -159,9 +161,9 @@ const productos = [
 
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        cuantity_type: "ML",
+        quantity_type: "ml",
         company: "Fisaude",
-        cuantity: 200,
+        quantity: 200,
         price: 16.00
     },
     {
@@ -184,7 +186,7 @@ const productos = [
         *Eficacia subjetiva en 21 consumidores, 2 veces a la semana durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PALM OIL FREE",
-        quantity_type: "GR",
+        quantity_type: "gr",
         company: "KenzaOil",
         quantity: 125, 
         price: 8
@@ -209,7 +211,7 @@ const productos = [
         *Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.
         `,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Yepoda",
         quantity: 30,
         price: 10.00
@@ -223,7 +225,7 @@ const productos = [
         big_description: ``,
         efficacy: ``,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Yepoda",
         quantity: 30,
         price: 10.00
@@ -237,7 +239,7 @@ const productos = [
         big_description: ``,
         efficacy: ``,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Yepoda",
         quantity: 30,
         price: 10.00
@@ -251,7 +253,7 @@ const productos = [
         big_description: ``,
         efficacy: ``,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Yepoda",
         quantity: 30,
         price: 10.00
@@ -265,7 +267,7 @@ const productos = [
         big_description: ``,
         efficacy: ``,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
-        quantity_type: "ML",
+        quantity_type: "ml",
         company: "Yepoda",
         quantity: 30,
         price: 10.00
@@ -285,9 +287,10 @@ const productos = [
             null
             `,
             ingredients: "VEGAN, PARABEN FREE, SULFATE FREE, NON TOXIC",
-            quantity_type: "ML",
+            quantity_type: "ml",
             quantity: 300,
             company: "Yepoda",
+            quantity: 50,
             price: 22.00
         },
 
@@ -308,9 +311,10 @@ Apto para todo tipo de cabellos / Testado dermatológicamente
             null
             `,
             ingredients: "VEGAN, SULFATE FREE",
-            quantity_type: "ML",
+            quantity_type: "ml",
             quantity: 300,
             company: "Yepoda",
+            quantity: 80,
             price: 18.00
         },
 
@@ -329,9 +333,10 @@ Apto para todo tipo de cabellos / Testado dermatológicamente
             null
             `,
             ingredients: "VEGAN",
-            quantity_type: "ML",
+            quantity_type: "ml",
             company: "Yepoda",
             quantity: 300,
+            
             price: 21.00
         },
 
@@ -356,7 +361,7 @@ Nuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabel
             null
             `,
             ingredients: "VEGAN, PARABEN FREE, PEG-FREE, SILICONE FREE",
-            quantity_type: "ML",
+            quantity_type: "ml",
             company: "Fisaude",
             quantity: 50,
             price:16.00
@@ -366,32 +371,18 @@ Nuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabel
 
 
 
-// let plantilla =    {
-//     id: "",
-//     category: "",
-//     name: "",
-//     sort_description: "",
-//     big_description: `
-       
-//     `,
-//     efficacy: `
-
-//     `,
-//     ingredients: "",
-//     price: 0
-// }
-
-
 
 const generarCartas = (category) =>{
-
+    footerModal.innerHTML = ``;
+    
     let productsFilterByCategory = productos.filter(product => product.category == category)
-
+  
     let cartas = ""
 
     productsFilterByCategory.forEach(product =>{
+
         cartas+=`
-        <div class="c-card" idproduct = "${product.id}">
+        <div class="c-card" idproduct="${product.id}">
             <div class="c-card__header">
                 <img src="./assets/img/${product.id}.png" alt="" class="c-card__img">
                 <img src="#" alt="" class="c-card__like">
@@ -402,7 +393,7 @@ const generarCartas = (category) =>{
                 <div class="c-card__company">${product.company}</div>
                 <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
-                <div class="c-card__btn"><button  class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
+                <div class="c-card__btn"><button  class="c-button c-button--add-cart uwu">Añadir a la bolsa</button></div>
             </div>
         </div>
         `
@@ -410,9 +401,10 @@ const generarCartas = (category) =>{
     })
 
     productsBox.innerHTML = cartas
+    
 
-
-    document.querySelectorAll(".c-button--add-cart").forEach( btn =>{
+    document.querySelectorAll(".uwu").forEach( btn =>{
+      
         const item = productos.find(it => it.id == btn.parentNode.parentNode.parentNode.attributes.idproduct.value)
         btn.addEventListener("click", (e)=>{
             e.preventDefault()
@@ -422,9 +414,8 @@ const generarCartas = (category) =>{
         
     })
 
+   
     productModal()
-
-    
 
 }
 
@@ -434,7 +425,7 @@ const generarCartasBestSeller = () =>{
     const productsCopy = [...productos].sort((a, b) => 0.5 - Math.random());
     const productosBestSeller =  productsCopy.slice(0,3)
 
-    console.log(productosBestSeller)
+  
 
     let cartas = ""
 
@@ -470,11 +461,38 @@ const generarCartasBestSeller = () =>{
         })
     })
 
+    const productsRandom =  productsCopy.slice(0,6)
+
+    let listProducts = ''
+
+    productsRandom.forEach(product =>{
+
+        listProducts+=`
+        <div class="c-product">
+            <img class="c-product__img" src="./assets/img/${product.id}.png">
+            <div class="c-product__body">
+                <div class="c-product__name">${product.name}</div>
+                <div class="c-card__btn"><button class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
+            </div>
+        </div>
+        
+        `
+
+    })
+
+    randomProductsSection.innerHTML = listProducts
+
+    
+
+   
     productModal()
 
 }
 
+
+
 generarCartasBestSeller()
+
 
 
 
@@ -484,6 +502,7 @@ btnSkincare.addEventListener("click",()=>{
     btnSkincare.checked = true
 
     bannerSection.style.display = 'none'
+    randomProductsSection.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom ='2px solid black'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom ='2px solid transparent'
@@ -496,10 +515,12 @@ btnSkincare.addEventListener("click",()=>{
 btnBodycare.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
+    randomProductsSection.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom ='2px solid transparent'
     btnBodycare.style.borderBottom = '2px solid black'
     btnOthers.style.borderBottom ='2px solid transparent'
     btnHaircare.style.borderBottom ='2px solid transparent'
+
 
     generarCartas("bodycare")
 
@@ -509,10 +530,13 @@ btnBodycare.addEventListener("click",()=>{
 btnOthers.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
+    randomProductsSection.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom = '2px solid transparent'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom = '2px solid black'
     btnHaircare.style.borderBottom ='2px solid transparent'
+
+
 
     generarCartas("others")
 
@@ -522,6 +546,7 @@ btnOthers.addEventListener("click",()=>{
 btnHaircare.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
+    randomProductsSection.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom = '2px solid transparent'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom ='2px solid transparent'

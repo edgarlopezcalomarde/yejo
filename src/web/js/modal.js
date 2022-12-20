@@ -136,7 +136,7 @@ btnHistory.addEventListener("click", () => {
   bodyModal.innerHTML = `
   <table class="c-table">
   <thead class="c-table__header">
-      <tr class="c-table__row">
+      <tr>
           <th class="c-table__head">ID pedido</th>
           <th class="c-table__head">Fecha</th>
           <th class="c-table__head">Total</th>
@@ -149,22 +149,54 @@ btnHistory.addEventListener("click", () => {
           <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
           <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
           <td class="c-table__item">45,34€</td>
-          <td class="c-table__item">Pendiente de pago</td>    
-          <td class="c-table__item">
+          <td class="c-table__item c-table__item--status-pay">Pagado</td>    
+          <td class="c-table__item c-table__item--btns">
               <a href="#" class="c-button c-button--pay">Pagar</a>
               <a href="#" class="c-button c-button--delete">Eliminar</a>
           </td>
       </tr>
       <tr class="c-table__row">
-          <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
-          <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
+          <td class="c-table__item">rfnli1de96s9c17dtfntf</td>
+          <td class="c-table__item">Martes, 24 Diciembre de 2022</td>
           <td class="c-table__item">45,34€</td>
-          <td class="c-table__item">Pendiente de pago</td>
-          <td class="c-table__item">
+          <td class="c-table__item c-table__item--status-pay">Pagado</td>
+          <td class="c-table__item  c-table__item--btns">
               <a href="#" class="c-button c-button--pay">Pagar</a>
               <a href="#" class="c-button c-button--delete">Eliminar</a>
           </td>
       </tr>
+
+      <tr class="c-table__row">
+      <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
+      <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
+      <td class="c-table__item">45,34€</td>
+      <td class="c-table__item c-table__item--status-pay">Pagado</td>    
+      <td class="c-table__item c-table__item--btns">
+          <a href="#" class="c-button c-button--pay">Pagar</a>
+          <a href="#" class="c-button c-button--delete">Eliminar</a>
+      </td>
+    </tr>
+    <tr class="c-table__row">
+        <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
+        <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
+        <td class="c-table__item">45,34€</td>
+        <td class="c-table__item c-table__item--status-pending">Pendiente</td>
+        <td class="c-table__item  c-table__item--btns">
+            <a href="#" class="c-button c-button--pay">Pagar</a>
+            <a href="#" class="c-button c-button--delete">Eliminar</a>
+        </td>
+    </tr>
+    <tr class="c-table__row">
+    <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
+    <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
+    <td class="c-table__item">45,34€</td>
+    <td class="c-table__item c-table__item--status-pay">Pagado</td>
+    <td class="c-table__item  c-table__item--btns">
+        <a href="#" class="c-button c-button--pay">Pagar</a>
+        <a href="#" class="c-button c-button--delete">Eliminar</a>
+    </td>
+</tr>
+
   </tbody>
 </table>
   

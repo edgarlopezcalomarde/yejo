@@ -1,10 +1,12 @@
 .c-table{
 
+    
 
     &__header{
         text-align: left;
         font-family: 'Libre Baskerville', serif;
-        font-weight: 700 ;
+        font-weight: 700;
+
 
     }
 
@@ -20,8 +22,36 @@
         padding-right: 10px; 
         padding-left: 10px; 
         padding-bottom: 20px; 
-        
+
+
+
+
+        &--status-pay{
+            color: getColor("verde",3);
+            font-weight: 700;
+
+        }
+
+        &--status-pending{
+            color: getColor("alternativo",2 );
+            font-weight: 700;
+
+        }
+    
     }
+
+    &__row:nth-child(odd){
+        font-family: 'Nunito', sans-serif;
+        padding-top: 20px; 
+        padding-right: 10px; 
+        padding-left: 10px; 
+        padding-bottom: 20px; 
+
+        background-color: getColor("blanco",3);
+    }
+
+    
+  
 
     &__head{
         font-family: 'Nunito', sans-serif;

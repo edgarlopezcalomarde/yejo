@@ -22,6 +22,14 @@ dialog[open] {
     transform: translateY(0%);
   }
 }
+@-webkit-keyframes unshow {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-110%);
+  }
+}
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -374,6 +382,9 @@ table {
 }
 .l-grid--columns-auto {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.l-grid--columns-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
 }
 .l-grid--gap-0 {
   gap: 0px;
@@ -936,6 +947,17 @@ table {
   border-radius: 6px;
   display: inline-block;
   margin-top: auto;
+  transition: all 0.3s ease;
+}
+.c-button--add-cart-mini {
+  background-color: #A4D6B9;
+  padding: 10px 20px;
+  color: #352938;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.c-button--add-cart:hover {
+  background-color: #87C9A2;
 }
 .c-button--quantity-plus {
   border-radius: 50%;
@@ -943,11 +965,20 @@ table {
   background-color: #A4D6B9;
   color: #FFFFFF;
 }
+.c-button--quantity-plus:hover {
+  background-color: #87C9A2;
+}
 .c-button--quantity-minus {
   border-radius: 50%;
   padding: 10px 14px;
   background-color: #A4D6B9;
   color: #FFFFFF;
+}
+.c-button--quantity-minus:hover {
+  background-color: #87C9A2;
+}
+.c-button--add-cart:hover {
+  background-color: #87C9A2;
 }
 .c-button--remove {
   color: #DC2828;
@@ -963,12 +994,14 @@ table {
   background-color: #A4D6B9;
   color: #352938;
   border-radius: 6px;
+  display: inline-block;
 }
 .c-button--delete {
   padding: 10px 14px;
   background-color: #FEC8C8;
   color: #503852;
   border-radius: 6px;
+  display: inline-block;
 }
 .c-button--newsletter {
   padding: 10px 14px;
@@ -1059,6 +1092,22 @@ table {
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 20px;
+}
+.c-table__item--status-pay {
+  color: #059467;
+  font-weight: 700;
+}
+.c-table__item--status-pending {
+  color: #FABD4C;
+  font-weight: 700;
+}
+.c-table__row:nth-child(odd) {
+  font-family: "Nunito", sans-serif;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  background-color: #EFF6F6;
 }
 .c-table__head {
   font-family: "Nunito", sans-serif;
@@ -1362,6 +1411,12 @@ table {
 .c-img__tarjetas {
   width: 200px;
 }
+.c-img--banner-3 {
+  height: 500px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 .c-icon {
   width: 30px;
@@ -1374,9 +1429,6 @@ table {
 .c-icon__mastercard {
   width: 30px;
   margin-left: 4px;
-}
-.c-icon__footer {
-  width: 20px;
 }
 
 .c-category {
@@ -1567,6 +1619,33 @@ table {
   font-weight: 600;
 }
 
+.c-product {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  gap: 16px;
+}
+.c-product__body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.c-product__name {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.c-product__img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 240px;
+  height: 100px;
+  object-fit: cover;
+}
+
 .c-input {
   border-radius: 2px;
   border: 0;
@@ -1580,7 +1659,7 @@ table {
 }
 .c-input--login {
   padding: 10px 20px;
-  background-color: #C8C5C1;
+  background-color: #EBE9E5;
   color: #231C26;
 }
 
