@@ -28,8 +28,8 @@
 
     &__texto {
         font-family: 'Nunito', sans-serif;
-        font-weight: getFontWeight(9);
-        color: getColor("negro", 2);
+        font-weight: getFontWeight(7);
+        color: getColor("negro", 3);
         font-size: getFontSize("m");
         padding: 6px 0 3px 0;
     }
@@ -41,13 +41,13 @@
 
     &__input {
         font-family: 'Libre Baskerville', serif;
-        font-weight: bold;
+        font-weight: getFontWeight(6);
         margin-bottom: getMargin(4);
         background: rgba(217, 217, 217, 0.039);
         border: 1px transparent solid;
         outline: none;
         padding: getPadding(4);
-        font-size: getFontSize("m");
+        font-size: getFontSize("s");
         border-radius: 10px;
         box-shadow: inset 0 -5px 45px rgba(143, 143, 143, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
         -webkit-transition: box-shadow .5s ease;
