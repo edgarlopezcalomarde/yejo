@@ -9,7 +9,7 @@ const btnOthers = document.getElementById("others")
 const btnSkincare = document.getElementById("skincare")
 
 
-const randomProductsSection = document.getElementById("randomProducts")
+const randomProductsSection = document.getElementById("moreProducts")
 
 let cart = new Cart()
 
@@ -481,9 +481,7 @@ const generarCartasBestSeller = () =>{
     })
 
     randomProductsSection.innerHTML = listProducts
-
     
-
    
     productModal()
 
@@ -502,7 +500,7 @@ btnSkincare.addEventListener("click",()=>{
     btnSkincare.checked = true
 
     bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.style.display = 'none'
+    randomProductsSection.parentNode.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom ='2px solid black'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom ='2px solid transparent'
@@ -558,7 +556,7 @@ btnHaircare.addEventListener("click",()=>{
 
 
 
-const logo = document.querySelector(".c-logo")
+const logo = document.querySelector("#logo")
 
 logo.addEventListener("click", ()=>{location.href = location.pathname})
 

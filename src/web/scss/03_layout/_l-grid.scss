@@ -1,49 +1,30 @@
-.l-grid{
-    display: grid;
-    &--columns-auto {
-        grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
+.l-grid {
+  display: grid;
+  width: 100%;
+
+  &--columns-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+
+  @for $i from 1 to 9 {
+    &--columns-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  @each $gap in getGapKeys() {
+    &--gap-#{$gap} {
+      gap: getGap($gap);
     }
 
-
-    &--columns-3 {
-        grid-template-columns: repeat(auto-fit, minmax( 300px, 3fr));
+    &--horizontal-gap-#{$gap} {
+      row-gap: getGap($gap);
     }
 
-
-    @each $gap in getGapKeys() {
-        &--gap-#{$gap}{
-            gap: getGap($gap);
-        }
-
-        &--horizontal-gap-#{$gap}{
-            row-gap: getGap($gap);
-        }
-
-        &--vertical-gap-#{$gap}{
-            column-gap: getGap($gap);
-        }
+    &--vertical-gap-#{$gap} {
+      column-gap: getGap($gap);
     }
-
-  
-
-   @for $i from 1 to 9{
-        &--columns-#{$i}{
-            grid-template-columns: repeat($i, 1fr);
-        }
-   }
-
-    &__area{
-       
-    }
-
-    @for $i from 2 to 12 {
-        &__area--span-column-start-#{$i}{
-            grid-column-start: span $i;
-        }
-
-        &__area--span-column-end-#{$i}{
-            grid-column-end: span $i;
-        }
-    }
+  }
 
 }

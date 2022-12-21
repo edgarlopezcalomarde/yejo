@@ -24,25 +24,28 @@ const productModal = () =>{
         document.body.style.overflow = "hidden"
 
         const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
-   
-        bodyModal.innerHTML = `
-            <div class="c-product-preview">
-                            <img class="c-product-preview__img" src="./assets/img/${productData.id}.png" alt="productimg" class="c-preview">
-                            
-                            <div class="c-product-preview__body">
-                                <div class="c-product-preview__name">${productData.name}</div>
-                                <div class="c-product-preview__category">${productData.category}</div>
-                                <div class="c-product-preview__company">${productData.company}</div>
-                               
-                                <div class="c-product-preview__refs">
-                                    <div class="c-product-preview__price">${productData.price}€</div>
-                                    <div class="c-product-preview__quantity">${productData.quantity} ${productData.quantity_type}</div>
-                                </div>
-                                
-                                <div class="c-product-preview__description"> ${productData.big_description}</div>
-                            </div>
-                        </div>
-            `;
+        
+        let preview = '<div class="c-preview">'
+        preview +=`<img class="c-preview__img" src="./assets/img/${productData.id}.png" alt="productimg" class="c-preview">
+        <div class="c-preview__body">
+            <div class="c-preview__name">${productData.name}</div>
+            <div class="c-preview__category">${productData.category}</div>
+            <div class="c-preview__company">${productData.company}</div>
+            <div class="c-preview__refs">
+                <div class="c-preview__price">${productData.price}€</div>
+            
+        
+            `
+        if(productData.quantity > 0 && productData.quantity !=null && productData.quantity_type != null){
+            preview += `<div class="c-preview__quantity">${productData.quantity + " " + productData.quantity_type}</div>`
+        }   
+      
+        preview += `
+            </div>
+            <div class="c-preview__description"> ${productData.big_description}</div>
+        </div>`
+
+        bodyModal.innerHTML = preview;
         footerModal.innerHTML = `
             <div class="c-modal__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la cesta</a></div>
             `;
@@ -91,9 +94,9 @@ btnCart.addEventListener("click", () => {
                 </div>
 
                 <div class="c-article__quantity">
-                    <a class="c-button c-button--quantity-minus" id="removeOne"><i class="fa-solid fa-minus"></i></a>
+                    <a class="c-button c-button--quantity" id="removeOne"><i class="fa-solid fa-minus"></i></a>
                     <div id="quantity">${art.unidades}</div>
-                    <a class="c-button c-button--quantity-plus" id="addOne"><i class="fa-solid fa-plus"></i></a>
+                    <a class="c-button c-button--quantity" id="addOne"><i class="fa-solid fa-plus"></i></a>
                 </div>
 
                 <div class="c-article__options">
@@ -260,11 +263,12 @@ const modalPagar = () =>{
 
     bodyModal.innerHTML = `
     <div class="l-flex l-flex--direction-column l-flex--align-items-center">
-        <div class="l-flex l-flex--direction-row l-flex--align-items-center">
-            <input type="radio" name="pago" id="iconVisa" value="visa.png" checked><img src="./assets/img/visa.png"
-                alt="icono visa" class="c-icon__visa">
-            <input type="radio" name="pago" id="iconMastercard" value="mastercard.png"><img
-                src="./assets/img/mastercard.png" alt="icono mastercard" class="c-icon__mastercard">
+        <div class="l-flex l-flex--direction-row l-flex--align-items-center l-flex--gap-1">
+            <input type="radio" name="pago" id="iconVisa" value="visa.png" checked>
+            <img src="./assets/img/visa.png" alt="icono visa" class="c-img c-img--icon-s">
+            
+            <input type="radio" name="pago" id="iconMastercard" value="mastercard.png">
+            <imgsrc="./assets/img/mastercard.png" alt="icono mastercard" class="c-img c-img--icon-s">
         </div>
         <form id="formu" class="c-formulario">
             <img id="imagenTarjeta" name="imagenTarjeta" class="c-formulario__img" src="./assets/img/visa.png" alt="icono tarjeta">

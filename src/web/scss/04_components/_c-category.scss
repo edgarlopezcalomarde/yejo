@@ -2,8 +2,9 @@
 
     display: flex;
     align-items: center;
-    gap: getGap(14);
     justify-content: center;
+
+    gap: getGap(14);
 
     padding-left: getPadding(17);
     padding-right: getPadding(17);
@@ -15,18 +16,22 @@
     background-color: getColor("principal",4);
 
     font-family: 'Libre Baskerville', serif;
-    font-size: 18px;
+    font-size: getFontSize("l");
 
     &__item{
         cursor: pointer;
         user-select: none;
 
-        border-bottom: 2px solid getColor("principal",4);
-        border-top: 2px solid getColor("principal",4);
+        border-bottom: getBorderSize(1) solid getColor("principal",4);
+        border-top: getBorderSize(1) solid getColor("principal",4);
     }
 
     &__item:hover{
-       border-bottom: 2px solid getColor("negro",5);
+       border-bottom: getBorderSize(1) solid getColor("negro",5);
+    }
+
+    &__item--selected{
+        border-bottom: getBorderSize(1) solid getColor("negro",5);
     }
 }
 

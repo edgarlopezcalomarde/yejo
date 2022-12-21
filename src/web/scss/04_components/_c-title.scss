@@ -1,8 +1,8 @@
 .c-title{
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    font-weight: getFontWeight(6);
+    font-size: getFontSize("3xl");
+    margin-top: getMargin(6);
+    margin-bottom:  getMargin(6);
 
     font-family: 'Libre Baskerville', serif;
 }

@@ -1,5 +1,5 @@
 .c-img{
-    //a rellenar
+
     &__cerrar{
         width: 20px;
         margin-left: auto;
@@ -11,10 +11,33 @@
         width: 200px;
     }
 
-    &--banner-3{
-        height: 500px;
-        width: 350px;
-        object-fit: cover;
-        border-radius: 4px;
+    &--banner{
+        &-horizontal{
+            width: 100%;
+            max-height: 520px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        &-vertical{
+            height: 500px;
+            width: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+       
     }
+
+
+    &--logo{
+        width: 250px;
+        cursor: pointer;
+    }
+
+
+    @each $key, $size in $icon-sizes{
+        &--icon-#{$key}{
+            width: $size;
+        }
+    }
+   
 }
