@@ -22,7 +22,7 @@
 
     <header class="c-header">
 
-        <div class="c-menu">
+        <div class="c-menu"> <!--20px por logo-->
 
             <img class="c-img c-img--logo" src="./assets/img/logo.png" id="logo">
 
@@ -47,12 +47,11 @@
             <div class="c-category__item" id="bodycare">Bodycare</div>
             <div class="c-category__item" id="others">Others</div>
         </div>
-        
     </header>
 
     <!-- BANNER -->
 
-    <section class="g--padding-horizontal-17  g--margin-vertical-9" id="banner">
+    <section class="g--padding-horizontal-17  g--margin-vertical-7" id="banner">
 
         <img src="./assets/img/banner.png" alt="#" class="c-img c-img--banner-horizontal">
 
@@ -70,7 +69,7 @@
 
     <!-- CONOCE NUESTROS PRODUCTOS -->
 
-    <section class="l-flex l-flex--direction-column l-flex--gap-2 g--padding-horizontal-17 g--margin-bottom-12" id="nuestrosProductos">
+    <section class="l-flex l-flex--direction-column l-flex--gap-2 g--padding-horizontal-17 g--margin-vertical-10">
        
         <div class="c-title">Conoce nuestros productos</div>
 
@@ -81,32 +80,26 @@
             <div class="l-grid l-grid--gap-6 l-grid--columns-3" id="moreProducts"></div>
         </div>
 
-    </section>    
+    </section>
 
   
     <!-- FOOTER -->
-    <svg viewBox="0 -25 700 60" height="100%" width="100%"  preserveAspectRatio="none"><path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#BAE3CE" /></svg>
     
     <footer class="c-footer">
       
+        <!-- <svg viewBox="0 -20 700 50" height="100%" width="100%"  preserveAspectRatio="none"><path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#BAE3CE" /></svg> -->
         <div class="c-footer__section c-footer__section--top">
 
             
             <div class="l-flex l-flex--direction-column l-flex--gap-12">
                
-                <!-- NEWSELETTER -->
-
+    
                 <div class="c-newsletter">
                     <div class="c-newsletter__title">Suscríbete a la Newsletter de BIOFRESHIE</div>
                     <div class="c-newsletter__description">Mantente al día sobre los nuevos lanzamientos, eventos y mucho más. No compartiremos tus datos con terceros y puedes darte de baja en cualquier momento. Para más información, consulta nuestra política de privacidad y las condiciones generales de venta.</div>
                    
-                    <div class="l-flex" id="btnEnviar">
-                        <input type="text" class="c-input c-input--newsletter" placeholder="Dirección de correo electrónico"> 
-                        <div class="c-button c-button--newsletter">➡</div>
-                    </div>
+                    <div class="l-flex" id="btnEnviar"><input type="text" class="c-input c-input--newsletter" placeholder="Dirección de correo electrónico"> <div class="c-button c-button--newsletter">➡</div></div>
                 </div> 
-
-                <!-- COMPROMISO SOCIAL -->
 
                 <div class="c-compromiso">
                     <div class="c-compromiso__header">
@@ -135,13 +128,10 @@
                     <div class="c-compromiso__item">
                         <svg width="36" height="33" focusable="false" role="presentation" aria-hidden="true" name="" class="box__Box-sc-1fis1rt-0 _icon-constructor__Svg-sc-1rjim1r-0 jlzdtA ekyULb"><path d="M10.649 15.476a1.128 1.128 0 0 0-1.578-.344 1.157 1.157 0 0 0-.319 1.586l1.882 2.983-.516.337s-1.281-1.915-1.691-2.563C7.27 15.645 6.779 12.8 7.328 10.04A.996.996 0 0 0 5.9 8.946a.992.992 0 0 0-.497.61c-1.775 6.041.56 11.917 3.295 15.095a1.771 1.771 0 0 1 .418 1.337l-.337 3.584 5.803-.07.44-3.371a3.833 3.833 0 0 0-.114-3.823l-1.285-2.094-2.973-4.738Zm9.343 10.65.44 3.373 5.803.07-.337-3.585a1.767 1.767 0 0 1 .417-1.336c2.739-3.178 5.075-9.054 3.295-15.096a.993.993 0 0 0-1.925.484c.556 2.76.07 5.594-1.099 7.436-.406.651-1.688 2.563-1.688 2.563l-.516-.337 1.882-2.984a1.157 1.157 0 0 0-.318-1.585 1.127 1.127 0 0 0-1.578.344l-2.962 4.74-1.3 2.113a3.826 3.826 0 0 0-.114 3.8Z" fill="currentcolor"></path><path d="M23.518 6.843a2.979 2.979 0 0 0-1.801-1.966c-1.886-.732-3.442.33-4.221 1.27-.78-1.098-2.131-1.966-3.852-1.27a3.404 3.404 0 0 0-2.05 2.252 3.932 3.932 0 0 0 .655 3.295c1.23 1.636 4.836 4.829 4.96 4.953a.443.443 0 0 0 .287.121.765.765 0 0 0 .285-.08c.125-.125 3.73-3.317 4.961-4.954.776-1.124 1.106-2.475.776-3.62Zm-.867 1.692a.366.366 0 0 1-.367.307h-.054a.366.366 0 0 1-.304-.417 1.928 1.928 0 0 0-.286-1.56 1.83 1.83 0 0 0-1.204-.604.367.367 0 1 1 .043-.732 2.589 2.589 0 0 1 1.729.871 2.627 2.627 0 0 1 .443 2.135Z" fill="currentcolor"></path></svg>
                         Hecho a mano
-                    </div>
-                    
+                    </div>   
                 </div>
                    
             </div>
-
-            <!-- CONTACTO -->
             
             <ul class="c-list">
                
@@ -163,8 +153,6 @@
                 <li class="c-list__item">Aviso Legal</li>
             </ul>
 
-            <!-- ABOUT -->
-
             <ul class="c-list">
                 <li class="c-list__header">Sobre nosotros</li>
                 <li class="c-list__item">Trabaja con nosotros</li>
@@ -178,7 +166,8 @@
                     <i class="fa-brands fa-instagram  fa-2x"></i>
                     <i class="fa-brands fa-square-facebook fa-2x"></i>
                     <i class="fa-brands fa-linkedin fa-2x"></i>
-                </div> 
+                </div>
+                    
             </ul>
 
         </div>
