@@ -1,6 +1,6 @@
 .c-modal{
 
-    border-radius: 6px;
+    border-radius: getBorderRadiusSize(3);
     border: 0px;
 
     background-color: getColor("blanco", 8);
@@ -12,12 +12,12 @@
     &__total{
         font-family: 'Nunito', sans-serif;
         
-        font-weight: 700;
-        font-size: 20pt;
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("2xl");
     
        
         text-align: right;
-        padding-top: 10px;
+        padding-top: getPadding(4);
     }
 
    
@@ -28,12 +28,12 @@
     }
 
     &__title{
-        font-weight: 400;
+        font-weight: getFontWeight(4);
         font-size: getFontSize("m");
     }
 
     &__close{
-        font-weight: 800;
+        font-weight: getFontWeight(8);
         font-size: getFontSize("3xl");
         cursor: pointer;
     }
@@ -55,17 +55,17 @@
 
 
     &__footer{
-        margin-top: 10px;
+        margin-top: getMargin(4);
         display: flex;
         flex-direction: column;
         justify-content: end;
 
-        border-top: 3px solid getColor("principal",4);
+        border-top: getBorderSize(1) solid getColor("principal",4);
         text-align: end;
     }
 
     &__btn{
-        margin-top: 16px;
+        margin-top: getMargin(6);
     }
 
    

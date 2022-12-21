@@ -223,8 +223,8 @@ const productos = [
         name: "Crystal snow",
         sort_description: "Un baño dulce y mentolado",
         big_description: `Una maravilla mineral con cristales de sal marina, menta y vainilla que deja la piel suave e hidratada.`,
-        efficacy: `null`,
-        ingredients: "null",
+        efficacy: ``,
+        ingredients: "",
         quantity_type: "gr",
         company: "Lush",
         quantity: 200,
@@ -237,9 +237,9 @@ const productos = [
         name: "Bamboo toothbrush",
         sort_description: "Cepillo de dientes fabricado en madera natural de bambú presentado en caja individual kraft y tapón protector.",
         big_description: `Cepillo de dientes fabricado en madera natural de bambú presentado en caja individual kraft y tapón protector.`,
-        efficacy: `null`,
-        ingredients: "null",
-        quantity_type: "null",
+        efficacy: ``,
+        ingredients: "",
+        quantity_type: "",
         company: "Fisaude",
         quantity: 30,
         price: 1.00
@@ -252,8 +252,8 @@ const productos = [
         sort_description: "Copa menstrual de silicona.",
         big_description: `El material de silicona de grado médico se obtiene de la arena (cuarzo), el material más abundante en la naturaleza de nuestro planeta. OrganiCup no contiene elementos químicos innecesarios, toxinas ni colorantes artificiales.`,
         efficacy: `Más de 700 000 mujeres usan la copa menstrual OrganiCup como su principal medida de protección higiénica.`,
-        ingredients: "null",
-        quantity_type: "null",
+        ingredients: "",
+        quantity_type: "",
         company: "OrganiCup",
         quantity: 0,
         price: 10.00
@@ -265,7 +265,7 @@ const productos = [
         name: "Natural sea sponge",
         sort_description: "Esponja marina natural",
         big_description: `Una esponja marina natural de panal de abeja sin blanquear de primera calidad seleccionada recién del mar Egeo, en la isla griega de Kalymnos. Las aguas profundas y frías aquí son clave para dar a nuestras esponjas su gran resistencia y densidad.`,
-        efficacy: `null`,
+        efficacy: ``,
         ingredients: "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE",
         quantity_type: "ml",
         company: "Yepoda",
@@ -283,9 +283,7 @@ const productos = [
             89% ingredientes de origen natural / Apto para todo tipo de cabellos / Testado dermatológicamente
             
             `,
-            efficacy: `
-            null
-            `,
+            efficacy: ` `,
             ingredients: "VEGAN, PARABEN FREE, SULFATE FREE, NON TOXIC",
             quantity_type: "ml",
             quantity: 300,
@@ -308,7 +306,6 @@ Ayuda a reparar y equilibrar cabellos secos y castigados por factores externos, 
 Apto para todo tipo de cabellos / Testado dermatológicamente
             `,
             efficacy: `
-            null
             `,
             ingredients: "VEGAN, SULFATE FREE",
             quantity_type: "ml",
@@ -330,7 +327,6 @@ Apto para todo tipo de cabellos / Testado dermatológicamente
 Apto para todo tipo de cabellos / Testado dermatológicamente  
             `,
             efficacy: `
-            null
             `,
             ingredients: "VEGAN",
             quantity_type: "ml",
@@ -358,7 +354,6 @@ Nuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabel
 99% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente  
             `,
             efficacy: `
-            null
             `,
             ingredients: "VEGAN, PARABEN FREE, PEG-FREE, SILICONE FREE",
             quantity_type: "ml",

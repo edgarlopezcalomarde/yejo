@@ -227,7 +227,7 @@ btnLogin.addEventListener("click", () => {
         `
         <div class="c-login">
             <div class="c-login__header">
-                <img src="./assets/img/img_login.png" alt="login" id="login" class="c-login__img">
+                <img src="./assets/img/img_login.png" alt="login" id="login" class="c-img c-img--login">
             </div>
             <div class="c-login__body">
 
@@ -263,6 +263,7 @@ const modalPagar = () =>{
 
     bodyModal.innerHTML = `
     <div class="l-flex l-flex--direction-column l-flex--align-items-center">
+
         <div class="l-flex l-flex--direction-row l-flex--align-items-center l-flex--gap-1">
             <input type="radio" name="pago" id="iconVisa" value="visa.png" checked>
             <img src="./assets/img/visa.png" alt="icono visa" class="c-img c-img--icon-s">
@@ -270,30 +271,39 @@ const modalPagar = () =>{
             <input type="radio" name="pago" id="iconMastercard" value="mastercard.png">
             <img src="./assets/img/mastercard.png" alt="icono mastercard" class="c-img c-img--icon-s">
         </div>
+
         <form id="formu" class="c-formulario">
             <img id="imagenTarjeta" name="imagenTarjeta" class="c-formulario__img" src="./assets/img/visa.png" alt="icono tarjeta">
+            
             <label for="numeroTarjeta" class="c-formulario__texto">Número de tarjeta</label>
-            <input type="text" maxlength="16" name="numeroTarjeta" id="numeroTarjeta" class="c-formulario__input" placeholder="1234 6969 8400 6755">
+            <input type="text" maxlength="16" name="numeroTarjeta" id="numeroTarjeta" class="c-input c-input--creditcard" placeholder="1234 6969 8400 6755">
+            
             <label for="titular" class="c-formulario__texto">Titular de la tarjeta</label>
-            <input type="text" name="titular" id="titular" class="c-formulario__input" placeholder="Paolo Mongez">
+            <input type="text" name="titular" id="titular" class="c-input c-input--creditcard" placeholder="Paolo Mongez">
+            
             <div class="l-flex l-flex--direction-row">
+
                 <div class="l-flex l-flex--direction-column">
                     <label for="mes" class="c-formulario__texto">Fecha de expiración</label>
-                    <input type="date" name="expirar" id="expirar" class="c-formulario__input">
+                    <input type="date" name="expirar" id="expirar" class="c-input c-input--creditcard">
                 </div>
                 <div class="l-flex l-flex--direction-column g--padding-left-10 pruebas">
                     <label for="cvc" class="c-formulario__texto">CVC</label>
-                    <input type="password" name="cvc" id="cvc" class="c-formulario__input" placeholder="***"  maxlength="3">
+                    <input type="password" name="cvc" id="cvc" class="c-input c-input--creditcard" placeholder="***"  maxlength="3">
                 </div>
+
             </div>
         </form>
+
     </div>
     `;
+    
     footerModal.innerHTML = `
     <div class="l-flex l-flex--justify-content-end">
     <button id="login" class="c-button c-button--pagar">Realizar Pago ( 1500€ )</button>
     </div>
     `;
+
     let imagen = document.getElementById("imagenTarjeta");
     let metodoPago = document.getElementsByName("pago");
     for (let post = 0; post < metodoPago.length; post++) {

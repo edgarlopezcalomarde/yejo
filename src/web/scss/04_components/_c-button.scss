@@ -6,19 +6,27 @@
     border: 0px;
 
    
+
     font-family: 'Nunito', sans-serif;
     font-weight: getFontWeight(7);
 
     transition: all 0.3s ease;
 
- 
     &--add-cart{
         background-color: getColor("principal",4);
-        padding: 10px 20px;
+        padding: getPadding(4) getPadding(7);
         color: getColor("negro",5);
-        border-radius: 6px;
+        border-radius: getBorderRadiusSize(3);
         display: inline-block;
-        margin-top: auto;  
+        margin-top: auto;
+
+        &-mini{
+            background-color: getColor("principal",4);
+            padding: getPadding(4) getPadding(7);
+            color: getColor("negro",5);
+            border-radius: getBorderRadiusSize(3);
+            font-size: getFontSize("s");
+        }
     }
 
 
@@ -28,7 +36,7 @@
 
     &--quantity{
         border-radius: 50%;
-        padding: 10px 14px;
+        padding: getPadding(5) getPadding(6);
         background-color: getColor("principal",4);
         color: getColor("blanco",8);
         margin: auto;
@@ -39,56 +47,56 @@
         background-color: getColor("principal",3);
     }
 
-
     &--remove{
         color: getColor("rojo",3);
     }
 
     &--buy{
         background-color: getColor("principal",4);
-        padding: 10px 20px;
+        padding: getPadding(4) getPadding(7);
         color: getColor("negro",5);
-        border-radius: 6px;
+        border-radius: getBorderRadiusSize(4);
     }
 
     &--pay{
-        padding: 10px 14px;
+        padding: getPadding(4) getPadding(5);
         background-color: getColor("principal",4);
         color: getColor("negro",5);
-        border-radius: 6px;
+        border-radius: getBorderRadiusSize(4);
         display: inline-block;
     }
 
     &--delete{
-        padding: 10px 14px;
+        padding: getPadding(4) getPadding(5);
         background-color: getColor("rojo",7);
         color: getColor("negro",8   );
-        border-radius: 6px;
+        border-radius: getBorderRadiusSize(4);
         display: inline-block;
 
     }
 
     &--newsletter{
-        padding: 10px 14px;
+        padding: getPadding(4) getPadding(5);
         background-color: getColor("principal",3);
         color: getColor("verde", 2);
         border-radius: 0px;
     }
 
     &--login{
-        padding: 10px 40px;
+        padding: getPadding(4) getPadding(10);
         background-color: getColor("principal",4);
         color: getColor("negro", 5);
-        border-radius: 4px;
+        border-radius: getBorderRadiusSize(2);
     }
     
     &--pagar{
         background-color: getColor("principal", 4);
-        padding: 10px 20px;
-        margin-top: 10px;
+        padding: getPadding(4) getPadding(7);
+        margin-top: getMargin(4);
         color: getColor("negro", 5);
-        border-radius: 4px;
+        border-radius: getBorderRadiusSize(2);
     }
+    
 
     &--more{
         background-color: getColor("principal",4);

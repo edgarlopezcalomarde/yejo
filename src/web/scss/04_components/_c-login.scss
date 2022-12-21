@@ -6,7 +6,6 @@
 
     min-width: 400px;
     gap: getGap(8);
-    padding-bottom: getPadding(5);
   
 
     &__body{
@@ -18,20 +17,15 @@
 
     &__input{
         display: flex;
-        flex-direction: column;
-      
+        flex-direction: column; 
     }
 
     &__label{
         font-family: 'Libre Baskerville', serif;
-        font-weight: 700;
+        font-weight: getFontWeight(7);
         font-size: getFontSize("m");
         color: getColor("negro", 5);
     }
 
-    &__img{
-        width: 200px;
-    }
-
-   
+  
 }

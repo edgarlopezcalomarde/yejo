@@ -7,25 +7,25 @@
 
     width: 500px;
    
-    gap: 16px;
+    gap: getGap(6);
      
     &__item{
        display: flex;
-       gap: 10px;
+       gap: getGap(4);
        align-items: center;
        width: 240px;
 
        font-family: 'Nunito', sans-serif;
-       font-size: 14px;
-       font-weight: 600;
+       font-size: getFontSize("s");
+       font-weight: getFontWeight(6);
 
     }
 
     &__header{
         width: 100%;
         font-family: 'Libre Baskerville', serif;
-        font-size: 16px;
-        font-weight: 700;
+        font-size: getFontSize("m");
+        font-weight: getFontWeight(7);
     }
                 
 }

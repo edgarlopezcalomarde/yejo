@@ -2,59 +2,57 @@
     display: flex;
     flex-direction: row;
 
-    gap: 16px;
+    gap: getGap(7);
 
     font-family: 'Poppins', sans-serif;
   
-
-
     &__img{
         width: 400px;
         height: 400px;
         object-fit: cover;
-        border-radius: 4px;
+        border-radius: getBorderRadiusSize(2);
     }
 
     &__name{
         font-family: 'Libre Baskerville', serif;
-        font-weight: 700;
-        font-size: 28px;
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("3xl"); //28px;
     }
 
     &__description {
         font-family: 'Nunito', sans-serif;
-        font-size: 18px;
+        font-size: getFontSize("l");
     }
 
     &__category{
         font-family: 'Nunito', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
+        font-size: getFontSize("l");
+        font-weight: getFontWeight(5);
         color: getColor("principal", 1);
     }
 
     &__price{
         font-family: 'Nunito', sans-serif;
-        font-weight: 700;
-        font-size: 26px;
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("2xl"); //26px;
     }
 
     &__body{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: getGap(5);
         width: 400px;
         height: 400px;
         overflow-y: auto; 
-        padding-right: 24px;      
+        padding-right: getPadding(9);   
     }
 
     &__refs{
         display: flex;
         justify-content: space-between;
-        border-bottom: 2px solid getColor("negro", 1);
+        border-bottom: getBorderSize(1) solid getColor("negro", 1);
         font-family: 'Nunito', sans-serif;
-        font-size: 20px;
+        font-size: getFontSize("xl");
     }
 
     &__quantity{
@@ -63,8 +61,8 @@
 
     &__company{
         font-family: 'Nunito', sans-serif;
-        font-size: 12px;
-        font-weight: 800;
+        font-size: getFontSize("xs");
+        font-weight: getFontWeight(8);
     }
 
 }

@@ -2,13 +2,11 @@
     width: 600px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    // color:white;
-    // background: linear-gradient(90deg, rgba(0, 30, 198, 0.826) 0%, rgba(0, 67, 168, 0.735) 20%, rgba(0, 115, 255, 0.74) 100%,rgba(0, 170, 255, 0.74) 100%);
+    background-color: getColor("blanco",8);
     border-radius: getBorderRadius(5);
     padding: getPadding(8) getPadding(10);
-    margin: 30px;
-    // margin-top: getMargin(4);
+    margin: getMargin(9);
+
     @include box-shadow(3);
 
     &__titulo {
@@ -31,7 +29,7 @@
         font-weight: getFontWeight(7);
         color: getColor("negro", 3);
         font-size: getFontSize("m");
-        padding: 6px 0 3px 0;
+        padding: getPadding(2) getPadding(0) getPadding(1) getPadding(0);
     }
 
     &__img {
@@ -39,28 +37,5 @@
         padding-bottom: getPadding(6);
     }
 
-    &__input {
-        font-family: 'Libre Baskerville', serif;
-        font-weight: getFontWeight(6);
-        margin-bottom: getMargin(4);
-        background: rgba(217, 217, 217, 0.039);
-        border: 1px transparent solid;
-        outline: none;
-        padding: getPadding(4);
-        font-size: getFontSize("s");
-        border-radius: 10px;
-        box-shadow: inset 0 -5px 45px rgba(143, 143, 143, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
-        -webkit-transition: box-shadow .5s ease;
-        -moz-transition: box-shadow .5s ease;
-        -o-transition: box-shadow .5s ease;
-        -ms-transition: box-shadow .5s ease;
-        transition: box-shadow .5s ease;
-        transition: all 0.5s ease;
-
-        border: 2px transparent solid;
-    }
 }
 
-.c-formulario__input:focus {
-    border: 2px solid getColor("principal", 5);
-}

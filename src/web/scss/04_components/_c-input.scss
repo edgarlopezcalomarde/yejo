@@ -1,11 +1,9 @@
 .c-input{
-    border-radius: getBorderRadius(1);
     border: 0;
     outline: none;
 
     font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+    font-weight: getFontWeight(5);
 
     font-size: getFontSize("s");
     padding: getPadding(1);
@@ -14,10 +12,54 @@
    
     
     &--login{
-        padding: 10px 20px;
+        border-radius: getBorderRadius(1);
+        padding: getPadding(4) getPadding(7);
         background-color: getColor("gris",8);
         color: getColor("negro", 3);
+    }
+
+    &--newsletter{
+        background-color: getColor("principal",3);
+        color: getColor("principal", 8);
+        font-family: 'Nunito', sans-serif;
+        font-size: getFontSize("s");
+        border: 0;
+        height: 100%;
+        outline: none;
+        padding: getPadding(0) getPadding(7);
+        width: 260px;
+
+        &::placeholder{
+            color: getColor("verde", 2);
+            font-weight: getFontWeight(5);
+        }
 
     }
-  
+
+
+    &--creditcard{
+        font-family: 'Libre Baskerville', serif;
+        font-weight: getFontWeight(6);
+        margin-bottom: getMargin(4);
+        background: rgba(217, 217, 217, 0.039);
+        border: 1px transparent solid;
+        outline: none;
+        padding: getPadding(5) getPadding(4);
+        font-size: getFontSize("xs");
+        border-radius: getBorderRadiusSize(5);
+        box-shadow: inset 0 -5px 45px rgba(143, 143, 143, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+        -webkit-transition: box-shadow .5s ease;
+        -moz-transition: box-shadow .5s ease;
+        -o-transition: box-shadow .5s ease;
+        -ms-transition: box-shadow .5s ease;
+        transition: box-shadow .5s ease;
+        transition: all 0.5s ease;
+
+        border: getBorderSize(1) transparent solid;
+
+        &:focus {
+            border: getBorderSize(1) solid getColor("principal", 5);
+        }
+    }
+
 }

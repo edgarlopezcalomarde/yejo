@@ -12,11 +12,8 @@
 
 
     background-color: getColor("principal", 5);
-
     margin-top: auto;
 
-
-   
 
     &__section{
         display: flex;
@@ -27,33 +24,17 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: getGap(10);
-           
-
         }
 
-        &--middle{
-            flex-direction: row;
-            gap: getGap(5);
-           
-        }
 
         &--bottom{
-            
             flex-direction: row;
             justify-content: space-between;
             font-family: 'Nunito', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            
+            font-size: getFontSize("m");
+            font-weight: getFontWeight(7);
         }
 
     }
-
-
-
-
-
-
-   
 
 }

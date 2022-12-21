@@ -1,16 +1,5 @@
 .c-img{
 
-    &__cerrar{
-        width: 20px;
-        margin-left: auto;
-    }
-    &__articulo{
-        width: 150px;
-    }
-    &__tarjetas{
-        width: 200px;
-    }
-
     &--banner{
         &-horizontal{
             width: 100%;
@@ -27,10 +16,13 @@
        
     }
 
-
     &--logo{
         width: 250px;
         cursor: pointer;
+    }
+
+    &--login{
+        width: 200px;
     }
 
 

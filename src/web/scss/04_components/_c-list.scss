@@ -8,29 +8,27 @@
     align-content: flex-end;
    
    
-
-    
     &__header{
         font-family: 'Libre Baskerville', serif;
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 16px;
+        font-size: getFontSize("m");
+        font-weight: getFontWeight(6);
+        margin-bottom: getMargin(6);
     }
 
     &__subheader{
         font-family: 'Libre Baskerville', serif;
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 16px;
-        margin-top: 16px;
+        font-size: getFontSize("m");
+        font-weight: getFontWeight(7);
+        margin-bottom: getMargin(6);
+        margin-top: getMargin(6);
     }
 
     &__item{
-        margin-top: 8px;
+        margin-top: getMargin(3);
         cursor: pointer;
         font-family: 'Nunito', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: getFontSize("s");
+        font-weight: getFontWeight(6);
        
     }
 

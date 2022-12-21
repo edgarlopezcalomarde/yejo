@@ -2,7 +2,7 @@
 
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: getGap(11);
 
     justify-content: space-between;
 
@@ -17,19 +17,19 @@
     }
 
     &__voidimg{
-        font-size: 60px;
+        font-size: getFontSize("6xl");
     }
 
     &__voidtitle{
         font-family: 'Libre Baskerville', serif;
-        font-weight: 700;
-        font-size: 20pt;   
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("2xl");   
     }
 
     &__voiddescription{
         font-family: 'Nunito', sans-serif;
-        font-weight: 600;
-        font-size: 18px;
+        font-weight: getFontWeight(6);
+        font-size: getFontSize("l");
 
     }
 
@@ -41,8 +41,8 @@
 
     &__name{
         font-family: 'Libre Baskerville', serif;
-        font-weight: 700;
-        font-size: 18pt;   
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("xl");   
     }
 
     &__info{
@@ -55,18 +55,18 @@
 
     &__description{
         font-family: 'Nunito', sans-serif;
-        font-size: 18px;
+        font-size: getFontSize("l");
     }
 
     &__quantity{
         display: flex;
-        gap: 30px;
+        gap: getGap(9);
         align-items: center;
     }
 
     &__price{
-        font-weight: 700;
-        font-size: 18pt;
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("xl");
     }
 
     &__options{
@@ -76,14 +76,14 @@
     &__category{
         font-family: 'Nunito', sans-serif;
         color: getColor("principal",1);
-        font-weight: 600;
+        font-weight:getFontWeight(6);
 
     }
 
     &__price{
         font-family: 'Nunito', sans-serif;
-        font-weight: 700;
-        font-size: 26px;
+        font-weight: getFontWeight(7);
+        font-size: getFontSize("2xl");;
     }
 
 
