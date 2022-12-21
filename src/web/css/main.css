@@ -980,13 +980,6 @@ table {
   display: inline-block;
   margin-top: auto;
 }
-.c-button--add-cart-mini {
-  background-color: #A4D6B9;
-  padding: 10px 20px;
-  color: #352938;
-  border-radius: 6px;
-  font-size: 14px;
-}
 .c-button--add-cart:hover {
   background-color: #87C9A2;
 }
@@ -1042,6 +1035,14 @@ table {
   color: #352938;
   border-radius: 4px;
 }
+.c-button--more {
+  background-color: #A4D6B9;
+  padding: 10px 20px;
+  color: #352938;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: auto;
+}
 
 .c-modal {
   border-radius: 6px;
@@ -1076,7 +1077,7 @@ table {
 .c-modal__body {
   display: flex;
   flex-direction: column;
-  height: 450px;
+  max-height: 450px;
   overflow-y: auto;
 }
 .c-modal__body--preview {
@@ -1351,8 +1352,8 @@ table {
 .c-title {
   font-weight: 600;
   font-size: 30px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
   font-family: "Libre Baskerville", serif;
 }
 
@@ -1547,6 +1548,7 @@ table {
   align-items: center;
   min-width: 400px;
   gap: 24px;
+  padding-bottom: 12px;
 }
 .c-login__body {
   display: flex;

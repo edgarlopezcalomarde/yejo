@@ -371,7 +371,6 @@ Nuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabel
 
 
 
-
 const generarCartas = (category) =>{
     footerModal.innerHTML = ``;
     
@@ -461,6 +460,13 @@ const generarCartasBestSeller = () =>{
         })
     })
 
+   
+    productModal()
+}
+
+
+const generarTarjetasMore = () =>{
+    const productsCopy = [...productos].sort((a, b) => 0.5 - Math.random());    
     const productsRandom =  productsCopy.slice(0,6)
 
     let listProducts = ''
@@ -472,26 +478,28 @@ const generarCartasBestSeller = () =>{
             <img class="c-product__img" src="./assets/img/${product.id}.png">
             <div class="c-product__body">
                 <div class="c-product__name">${product.name}</div>
-                <div class="c-card__btn"><button class="c-button c-button--add-cart">Añadir a la bolsa</button></div>
+                <div class="c-card__btn"><button class="c-button c-button--more">Más info</button></div>
             </div>
         </div>
-        
         `
-
     })
 
     randomProductsSection.innerHTML = listProducts
-    
-   
-    productModal()
 
+    const btnsMasInfo = document.querySelectorAll(".c-button--more")
+
+    btnsMasInfo.forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+            productModal()
+        })
+    })
 }
 
 
 
 generarCartasBestSeller()
 
-
+generarTarjetasMore()
 
 
 
@@ -513,7 +521,7 @@ btnSkincare.addEventListener("click",()=>{
 btnBodycare.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.style.display = 'none'
+    randomProductsSection.parentNode.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom ='2px solid transparent'
     btnBodycare.style.borderBottom = '2px solid black'
     btnOthers.style.borderBottom ='2px solid transparent'
@@ -528,7 +536,7 @@ btnBodycare.addEventListener("click",()=>{
 btnOthers.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.style.display = 'none'
+    randomProductsSection.parentNode.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom = '2px solid transparent'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom = '2px solid black'
@@ -544,7 +552,7 @@ btnOthers.addEventListener("click",()=>{
 btnHaircare.addEventListener("click",()=>{
 
     bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.style.display = 'none'
+    randomProductsSection.parentNode.parentNode.style.display = 'none'
     btnSkincare.style.borderBottom = '2px solid transparent'
     btnBodycare.style.borderBottom ='2px solid transparent'
     btnOthers.style.borderBottom ='2px solid transparent'
@@ -557,7 +565,6 @@ btnHaircare.addEventListener("click",()=>{
 
 
 const logo = document.querySelector("#logo")
-
 logo.addEventListener("click", ()=>{location.href = location.pathname})
 
 

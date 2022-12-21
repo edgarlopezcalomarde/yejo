@@ -25,6 +25,8 @@ dialog[open] {
   -webkit-animation: show 1s ease normal;
 }
 
+
+
 @-webkit-keyframes show {
   from {
     transform: translateY(-110%);
@@ -34,6 +36,7 @@ dialog[open] {
   }
 }
 
+
 @-webkit-keyframes unshow {
   from {
     transform: translateY(0%);
@@ -42,6 +45,8 @@ dialog[open] {
     transform: translateY(-110%);
   }
 }
+
+
 
 *,
 *:before,

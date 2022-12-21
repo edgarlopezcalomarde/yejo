@@ -5,7 +5,7 @@ const bodyModal = document.querySelector(".c-modal__body");
 const footerModal = document.querySelector(".c-modal__footer");
 
 btnCloseModal.addEventListener("click", () => {
-  modal.close();
+    modal.close();
 });
 
 modal.addEventListener("close", ()=>{
@@ -268,7 +268,7 @@ const modalPagar = () =>{
             <img src="./assets/img/visa.png" alt="icono visa" class="c-img c-img--icon-s">
             
             <input type="radio" name="pago" id="iconMastercard" value="mastercard.png">
-            <imgsrc="./assets/img/mastercard.png" alt="icono mastercard" class="c-img c-img--icon-s">
+            <img src="./assets/img/mastercard.png" alt="icono mastercard" class="c-img c-img--icon-s">
         </div>
         <form id="formu" class="c-formulario">
             <img id="imagenTarjeta" name="imagenTarjeta" class="c-formulario__img" src="./assets/img/visa.png" alt="icono tarjeta">

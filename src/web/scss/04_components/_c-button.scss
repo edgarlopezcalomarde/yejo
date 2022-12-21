@@ -6,27 +6,19 @@
     border: 0px;
 
    
-
     font-family: 'Nunito', sans-serif;
     font-weight: getFontWeight(7);
 
     transition: all 0.3s ease;
 
+ 
     &--add-cart{
         background-color: getColor("principal",4);
         padding: 10px 20px;
         color: getColor("negro",5);
         border-radius: 6px;
         display: inline-block;
-        margin-top: auto;
-
-        &-mini{
-            background-color: getColor("principal",4);
-            padding: 10px 20px;
-            color: getColor("negro",5);
-            border-radius: 6px;
-            font-size: 14px;
-        }
+        margin-top: auto;  
     }
 
 
@@ -97,6 +89,16 @@
         color: getColor("negro", 5);
         border-radius: 4px;
     }
-    
+
+    &--more{
+        background-color: getColor("principal",4);
+        padding: getPadding(4) getPadding(7);
+        color: getColor("negro",5);
+        border-radius: getBorderRadiusSize(4);
+        display: inline-block;
+        margin-top: auto;
+    }
+
+
 }
 
