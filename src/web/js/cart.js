@@ -1,5 +1,3 @@
-
-
 class Cart{
 
     constructor(){
@@ -14,7 +12,6 @@ class Cart{
 			item.unidades = 1
 			this.cart.push(item)	
 		}
-
 
     }
 

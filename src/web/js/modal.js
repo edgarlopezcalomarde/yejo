@@ -14,13 +14,13 @@ modal.addEventListener("close", ()=>{
 
 /* ---------- Product Modal -------------- */
 
-const productModal = () =>{
+const productModal = (productos) =>{
 
 
     const products = document.querySelectorAll(".c-card");
 
     products.forEach((product) => {
-    product.addEventListener("click", (e) => {
+    product.addEventListener("click", () => {
         document.body.style.overflow = "hidden"
 
         const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
@@ -42,12 +42,12 @@ const productModal = () =>{
       
         preview += `
             </div>
-            <div class="c-preview__description"> ${productData.big_description}</div>
+            <div class="c-preview__description"> ${productData.bigDescription}</div>
         </div>`
 
         bodyModal.innerHTML = preview;
         footerModal.innerHTML = `
-            <div class="c-modal__btn"><a href="#" class="c-button c-button--add-cart">Añadir a la cesta</a></div>
+            <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal">Añadir a la cesta</a></div>
             `;
             
         modal.showModal();
@@ -86,11 +86,11 @@ btnCart.addEventListener("click", () => {
         cart.cart.forEach(art=>{
             cartBox +=`
             <div class="c-article"> 
-                <img src="./assets/img/${art.complementary}.png" alt="articleimg" class="c-article__img">
+                <img src="./assets/img/${art.id}sort.png" alt="articleimg" class="c-article__img">
                 <div class="c-article__info">
                     <div class="c-article__name">${art.name}</div>
                     <div class="c-article__category">${art.category}</div>
-                    <div class="c-article__description">${art.sort_description}</div>
+                    <div class="c-article__description">${art.sortDescription}</div>
                 </div>
 
                 <div class="c-article__quantity">
@@ -101,7 +101,7 @@ btnCart.addEventListener("click", () => {
 
                 <div class="c-article__options">
                     <div class="c-article__price">${art.price} €</div>
-                    <a class="c-button c-button--remove">Eliminar</a>
+                    <a class="c-button c-button--terciario-peligroso">Eliminar</a>
                 </div>  
 
             </div>
@@ -117,11 +117,11 @@ btnCart.addEventListener("click", () => {
         footerModal.innerHTML = 
         `
         <div class="c-modal__total">Total: 24,39€</div>
-        <div class="c-modal__btn"><a href="#" class="c-button c-button--buy">Tramitar pedido</a></div>
+        <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal" id="btnTramitar">Tramitar pedido</a></div>
         `;
 
 
-        const btnPagar = document.querySelector(".c-button--buy")
+        const btnPagar = document.querySelector("#btnTramitar")
         btnPagar.addEventListener("click", ()=>{
             modal.close()
             modalPagar()
@@ -162,8 +162,8 @@ btnHistory.addEventListener("click", () => {
           <td class="c-table__item">45,34€</td>
           <td class="c-table__item c-table__item--status-pay">Pagado</td>    
           <td class="c-table__item c-table__item--btns">
-              <a href="#" class="c-button c-button--pay">Pagar</a>
-              <a href="#" class="c-button c-button--delete">Eliminar</a>
+              <a href="#" class="c-button c-button--primario-normal">Pagar</a>
+              <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
           </td>
       </tr>
       <tr class="c-table__row">
@@ -172,8 +172,8 @@ btnHistory.addEventListener("click", () => {
           <td class="c-table__item">45,34€</td>
           <td class="c-table__item c-table__item--status-pay">Pagado</td>
           <td class="c-table__item  c-table__item--btns">
-              <a href="#" class="c-button c-button--pay">Pagar</a>
-              <a href="#" class="c-button c-button--delete">Eliminar</a>
+              <a href="#" class="c-button c-button--primario-normal">Pagar</a>
+              <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
           </td>
       </tr>
 
@@ -183,8 +183,8 @@ btnHistory.addEventListener("click", () => {
       <td class="c-table__item">45,34€</td>
       <td class="c-table__item c-table__item--status-pay">Pagado</td>    
       <td class="c-table__item c-table__item--btns">
-          <a href="#" class="c-button c-button--pay">Pagar</a>
-          <a href="#" class="c-button c-button--delete">Eliminar</a>
+          <a href="#" class="c-button c-button--primario-normal">Pagar</a>
+          <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
       </td>
     </tr>
     <tr class="c-table__row">
@@ -193,8 +193,8 @@ btnHistory.addEventListener("click", () => {
         <td class="c-table__item">45,34€</td>
         <td class="c-table__item c-table__item--status-pending">Pendiente</td>
         <td class="c-table__item  c-table__item--btns">
-            <a href="#" class="c-button c-button--pay">Pagar</a>
-            <a href="#" class="c-button c-button--delete">Eliminar</a>
+            <a href="#" class="c-button c-button--primario-normal">Pagar</a>
+            <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
         </td>
     </tr>
     <tr class="c-table__row">
@@ -203,8 +203,8 @@ btnHistory.addEventListener("click", () => {
     <td class="c-table__item">45,34€</td>
     <td class="c-table__item c-table__item--status-pay">Pagado</td>
     <td class="c-table__item  c-table__item--btns">
-        <a href="#" class="c-button c-button--pay">Pagar</a>
-        <a href="#" class="c-button c-button--delete">Eliminar</a>
+        <a href="#" class="c-button c-button--primario-normal">Pagar</a>
+        <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
     </td>
 </tr>
 
@@ -243,7 +243,7 @@ btnLogin.addEventListener("click", () => {
 
             </div>
 
-            <button id="login" class="c-button c-button--login">Login</button>
+            <button id="login" class="c-button c-button--primario-normal">Login</button>
 
         </div>
         `;
@@ -300,7 +300,7 @@ const modalPagar = () =>{
     
     footerModal.innerHTML = `
     <div class="l-flex l-flex--justify-content-end">
-    <button id="login" class="c-button c-button--pagar">Realizar Pago ( 1500€ )</button>
+    <button id="login" class="c-button c-button--primario-normal">Realizar Pago ( 1500€ )</button>
     </div>
     `;
 

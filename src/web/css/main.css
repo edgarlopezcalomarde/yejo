@@ -972,23 +972,68 @@ table {
   font-weight: 700;
   transition: all 0.3s ease;
 }
-.c-button--add-cart {
+.c-button--primario-normal {
+  padding: 10px 20px;
   background-color: #A4D6B9;
+  color: #352938;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: auto;
+}
+.c-button--primario-normal:hover {
+  background-color: #87C9A2;
+}
+.c-button--primario-alternativo {
+  padding: 10px 20px;
+  background-color: #FCDD88;
+  color: #352938;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: auto;
+}
+.c-button--primario-alternativo:hover {
+  background-color: #FBD06A;
+}
+.c-button--primario-peligroso {
+  padding: 10px 20px;
+  background-color: #FEC8C8;
+  color: #352938;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: auto;
+}
+.c-button--primario-peligroso:hover {
+  background-color: #FCA6A6;
+}
+.c-button--secunadario-normal {
   padding: 10px 20px;
   color: #352938;
   border-radius: 6px;
   display: inline-block;
   margin-top: auto;
 }
-.c-button--add-cart-mini {
-  background-color: #A4D6B9;
+.c-button--secunadario-alternativo {
   padding: 10px 20px;
   color: #352938;
   border-radius: 6px;
-  font-size: 14px;
+  display: inline-block;
+  margin-top: auto;
 }
-.c-button--add-cart:hover {
-  background-color: #87C9A2;
+.c-button--secunadario-peligroso {
+  padding: 10px 20px;
+  color: #352938;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: auto;
+}
+.c-button--terciario-normal {
+  color: #352938;
+}
+.c-button--terciario-alternativo {
+  color: #352938;
+}
+.c-button--terciario-peligroso {
+  color: #DC2828;
 }
 .c-button--quantity {
   border-radius: 50%;
@@ -1000,55 +1045,11 @@ table {
 .c-button--quantity:hover {
   background-color: #87C9A2;
 }
-.c-button--remove {
-  color: #DC2828;
-}
-.c-button--buy {
-  background-color: #A4D6B9;
-  padding: 10px 20px;
-  color: #352938;
-  border-radius: 8px;
-}
-.c-button--pay {
-  padding: 10px 12px;
-  background-color: #A4D6B9;
-  color: #352938;
-  border-radius: 8px;
-  display: inline-block;
-}
-.c-button--delete {
-  padding: 10px 12px;
-  background-color: #FEC8C8;
-  color: #503852;
-  border-radius: 8px;
-  display: inline-block;
-}
 .c-button--newsletter {
   padding: 10px 12px;
   background-color: #87C9A2;
   color: #047756;
   border-radius: 0px;
-}
-.c-button--login {
-  padding: 10px 40px;
-  background-color: #A4D6B9;
-  color: #352938;
-  border-radius: 4px;
-}
-.c-button--pagar {
-  background-color: #A4D6B9;
-  padding: 10px 20px;
-  margin-top: 10px;
-  color: #352938;
-  border-radius: 4px;
-}
-.c-button--more {
-  background-color: #A4D6B9;
-  padding: 10px 20px;
-  color: #352938;
-  border-radius: 8px;
-  display: inline-block;
-  margin-top: auto;
 }
 
 .c-modal {
