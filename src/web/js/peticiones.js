@@ -1,4 +1,3 @@
-
 const cosmeticsUrl = "http://localhost:3000/cosmeticos"
 const usersUrl = "http://localhost:3000/usuarios"
 const ordersUrl = "http://localhost:3000/pedidos"
@@ -34,17 +33,5 @@ const loadAllProducts = () => new Promise((resolve, reject)=>{
 
 })
 
-
-/*Al cargar la pagina*/
-
-window.onload = ()=>{
-
-    loadAllProducts()
-    .then(response => { 
-        generarCartasBestSeller(response)
-        generarTarjetasMore(response)
-    })
-    .catch(error => { console.log(error)})
-}
 
 

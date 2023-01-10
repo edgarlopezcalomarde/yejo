@@ -15,12 +15,10 @@ let user = new User();
 
 
 const generarCartas = (category) =>{
-    footerModal.innerHTML = ``;
+    modal.innerHTML = ``;
     
     let productsFilterByCategory = listaproductos.filter(product => product.category == category)
   
-    console.log(productsFilterByCategory)
-
     let cartas = ""
 
     productsFilterByCategory.forEach(product =>{
@@ -198,19 +196,26 @@ btnHaircare.addEventListener("click",()=>{
     btnOthers.style.borderBottom ='2px solid transparent'
     btnHaircare.style.borderBottom ='2px solid black' 
 
-    
     generarCartas("haircare")
 })
 
 
 
- const logo = document.querySelector("#logo")
- logo.addEventListener("click", ()=>{location.href = location.pathname})
+/*Al cargar la pagina*/
 
- window.onload = () => {
+window.onload = ()=>{
+
+    const logo = document.querySelector("#logo")
+    logo.addEventListener("click", ()=>{location.href = location.pathname})
+    
+    
     loadAllProducts()
-        .then(response => { listaproductos = response;
-            generarCartasBestSeller(response);console.log(response)}
-            )
-        .catch(error => { console.log(error) })
+    .then(response => {  
+        listaproductos = response;
+        generarCartasBestSeller(response)
+        generarTarjetasMore(response)
+    })
+    .catch(error => { console.log(error)})
 }
+
+
