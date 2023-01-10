@@ -2,7 +2,7 @@
     "cosmeticos" : [
         { 
             "id" : 1 ,
-            "category": "1",
+            "category": "skincare",
             "name": "Super green concentrated",
             "sortDescription": "Sérum super nutritivo que ayuda a equilibrar pieles con rojeces o acné.",
             "bigDescription": "Suero anhidro que contiene Hechy Complex combinado con aceite de semilla de cáñamo combinado con aceite de chía, considerado un “superalimento” antioxidante rico en omega-3 y omega-6, y escualano, un emoliente protector obtenido a través del aceite de oliva. Es una inyección de fitonutrientes naturales para la piel, que le da una extraordinaria sensación de confort, elasticidad, protección, hidratación y suavidad. Se absorbe rápidamente y no deja rastros grasientos.",
@@ -17,7 +17,7 @@
         },
         {
             "id": "2",
-            "category": "1",
+            "category": "skincare",
             "name": "Urban face mist",
             "sortDescription": "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día.",
             "bigDescription": "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día. Suave bruma facial a base de agua de Cannabis Sativa combinada con un polisacárido de  alto peso molecular, que ejerce de escudo protector, invisible y transpirable frente a la polución ambiental debida a la contaminación atmosférica. Además, contiene Niacinamida, que refuerza el efecto protector de la piel al ayudar a reducir los efectos producidos por la luz azul.\n        \n        95% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente y oftalmológicamente\n        ",
@@ -31,7 +31,7 @@
           },
           {
             "id": "3",
-            "category": "1",
+            "category": "skincare",
             "name": "Glowy cleansing gel",
             "sortDescription": "Limpiador facial hidratante e iluminador.",
             "bigDescription": "Mantén tu piel limpia, hidratada y con un efecto glowy gracias a nuestro Glowy Cleansing Gel. Elimina los restos de maquillaje e impurezas de forma delicada, aportando un extra de hidratación a tu piel para mantenerla sana e iluminada. Formulado con agua termal, extracto de cúrcuma y betaína hidratante extraída de la raíz de la remolacha, este limpiador es el aliado perfecto para tu limpieza facial. \n        \n        95% ingredientes de origen natural /Apto para todo tipo de pieles / Testado dermatológicamente \n        ",
@@ -45,7 +45,7 @@
           },
           {
             "id": "4",
-            "category": "1",
+            "category": "skincare",
             "name": "Rescue face mist",
             "sortDescription": "Bruma facial hidratante, antioxidante  y nutritiva que refresca la piel y aporta sensación de confort a cualquier hora del día.",
             "bigDescription": "Delicada bruma facial de agua de Rosa Búlgara y una poderosa combinación a base de kale, limón y zanahoria que le aporta propiedades antioxidantes y nutritivas a la piel. Además, contiene extracto de Aloe vera y Niacinamida que refuerzan su efecto hidratante. Refresca la piel y le devuelve su sensación de confort a cualquier hora del día. \n        \n        95% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente y oftalmológicamente   \n        ",
@@ -59,7 +59,7 @@
           },
           {
             "id": "5",
-            "category": "3",
+            "category": "bodycare",
             "name": "Hyaluronic Energy Serum",
             "sortDescription": "Sérum corporal piernas cansadas",
             "bigDescription": "Sérum en formato de gel. Su fórmula aporta una sensación de alivio y confort inmediatos gracias a 8 activos vegetales: goldenrod, el alga roja, ácido hialurónico vegano, potentes activos naturales marinos.\n    \n    Contribuye al biensestar de la piel, con efecto calmante inmediato, acción antiséptica y antiinflamatoria y además activa la microcirculación y el flujo sanguíneo.\n    Aporta máxima suavidad, firmeza y elasticidad en la piel, sin dejarla pegajosa gracias a su rápida absorción.\n    \n    96% ingredientes de origen natural / Apto para pieles sensibles y atópicas / Apto para embarazadas\n    ",
@@ -73,7 +73,7 @@
           },
           {
             "id": "6",
-            "category": "3",
+            "category": "bodycare",
             "name": "Balance body",
             "sortDescription": "Emulsión corporal de rápida extensibilidad y absorción a base de aceite de semilla de cáñamo combinado con agua floral de Cannabis Sativa. ",
             "bigDescription": "Contribuye al bienestar de la piel dejándola suave e hidratada, sin sensación de pegajosidad, una vez absorbida. Actúa como agente calmante de acción rápida. Ayuda a la piel a reducir la pérdida de agua epidérmica. Es altamente nutritiva.\n\n        96% ingredientes de origen natural / Apto para todo tipo de pieles: grasas, sensibles o mixtas\n        ",
@@ -87,7 +87,7 @@
           },
           {
             "id": "7",
-            "category": "3",
+            "category": "bodycare",
             "name": "Exfoliating body soap",
             "sortDescription": "Jabón corporal exfoliante con aroma a almendras y limón.",
             "bigDescription": "Enriquecido con aceite de Almendra de Provenza. Este jabón limpia y exfolia la piel mientras la envuelve en un sutil y delicioso aroma a almendras frescas y limón. Su textura ayuda la eliminación de células muertas, dejando la piel suave y luminosa. \n\n        100% ingredientes de origen natural / Apto para todo tipo de pieles: grasas, sensibles o mixtas\n   \n        ",
@@ -101,7 +101,7 @@
           },
           {
             "id": "8",
-            "category": "3",
+            "category": "bodycare",
             "name": "Skin Food Light",
             "sortDescription": "Nutrición intensiva de textura cremosa y rápida absorción para piel seca.",
             "bigDescription": "Skin Food Light aporta confort a la piel seca inmediatamente. Esta crema de textura cremosa que se absorbe rápidamente, combina aceite de girasol orgánico con los extractos calmantes de pensamiento silvestre, camomila y caléndula. La piel se hidrata al instante, su fórmula regenera la barrera protectora natural de la piel y la protege frente a la sequedad.\n\n        96% ingredientes de origen natural / Apto para todo tipo de pieles: grasas, sensibles o mixtas \n        ",
@@ -115,7 +115,7 @@
           },
           {
             "id": "9",
-            "category": "4",
+            "category": "others",
             "name": "Crystal snow",
             "sortDescription": "Un baño dulce y mentolado",
             "bigDescription": "Una maravilla mineral con cristales de sal marina, menta y vainilla que deja la piel suave e hidratada.",
@@ -128,7 +128,7 @@
           },
           {
             "id": "10",
-            "category": "4",
+            "category": "others",
             "name": "Bamboo toothbrush",
             "sortDescription": "Cepillo de dientes fabricado en madera natural de bambú presentado en caja individual kraft y tapón protector.",
             "bigDescription": "Cepillo de dientes fabricado en madera natural de bambú presentado en caja individual kraft y tapón protector.",
@@ -141,7 +141,7 @@
           },
           {
             "id": "11",
-            "category": "4",
+            "category": "others",
             "name": "OrganiCup",
             "sortDescription": "Copa menstrual de silicona.",
             "bigDescription": "El material de silicona de grado médico se obtiene de la arena (cuarzo), el material más abundante en la naturaleza de nuestro planeta. OrganiCup no contiene elementos químicos innecesarios, toxinas ni colorantes artificiales.",
@@ -154,7 +154,7 @@
           },
           {
             "id": "12",
-            "category": "4",
+            "category": "others",
             "name": "Natural sea sponge",
             "sortDescription": "Esponja marina natural",
             "bigDescription": "Una esponja marina natural de panal de abeja sin blanquear de primera calidad seleccionada recién del mar Egeo, en la isla griega de Kalymnos. Las aguas profundas y frías aquí son clave para dar a nuestras esponjas su gran resistencia y densidad.",
@@ -167,7 +167,7 @@
           },
           {
             "id": "13",
-            "category": "2",
+            "category": "haircare",
             "name": "Ultra soothed scalp shampoo bar",
             "sortDescription": "Shampoo ultra nutritivo y calmante para cabello graso y cuero cabelludo alterado.",
             "bigDescription": "Shampoo formulado con tensioactivos suaves para la limpieza y cuidado del cabello y cuero cabelludo. Combina agua floral de Cannabis Sativa (extraída del tallo y las hojas mediante destilación por vapor) con agentes acondicionadores del cabello que le aportan suavidad y D-panthenol o provitamina B5, reconocido por sus propiedades hidratantes y nutritivas. Ayuda a regula y equilibrar el cuero cabelludo y el exceso de sebo, prevenir la rotura del cabello, engrosar la estructura y reducir las puntas abiertas. Actúa como protector de polución y de calor.\n\n            89% ingredientes de origen natural / Apto para todo tipo de cabellos / Testado dermatológicamente\n            \n            ",
@@ -180,7 +180,7 @@
           },
           {
             "id": "14",
-            "category": "2",
+            "category": "haircare",
             "name": "Silky restoring shampoo bar",
             "sortDescription": "Shampoo formulado para controlar el encrespamiento y  aportar una alta dosis de hidratación en cabellos frágiles y dañados.",
             "bigDescription": "Shampoo formulado con tensioactivos suaves para la limpieza y cuidado del cabello y cuero cabelludo. Contiene ácido hialurónico de diferentes pesos moleculares y extracto de algodón. \n\nAyuda a reparar y equilibrar cabellos secos y castigados por factores externos, ya sean ambientales, térmicos o químicos. Actúa como protector de la cutícula del cabello, mejorando su aspecto y aportando hidratación y flexibilidad.\n\nApto para todo tipo de cabellos / Testado dermatológicamente\n            ",
@@ -193,7 +193,7 @@
           },
           {
             "id": "15",
-            "category": "2",
+            "category": "haircare",
             "name": "Intensive repair mask",
             "sortDescription": "Mascarilla capilar hidratante y reestructurante para cabellos frágiles y dañados.",
             "bigDescription": "Aporta a tu cabello una dosis extra de volumen, brillo y fuerza. Nuestra mascarilla es el tratamiento perfecto para cabellos frágiles y dañados, debido a la exposición a factores externos ambientales, térmicos y químicos, que ayuda retener la humedad del cabello aportando densidad, plenitud, suavidad y grosor. Contiene una alta concentración de ácido hialurónico de diferentes pesos moleculares, manteca de mango y aceite de semilla de uva.\n\nApto para todo tipo de cabellos / Testado dermatológicamente  \n            ",
@@ -206,7 +206,7 @@
           },
           {
             "id": "16",
-            "category": "2",
+            "category": "haircare",
             "name": "Superfood hairoil",
             "sortDescription": "Aporta brillo, elasticidad y suavidad al cabello de manera natural.",
             "bigDescription": "Aporta brillo, elasticidad y suavidad al cabello de manera natural.\n\n \n\nNuestro Super Food Hair Oil es un aceite de tacto seco para el cuidado del cabello. Formulado con una combinación de aceite de semilla de cáñamo, rico en omega 3 y 6, aceite de abisinia, rico en omega 9 y un emoliente biodegradable de origen natural, que le aporta un extraordinario brillo, elasticidad y suavidad al cabello de manera natural, sobre todo a cabellos secos y apagados. Forma un ligero film nutritivo que ayuda a protegerlo de las agresiones mecánicas o ambientales como el exceso de calor o el agua del mar, convirtiéndose en un imprescindible en tu rutina de belleza capilar\n\n \n\n99% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente  \n            ",
@@ -219,10 +219,10 @@
           }
     ],
     "categorias" : [
-        { "id" : "1" , "name" : "skincare" },
-        { "id" : "2" , "name" : "haircare" },
-        { "id" : "3" , "name" : "bodycare" },
-        { "id" : "4" , "name" : "others" }
+        { "id" : "skincare"},
+        { "id" : "haircare"},
+        { "id" : "bodycare"},
+        { "id" : "others"}
     ],
     "pedidos" : [
         {

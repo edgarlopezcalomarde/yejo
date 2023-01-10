@@ -9,14 +9,15 @@ const btnOthers = document.getElementById("others")
 const btnSkincare = document.getElementById("skincare")
 
 const randomProductsSection = document.getElementById("moreProducts")
-
+let listaproductos;
 let cart = new Cart()
+let user = new User();
 
 
-const generarCartas = (productos, category) =>{
+const generarCartas = (category) =>{
     footerModal.innerHTML = ``;
     
-    let productsFilterByCategory = productos.filter(product => product.category == category)
+    let productsFilterByCategory = listaproductos.filter(product => product.category == category)
   
     console.log(productsFilterByCategory)
 
@@ -48,7 +49,7 @@ const generarCartas = (productos, category) =>{
 
     document.querySelectorAll(".category").forEach( btn =>{
       
-        const item = productos.find(it => it.id == btn.parentNode.parentNode.parentNode.attributes.idproduct.value)
+        const item = listaproductos.find(it => it.id == btn.parentNode.parentNode.parentNode.attributes.idproduct.value)
         btn.addEventListener("click", (e)=>{
             e.preventDefault()
             e.stopPropagation()
@@ -58,7 +59,7 @@ const generarCartas = (productos, category) =>{
     })
 
    
-    productModal(productos)
+    productModal(listaproductos)
 
 }
 
@@ -154,9 +155,7 @@ btnSkincare.addEventListener("click",()=>{
     btnOthers.style.borderBottom ='2px solid transparent'
     btnHaircare.style.borderBottom ='2px solid transparent'
    
-    loadAllProducts()
-    .then(response => {  generarCartas(response,"1")})
-    .catch(error => { console.log(error)})
+    generarCartas("skincare")
     
 
 })
@@ -170,9 +169,7 @@ btnBodycare.addEventListener("click",()=>{
     btnOthers.style.borderBottom ='2px solid transparent'
     btnHaircare.style.borderBottom ='2px solid transparent'
 
-    loadAllProducts()
-    .then(response => {  generarCartas(response,"3")})
-    .catch(error => { console.log(error)})
+    generarCartas("bodycare")
   
 })
 
@@ -186,9 +183,8 @@ btnOthers.addEventListener("click",()=>{
     btnOthers.style.borderBottom = '2px solid black'
     btnHaircare.style.borderBottom ='2px solid transparent'
 
-    loadAllProducts()
-    .then(response => {  generarCartas(response,"4")})
-    .catch(error => { console.log(error)})
+    generarCartas("others")
+
   
 })
 
@@ -203,16 +199,18 @@ btnHaircare.addEventListener("click",()=>{
     btnHaircare.style.borderBottom ='2px solid black' 
 
     
-    loadAllProducts()
-    .then(response => {  generarCartas(response,"2")})
-    .catch(error => { console.log(error)})
+    generarCartas("haircare")
 })
 
 
 
-const logo = document.querySelector("#logo")
-logo.addEventListener("click", ()=>{location.href = location.pathname})
+ const logo = document.querySelector("#logo")
+ logo.addEventListener("click", ()=>{location.href = location.pathname})
 
-
-
-
+ window.onload = () => {
+    loadAllProducts()
+        .then(response => { listaproductos = response;
+            generarCartasBestSeller(response);console.log(response)}
+            )
+        .catch(error => { console.log(error) })
+}
