@@ -13,7 +13,6 @@ let listaproductos;
 let cart = new Cart()
 let user = new User();
 
-
 const generarCartas = (category) =>{
     modal.innerHTML = ``;
     

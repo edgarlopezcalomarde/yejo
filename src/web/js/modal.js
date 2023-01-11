@@ -14,17 +14,6 @@ function closeModal() {
 }
 
 
-let moo = `
-<div class="c-modal__header">
-    <div class="c-modal__title"></div>
-    <div class="c-modal__close"  id="btnCloseModal">&times;</div>
-</div>
-        
-        <div class="c-modal__body"></div>
-        <div class="c-modal__footer"></div>
-`
-
-
 /* ---------- Product Modal -------------- */
 
 const productModal = (productos) =>{
@@ -266,18 +255,22 @@ btnLogin.addEventListener("click", () => {
             </div>
             <div class="c-login__body">
 
-                <div class="c-login__input">
-                    <label for="email" class="c-login__label" >Correo electrónico: </label>
-                    <input type="text" name="correo" class="c-input c-input--login" id="correo" placeholder="pepe@gmail.com">
-                </div>
-                
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
-                </div>
+                <form name="login">
+
+                    <div class="c-login__input">
+                        <label for="email" class="c-login__label" >Correo electrónico: </label>
+                        <input type="text" name="correo" class="c-input c-input--login" placeholder="pepe@gmail.com">
+                    </div>
+                    
+                    <div class="c-login__input">
+                        <label for="password" class="c-login__label">Contraseña: </label>
+                        <input type="password" name="password" class="c-input c-input--login" placeholder="Tú contraseña">
+                    </div>
+
+                </form>
 
             </div>
-            <button id="login" class="c-button c-button--primario-normal">Login</button>
+            <button id="btnIniciarSesion" class="c-button c-button--primario-normal">Login</button>
             <p id="btnIrRegister">No tengo cuenta</p>
         </div>
     </div>
@@ -288,25 +281,27 @@ btnLogin.addEventListener("click", () => {
             </div>
             <div class="c-login__body">
 
-                <div class="c-login__input">
-                    <label for="email" class="c-login__label" >Correo electrónico: </label>
-                    <input type="text" name="correo" class="c-input c-input--login" id="correo" placeholder="pepe@gmail.com">
-                </div>
-                
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
-                </div>
+                <form name="register">
+                    <div class="c-login__input">
+                        <label for="email" class="c-login__label" >Correo electrónico: </label>
+                        <input type="text" name="correo" class="c-input c-input--login" placeholder="pepe@gmail.com">
+                    </div>
+                    
+                    <div class="c-login__input">
+                        <label for="password" class="c-login__label">Usuario: </label>
+                        <input type="password" name="user" class="c-input c-input--login" placeholder="pepe15">
+                    </div>
 
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
-                </div>
+                    <div class="c-login__input">
+                        <label for="password" class="c-login__label">Contraseña: </label>
+                        <input type="password" name="password" class="c-input c-input--login" placeholder="Escribe una contraseña">
+                    </div>
 
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" id="password" placeholder="Tú contraseña">
-                </div>
+                    <div class="c-login__input">
+                        <label for="password" class="c-login__label">Repetir Contraseña: </label>
+                        <input type="password" name="repassword" class="c-input c-input--login" placeholder="Repite la contraaseña">
+                    </div>
+                </form>
 
             </div>
             <button id="btnRegister" class="c-button c-button--primario-normal">Register</button>
@@ -330,6 +325,26 @@ btnLogin.addEventListener("click", () => {
         loginBox.classList.remove("g--oculto")  
         registerBox.classList.add("g--oculto")  
     })
+
+    /*BTN INICIAR SESION*/
+
+    const btnIniciarSesion = document.querySelector("#btnIniciarSesion")
+    btnIniciarSesion.addEventListener("click", ()=>{
+        let loginData = {}
+        Array.from(document.forms.login).forEach(input => loginData[input.name] = input.value)
+
+        try{
+            let response = isEmpty(loginData)
+            
+            
+        }catch(err){
+            console.log(err.msg)
+        }
+
+    })
+
+
+    /*BTN REGISTRARSE*/
 
     closeModal()
     modal.showModal();
