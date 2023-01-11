@@ -15,12 +15,16 @@
 
     background-color: getColor("principal",4);
 
-    font-family: 'Libre Baskerville', serif;
+    // font-family: 'Libre Baskerville', serif;
+    font-family: 'Outfit', sans-serif;
     font-size: getFontSize("l");
 
+  
     &__item{
         cursor: pointer;
         user-select: none;
+        text-decoration: none;
+        color: getColor("negro",5);
 
         border-bottom: getBorderSize(1) solid getColor("principal",4);
         border-top: getBorderSize(1) solid getColor("principal",4);
@@ -28,6 +32,10 @@
 
     &__item:hover{
        border-bottom: getBorderSize(1) solid getColor("negro",5);
+    }
+
+    &__item:focus{
+        border-bottom: getBorderSize(1) solid getColor("negro",5);
     }
 
     &__item--selected{

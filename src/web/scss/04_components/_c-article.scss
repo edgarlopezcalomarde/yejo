@@ -21,7 +21,8 @@
     }
 
     &__voidtitle{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: getFontWeight(7);
         font-size: getFontSize("2xl");   
     }
@@ -40,7 +41,8 @@
     }
 
     &__name{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: getFontWeight(7);
         font-size: getFontSize("xl");   
     }
