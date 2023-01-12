@@ -11,7 +11,7 @@ const btnSkincare = document.getElementById("skincare")
 const randomProductsSection = document.getElementById("moreProducts")
 let listaproductos;
 let cart = new Cart()
-let user = new User();
+
 
 const generarCartas = (category) =>{
     modal.innerHTML = ``;
@@ -135,9 +135,6 @@ const generarTarjetasMore = (productos) =>{
         })
     })
 }
-
-
-
 
 
 

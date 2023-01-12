@@ -3,50 +3,43 @@ const usersUrl = "http://localhost:3000/usuarios"
 const ordersUrl = "http://localhost:3000/pedidos"
 
 /*Funcion auxiliar para ahorrar codigo a la hora de realizar una peticion*/
-const request = (method, url, responsetype, body) =>{
+const request = (method, url, responsetype, body) =>  new Promise((resolve, reject) => {
 
-    const xhr = new XMLHttpRequest()
-    xhr.open(method, url)
-    xhr.responseType = responsetype
-    
-    if(method === "GET" || method === "DELETE"){
-        xhr.send()
+    const result = new XMLHttpRequest()
+    result.open(method, url)
+    result.responseType = responsetype
+
+    if (method === "GET" || method === "DELETE") {
+        result.send()
     }
 
-    if(method === "POST" || method === "UPDATE"){
-        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
-        xhr.send(JSON.stringify(body))
+    if (method === "POST" || method === "PUT" || method === "PATCH") {
+        result.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+        result.send(JSON.stringify(body))
     }
 
-    return xhr;
-}
-
-const loadAllProducts = () => new Promise((resolve, reject)=>{
-    const result = request("GET",cosmeticsUrl, "json")
-    result.addEventListener("load", ()=>{
+    result.addEventListener("load", () => {
         resolve(result.response)
     })
 
-    result.addEventListener("error", ()=>{
+    result.addEventListener("error", () => {
         reject(result.response)
     })
-
 })
 
 
-const findUser = (user, password) => new Promise((resolve, reject) =>{
-    let peticion = request("GET", usersUrl + "?nickname=" + user, "json");
+/*Peticiones*/ 
+const loadAllProducts = () => request("GET", cosmeticsUrl, "json")
+const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
+const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
+const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
+const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
+const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + user, "json")
 
-    peticion.addEventListener("load", () => {
-        resolve(peticion.response)
-    })
 
-    peticion.addEventListener("error", () => {
-        reject(peticion.response)
-    })
 
-}) 
-
+/*Operaciones*/
+  
 const checkUser = (data, user, password) => {
    
     if (data[0].nickname == user && data[0].pass == password) {
@@ -59,4 +52,53 @@ const checkUser = (data, user, password) => {
         )
     }
 }
+
+const almacenarCarritoPendiente = () =>{
+
+    if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
+        
+        const currentUser = JSON.parse(localStorage.getItem("currentuser"))
+        cart.userId = currentUser.id
+        cart.date = (new Date()).fecha()
+        cart.totalprice = cart.total
+        cart.status = "pendiente"
+
+        getCarrito(cart.cartid).then(response =>{
+            console.log(response)
+            if(response.length <= 0){
+                saveCart({...cart})
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+            }else{
+                updatePedido(response[0].id,cart)
+                .then(res => console.log(res))
+            }
+        })
+
+        modal.close()
+        modalPagar()
+
+    }else{
+        alert("Debes registrarte primero")
+    }
+
+}
+
+
+const almacenarCarritoPagado = () =>{
+
+    getCarrito(cart.cartid)
+    .then(res =>{
+        cart.status = "pagado"
+        updatePedido(res[0].id,cart)
+        .then(res => {
+            console.log(res)
+            cart = new Cart() //Vaciar el carrito
+        })
+        .catch(err => console.log(err))
+    })
+
+}
+
+
 

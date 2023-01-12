@@ -1,35 +1,43 @@
 /* ---------- General references -------------- */
 
 const modal = document.querySelector("#modal");
+const btnHistory = document.querySelector("#btnHistory");
 
 function closeModal() {
     const btnCloseModal = document.querySelector("#btnCloseModal");
     btnCloseModal.addEventListener("click", () => {
+        modal.style.backgroundColor = "#FFFFFF";
         modal.close()
-    });  
-
-    modal.addEventListener("close", ()=>{
-        document.body.style.overflow = "auto"
-    }) 
+    });
 }
+modal.addEventListener("close", () => {
+    document.body.style.overflow = "auto"
+    modal.style.backgroundColor = "#FFFFFF";
+})
 
+modal.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") {
+        modal.style.backgroundColor = "#FFFFFF";
+    }
+})
 
 if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
     const nicknameBox = document.querySelector("#currentUserNick")
     let currentUser =JSON.parse(localStorage.getItem("currentuser"))
     nicknameBox.innerHTML = currentUser.nick
+    btnHistory.parentNode.classList.remove("g--oculto")
 }
 
 /* ---------- Product Modal -------------- */
 
-const productModal = (productos) =>{
+const productModal = (productos) => {
 
     const products = document.querySelectorAll(".c-card");
     products.forEach((product) => {
         product.addEventListener("click", () => {
             document.body.style.overflow = "hidden"
             const productData = productos.find(producto => producto.id == product.attributes.idproduct.value)
-    
+
             let preview = `
             <div class="c-modal__header">
                 <div class="c-modal__title"></div>
@@ -54,8 +62,8 @@ const productModal = (productos) =>{
             <div class="c-modal__footer">
                 <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal">Añadir a la cesta</a></div>
             </div>`
-           
-            modal.innerHTML = preview 
+
+            modal.innerHTML = preview
 
             const cpreview = document.querySelector(".c-preview")
             cpreview.style.overflowY = "hidden"
@@ -70,10 +78,9 @@ const productModal = (productos) =>{
 
 
 
-/* ---------- Cart Modal -------------- */
-const btnCart = document.querySelector("#btnCart");
+/* ---------- Carrito Modal -------------- */
 
-btnCart.addEventListener("click", () => {
+const pintarCarrito  = () =>{
     document.body.style.overflow = "hidden"
 
     let cartBox = `
@@ -82,9 +89,9 @@ btnCart.addEventListener("click", () => {
         <div class="c-modal__close"  id="btnCloseModal">&times;</div>
     </div>
     `
-    if(cart.cart.length < 1){
+    if (cart.cart.length < 1) {
 
-      cartBox += `
+        cartBox += `
         <div class="c-modal__body">
             <div class="l-flex l-flex--direction-column l-flex--gap-7 g--margin-top-6">
                 <div class='c-article c-article--void'>
@@ -96,7 +103,7 @@ btnCart.addEventListener("click", () => {
         </div>
       `
 
-    }else{
+    } else {
 
         let articulos = ""
 
@@ -111,9 +118,9 @@ btnCart.addEventListener("click", () => {
                 </div>
 
                 <div class="c-article__quantity">
-                    <a class="c-button c-button--quantity btnAddOne"><i class="fa-solid fa-minus"></i></a>
+                    <a class="c-button c-button--quantity btnRemoveOne"><i class="fa-solid fa-minus"></i></a>
                     <div id="quantity">${art.unidades}</div>
-                    <a class="c-button c-button--quantity btnRemoveOne"><i class="fa-solid fa-plus"></i></a>
+                    <a class="c-button c-button--quantity btnAddOne"><i class="fa-solid fa-plus"></i></a>
                 </div>
 
                 <div class="c-article__options">
@@ -131,40 +138,84 @@ btnCart.addEventListener("click", () => {
                 ${articulos}
             </div>
         </div>
-        `
-    }
-       
-    if(!cart.cart.length < 1) {
-        cartBox += `
         <div class="c-modal__footer">
-            <div class="c-modal__total">Total: 24,39€</div>
+            <div class="c-modal__total">Total: ${cart.total} €</div>
             <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal" id="btnTramitar">Tramitar pedido</a></div>
         </div>
-       `;
-        modal.innerHTML = cartBox
+        `
+    }
 
-        const btnPagar = document.querySelector("#btnTramitar")
-        btnPagar.addEventListener("click", ()=>{
-            modal.close()
-            modalPagar()
+    modal.innerHTML = cartBox
+
+
+    if (!cart.cart.length < 1) {
+     
+        const btnsAddOne = document.querySelectorAll(".btnAddOne")
+        const btnsRemoveOne = document.querySelectorAll(".btnRemoveOne")
+        const btnsDelete = document.querySelectorAll(".btnDelete")
+
+        btnsAddOne.forEach(btn=>{
+            btn.addEventListener("click", ()=>{
+                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"),"+")
+                pintarCarrito()  
+            })
         })
 
-    }else{
-        modal.innerHTML = cartBox
+        btnsRemoveOne.forEach(btn=>{
+            btn.addEventListener("click", ()=>{
+                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"),"-")
+                pintarCarrito()
+            })
+        })
+
+        btnsDelete.forEach(btn=>{
+            btn.addEventListener("click", ()=>{
+                cart.removeItem(btn.parentNode.parentNode.getAttribute("artId"))
+                pintarCarrito()
+            })
+        })
+
+
+        const btnPagar = document.querySelector("#btnTramitar")
+        btnPagar.addEventListener("click", () => { almacenarCarritoPendiente()})
+
     }
 
     closeModal()
+    
+}
+
+
+const btnCart = document.querySelector("#btnCart");
+
+btnCart.addEventListener("click", () => {
+    pintarCarrito()
     modal.showModal();
 });
 
 
-
 /* ---------- History Modal -------------- */
 
-const btnHistory = document.querySelector("#btnHistory");
-    
-btnHistory.addEventListener("click", () => {
+const pintarOrders = (orders) =>{
     document.body.style.overflow = "hidden"
+    let ordersBox = ""
+
+    orders.forEach(order => {
+
+        ordersBox += `
+        <tr class="c-table__row">
+            <td class="c-table__item">${order.id}</td>
+            <td class="c-table__item">${order.date}</td>
+            <td class="c-table__item">${order.totalprice}€</td>
+            <td class="c-table__item c-table__item--status-pay">${order.status}</td>    
+            <td class="c-table__item c-table__item--status-pending g--oculto">${order.status}</td>    
+            <td class="c-table__item c-table__item--btns">
+                <a href="#" class="c-button c-button--primario-normal">Recuperar</a>
+                <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
+            </td>
+        </tr>
+        `
+    })
 
     modal.innerHTML = `
     <div class="c-modal__header">
@@ -184,63 +235,22 @@ btnHistory.addEventListener("click", () => {
             </tr>
         </thead>
         <tbody class="c-table__body">
-            <tr class="c-table__row">
-                <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
-                <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
-                <td class="c-table__item">45,34€</td>
-                <td class="c-table__item c-table__item--status-pay">Pagado</td>    
-                <td class="c-table__item c-table__item--btns">
-                    <a href="#" class="c-button c-button--primario-normal">Pagar</a>
-                    <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
-                </td>
-            </tr>
-            <tr class="c-table__row">
-                <td class="c-table__item">rfnli1de96s9c17dtfntf</td>
-                <td class="c-table__item">Martes, 24 Diciembre de 2022</td>
-                <td class="c-table__item">45,34€</td>
-                <td class="c-table__item c-table__item--status-pay">Pagado</td>
-                <td class="c-table__item  c-table__item--btns">
-                    <a href="#" class="c-button c-button--primario-normal">Pagar</a>
-                    <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
-                </td>
-            </tr>
-
-            <tr class="c-table__row">
-            <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
-            <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
-            <td class="c-table__item">45,34€</td>
-            <td class="c-table__item c-table__item--status-pay">Pagado</td>    
-            <td class="c-table__item c-table__item--btns">
-                <a href="#" class="c-button c-button--primario-normal">Pagar</a>
-                <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
-            </td>
-            </tr>
-            <tr class="c-table__row">
-                <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
-                <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
-                <td class="c-table__item">45,34€</td>
-                <td class="c-table__item c-table__item--status-pending">Pendiente</td>
-                <td class="c-table__item  c-table__item--btns">
-                    <a href="#" class="c-button c-button--primario-normal">Pagar</a>
-                    <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
-                </td>
-            </tr>
-            <tr class="c-table__row">
-            <td class="c-table__item">24hj4pbk9938c9706thj1s</td>
-            <td class="c-table__item">Martes, 13 Diciembre de 2022</td>
-            <td class="c-table__item">45,34€</td>
-            <td class="c-table__item c-table__item--status-pay">Pagado</td>
-            <td class="c-table__item  c-table__item--btns">
-                <a href="#" class="c-button c-button--primario-normal">Pagar</a>
-                <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
-            </td>
-        </tr>
+            ${ordersBox}
         </tbody>
         </table>
     </div>
-    <div class="c-modal__footer"></div>
     `
-    closeModal()
+ 
+}
+
+
+btnHistory.addEventListener("click", () => {
+    getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
+    .then(orders =>{
+        pintarOrders(orders)
+        closeModal()
+    })
+
     modal.showModal();
 });
 
@@ -328,118 +338,122 @@ let loginRegisterBox = `
 </div>
 `
 
+function loginRegister(){
+    modal.innerHTML = loginRegisterBox
 
+    const btnIrRegister = document.querySelector("#btnIrRegister");
+    const btnIrLogin = document.querySelector("#btnIrLogin");
+    const loginBox =  document.querySelector("#loginBox");
+    const registerBox = document.querySelector("#registerBox");
+    const userBox = document.querySelector("#userBox");
+    const btnCerrarSesion = document.querySelector("#btnCerrarSesion");
+
+    const usernickname  = document.querySelector("#usernickname");
+    const usermail  = document.querySelector("#usermail");
+    const nicknameBox = document.querySelector("#currentUserNick")
+
+    btnIrRegister.addEventListener("click", ()=>{
+        loginBox.classList.add("g--oculto")  
+        registerBox.classList.remove("g--oculto")   
+    })
+
+    btnIrLogin.addEventListener("click", ()=>{
+        loginBox.classList.remove("g--oculto")  
+        registerBox.classList.add("g--oculto")  
+    })
+
+    /*BTN INICIAR SESION*/
+
+    const btnIniciarSesion = document.querySelector("#btnIniciarSesion")
+    btnIniciarSesion.addEventListener("click", ()=>{
+        let loginData = {}
+        Array.from(document.forms.login).forEach(input => loginData[input.name] = input.value)
+
+        try{
+            let response = isEmpty(loginData)
+        
+            findUser(response.user, response.password)
+            .then(response => {
+
+                loginBox.classList.add("g--oculto")  
+                registerBox.classList.add("g--oculto")   
+                userBox.classList.remove("g--oculto")   
+
+                checkUser(response, loginData.user, loginData.password)
+                
+                let currentUser =JSON.parse(localStorage.getItem("currentuser"))
+
+                usernickname.innerHTML = currentUser.nick
+                usermail.innerHTML = currentUser.mail
+                nicknameBox.innerHTML = currentUser.nick
+                btnHistory.parentNode.classList.remove("g--oculto")
+                
+            })
+            .catch(response => console.log(response));
+            
+        }catch(err){
+            console.log(err.msg)
+        }
+
+    })
+
+
+    /*BTN REGISTRARSE*/
+
+
+    /*BTN CERRAR SESION*/
+    
+    btnCerrarSesion.addEventListener("click", ()=> {
+        localStorage.setItem("currentuser", "")
+        loginBox.classList.remove("g--oculto")     
+        userBox.classList.add("g--oculto")   
+        nicknameBox.innerHTML = ""
+        btnHistory.parentNode.classList.add("g--oculto")
+    })
+
+
+    if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
+        loginBox.classList.add("g--oculto")  
+        registerBox.classList.add("g--oculto")   
+        userBox.classList.remove("g--oculto")  
+        
+
+        let currentUser =JSON.parse(localStorage.getItem("currentuser"))
+        usernickname.innerHTML = currentUser.nick
+        usermail.innerHTML = currentUser.mail
+        nicknameBox.innerHTML = currentUser.nick
+        
+       
+
+    }else{
+        loginBox.classList.remove("g--oculto")  
+        registerBox.classList.add("g--oculto")   
+        userBox.classList.add("g--oculto")  
+    }
+
+    closeModal()
+    modal.showModal();
+
+}
 
 
 const btnLogin = document.querySelector("#btnLogin");
 
 
     btnLogin.addEventListener("click", () => {
-
-        modal.innerHTML = loginRegisterBox
-
-        const btnIrRegister = document.querySelector("#btnIrRegister");
-        const btnIrLogin = document.querySelector("#btnIrLogin");
-        const loginBox =  document.querySelector("#loginBox");
-        const registerBox = document.querySelector("#registerBox");
-        const userBox = document.querySelector("#userBox");
-        const btnCerrarSesion = document.querySelector("#btnCerrarSesion");
-
-        const usernickname  = document.querySelector("#usernickname");
-        const usermail  = document.querySelector("#usermail");
-        const nicknameBox = document.querySelector("#currentUserNick")
-
-        btnIrRegister.addEventListener("click", ()=>{
-            loginBox.classList.add("g--oculto")  
-            registerBox.classList.remove("g--oculto")   
-        })
-
-        btnIrLogin.addEventListener("click", ()=>{
-            loginBox.classList.remove("g--oculto")  
-            registerBox.classList.add("g--oculto")  
-        })
-
-        /*BTN INICIAR SESION*/
-
-        const btnIniciarSesion = document.querySelector("#btnIniciarSesion")
-        btnIniciarSesion.addEventListener("click", ()=>{
-            let loginData = {}
-            Array.from(document.forms.login).forEach(input => loginData[input.name] = input.value)
-
-            try{
-                let response = isEmpty(loginData)
-            
-                findUser(response.user, response.password)
-                .then(response => {
-
-                    loginBox.classList.add("g--oculto")  
-                    registerBox.classList.add("g--oculto")   
-                    userBox.classList.remove("g--oculto")   
-
-                    checkUser(response, loginData.user, loginData.password)
-                    
-                    let currentUser =JSON.parse(localStorage.getItem("currentuser"))
-
-                    usernickname.innerHTML = currentUser.nick
-                    usermail.innerHTML = currentUser.mail
-                    nicknameBox.innerHTML = currentUser.nick
-                    
-                })
-                .catch(response => console.log(response));
-                
-            }catch(err){
-                console.log(err.msg)
-            }
-
-        })
-
-
-        /*BTN REGISTRARSE*/
-
-
-        /*BTN CERRAR SESION*/
-        
-        btnCerrarSesion.addEventListener("click", ()=> {
-            localStorage.setItem("currentuser", "")
-            loginBox.classList.remove("g--oculto")     
-            userBox.classList.add("g--oculto")   
-            nicknameBox.innerHTML = ""
-        })
-
-
-        if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
-            loginBox.classList.add("g--oculto")  
-            registerBox.classList.add("g--oculto")   
-            userBox.classList.remove("g--oculto")  
-            
-
-            let currentUser =JSON.parse(localStorage.getItem("currentuser"))
-            usernickname.innerHTML = currentUser.nick
-            usermail.innerHTML = currentUser.mail
-            nicknameBox.innerHTML = currentUser.nick
-            
-           
-
-        }else{
-            loginBox.classList.remove("g--oculto")  
-            registerBox.classList.add("g--oculto")   
-            userBox.classList.add("g--oculto")  
-        }
-
-        closeModal()
-        modal.showModal();
-
+        loginRegister()
+       
     });
 
 
 
 
 
-/* ---------- Pagar Modal --------------*/ 
+/* ---------- Pagar Modal --------------*/
 const btnPagar = document.querySelector("#boton2");
 
-const modalPagar = () =>{
-    
+const modalPagar = () => {
+
     modal.style.backgroundColor = "#FDEAA5";
 
     modal.innerHTML = `
@@ -473,7 +487,7 @@ const modalPagar = () =>{
                     <label for="mes" class="c-formulario__texto">Fecha de expiración</label>
                     <input type="date" name="expirar" id="expirar" class="c-input c-input--creditcard">
                 </div>
-                <div class="l-flex l-flex--direction-column g--padding-left-10 pruebas">
+                <div class="l-flex l-flex--direction-column g--padding-left-10">
                     <label for="cvc" class="c-formulario__texto">CVC</label>
                     <input type="password" name="cvc" id="cvc" class="c-input c-input--creditcard" placeholder="***"  maxlength="3">
                 </div>
@@ -485,32 +499,27 @@ const modalPagar = () =>{
 
     <div class="c-modal__footer">
         <div class="l-flex l-flex--justify-content-end">
-            <button id="login" class="c-button c-button--primario-normal">Realizar Pago ( 1500€ )</button>
+            <button id="btnPagar" class="c-button c-button--primario-normal g--margin-top-2">Realizar Pago ( 1500€ )</button>
         </div>
     </div>
     `;
 
-    closeModal()
-
+   
     let imagen = document.getElementById("imagenTarjeta");
     let metodoPago = document.getElementsByName("pago");
     for (let post = 0; post < metodoPago.length; post++) {
-        metodoPago[post].onclick = function() {
-            imagen.setAttribute("src", "./assets/img/"+this.value);
-            }      
-    }
-    modal.showModal();
-
-    btnCloseModal.addEventListener("click", ()=>{
-        modal.style.backgroundColor = "#FFFFFF";
-    })
-
-    modal.addEventListener("keydown", (e)=>{
-        if(e.key == "Escape"){
-            modal.style.backgroundColor = "#FFFFFF";
+        metodoPago[post].onclick = function () {
+            imagen.src = "./assets/img/" + this.value;
         }
+    }
+
+    const btnRealizarCompra = document.getElementById("btnPagar")
+    btnRealizarCompra.addEventListener("click", ()=>{
+        almacenarCarritoPagado()
     })
+
+    closeModal()
+
+    modal.showModal();
 }
-
-
 
