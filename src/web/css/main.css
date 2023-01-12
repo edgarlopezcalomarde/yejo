@@ -1158,7 +1158,7 @@ table {
   font-size: 64px;
 }
 .c-article__voidtitle {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 24px;
 }
@@ -1173,7 +1173,7 @@ table {
   object-fit: cover;
 }
 .c-article__name {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
@@ -1223,7 +1223,7 @@ table {
   border-radius: 4px;
 }
 .c-preview__name {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 30px;
 }
@@ -1322,14 +1322,24 @@ table {
   gap: 10px;
 }
 .c-card__name {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 20px;
+  text-overflow: clip;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .c-card__description {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   height: 90px;
+  text-overflow: clip;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .c-card__price {
   font-family: "Nunito", sans-serif;
@@ -1357,7 +1367,7 @@ table {
   font-size: 30px;
   margin-top: 24px;
   margin-bottom: 24px;
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .c-formulario {
@@ -1413,7 +1423,7 @@ table {
   cursor: pointer;
 }
 .c-img--login {
-  width: 200px;
+  width: 180px;
 }
 .c-img--icon-s {
   width: 30px;
@@ -1436,16 +1446,21 @@ table {
   padding-bottom: 16px;
   color: #352938;
   background-color: #A4D6B9;
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
 }
 .c-category__item {
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: #352938;
   border-bottom: 2px solid #A4D6B9;
   border-top: 2px solid #A4D6B9;
 }
 .c-category__item:hover {
+  border-bottom: 2px solid #352938;
+}
+.c-category__item:focus {
   border-bottom: 2px solid #352938;
 }
 .c-category__item--selected {
@@ -1488,13 +1503,13 @@ table {
   align-content: flex-end;
 }
 .c-list__header {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 .c-list__subheader {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 16px;
@@ -1516,23 +1531,24 @@ table {
   flex-direction: column;
   align-items: center;
   min-width: 400px;
-  gap: 24px;
 }
 .c-login__body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 80%;
+  width: 70%;
+  margin-bottom: 16px;
 }
 .c-login__input {
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 }
 .c-login__label {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #352938;
+  margin-bottom: 6px;
 }
 
 .c-compromiso {
@@ -1568,7 +1584,7 @@ table {
   gap: 12px;
 }
 .c-newsletter__title {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
@@ -1592,7 +1608,7 @@ table {
   padding-right: 12px;
 }
 .c-product__name {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 14px;
 }
@@ -1634,7 +1650,7 @@ table {
   font-weight: 500;
 }
 .c-input--creditcard {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600;
   margin-bottom: 10px;
   background: rgba(217, 217, 217, 0.039);

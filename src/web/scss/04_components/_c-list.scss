@@ -9,14 +9,16 @@
    
    
     &__header{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-size: getFontSize("m");
         font-weight: getFontWeight(6);
         margin-bottom: getMargin(6);
     }
 
     &__subheader{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-size: getFontSize("m");
         font-weight: getFontWeight(7);
         margin-bottom: getMargin(6);

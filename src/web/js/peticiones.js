@@ -34,4 +34,29 @@ const loadAllProducts = () => new Promise((resolve, reject)=>{
 })
 
 
+const findUser = (user, password) => new Promise((resolve, reject) =>{
+    let peticion = request("GET", usersUrl + "?nickname=" + user, "json");
+
+    peticion.addEventListener("load", () => {
+        resolve(peticion.response)
+    })
+
+    peticion.addEventListener("error", () => {
+        reject(peticion.response)
+    })
+
+}) 
+
+const checkUser = (data, user, password) => {
+   
+    if (data[0].nickname == user && data[0].pass == password) {
+        localStorage.setItem("currentuser", 
+            JSON.stringify({
+                id: data[0].id,
+                nick: data[0].nickname,
+                mail: data[0].mail
+            })
+        )
+    }
+}
 

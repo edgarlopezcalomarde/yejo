@@ -241,21 +241,25 @@
         {
             "id":"1",
             "nickname":"juanG",
+            "mail":"juang@gmail.com",
             "pass":"1234"
         },
         {
             "id":"2",
             "nickname":"olgaG",
+            "mail":"olgag@gmail.com",
             "pass":"12345"
         },
         {
             "id":"3",
             "nickname":"yaizaG",
+            "mail":"yaizag@gmail.com",
             "pass":"1234"
         },
         {
             "id":"4",
             "nickname":"edgarG",
+            "mail":"edgarg@gmail.com",
             "pass":"12345"
         }
     ]

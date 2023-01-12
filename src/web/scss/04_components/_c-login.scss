@@ -5,26 +5,27 @@
     align-items: center;
 
     min-width: 400px;
-    gap: getGap(8);
-  
 
     &__body{
         display: flex;
         flex-direction: column;
-        gap: getGap(7);
-        width: 80%;
+        width: 70%;
+        margin-bottom: getMargin(6);
     }
 
     &__input{
         display: flex;
         flex-direction: column; 
+        margin-top: getMargin(5);
     }
 
     &__label{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: getFontWeight(7);
         font-size: getFontSize("m");
         color: getColor("negro", 5);
+        margin-bottom: getMargin(2);
     }
 
   

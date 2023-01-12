@@ -13,7 +13,6 @@ let listaproductos;
 let cart = new Cart()
 let user = new User();
 
-
 const generarCartas = (category) =>{
     modal.innerHTML = ``;
     
@@ -143,62 +142,30 @@ const generarTarjetasMore = (productos) =>{
 
 
 btnSkincare.addEventListener("click",()=>{
-
-    btnSkincare.checked = true
-
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
-    btnSkincare.style.borderBottom ='2px solid black'
-    btnBodycare.style.borderBottom ='2px solid transparent'
-    btnOthers.style.borderBottom ='2px solid transparent'
-    btnHaircare.style.borderBottom ='2px solid transparent'
-   
     generarCartas("skincare")
-    
-
 })
 
 btnBodycare.addEventListener("click",()=>{
-
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
-    btnSkincare.style.borderBottom ='2px solid transparent'
-    btnBodycare.style.borderBottom = '2px solid black'
-    btnOthers.style.borderBottom ='2px solid transparent'
-    btnHaircare.style.borderBottom ='2px solid transparent'
-
     generarCartas("bodycare")
-  
 })
 
 
 btnOthers.addEventListener("click",()=>{
-
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
-    btnSkincare.style.borderBottom = '2px solid transparent'
-    btnBodycare.style.borderBottom ='2px solid transparent'
-    btnOthers.style.borderBottom = '2px solid black'
-    btnHaircare.style.borderBottom ='2px solid transparent'
-
     generarCartas("others")
-
-  
 })
 
 
 btnHaircare.addEventListener("click",()=>{
-
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
-    btnSkincare.style.borderBottom = '2px solid transparent'
-    btnBodycare.style.borderBottom ='2px solid transparent'
-    btnOthers.style.borderBottom ='2px solid transparent'
-    btnHaircare.style.borderBottom ='2px solid black' 
-
     generarCartas("haircare")
 })
-
 
 
 /*Al cargar la pagina*/

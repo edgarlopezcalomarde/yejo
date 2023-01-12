@@ -11,7 +11,7 @@
 
     <script src="https://kit.fontawesome.com/a6732e9bd4.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/icono.ico" type="image/x-icon">
 </head>
 <body class="g--background-color-blanco-3">
@@ -26,12 +26,14 @@
 
             <img class="c-img c-img--logo" src="./assets/img/logo.png" id="logo">
 
-            <div class="c-menu__item c-menu__item--left">
+            <p class="c-menu__item--left" id="currentUserNick"></p>
+
+            <div class="c-menu__item">
                 <img class="c-img c-img--icon-s" id="btnLogin" src="./assets/img/perfil.png" alt="perfil">
             </div>
-            <div class="c-menu__item">
+            <!-- <div class="c-menu__item">
                 <img class= "c-img c-img--icon-s" id="btnFavoritos" src="./assets/img/heart2.png" alt="favoritos">
-            </div>
+            </div> -->
             <div class="c-menu__item">
                 <img class="c-img c-img--icon-s" id="btnHistory" src="./assets/img/order.png"  alt="compra">
             </div>
@@ -42,10 +44,10 @@
         </div>
 
         <div class="c-category">
-            <div class="c-category__item" id="skincare">Skincare</div>
-            <div class="c-category__item" id="haircare">Haircare</div>
-            <div class="c-category__item" id="bodycare">Bodycare</div>
-            <div class="c-category__item" id="others">Others</div>
+            <a href="#" class="c-category__item" id="skincare">Skincare</a>
+            <a href="#" class="c-category__item" id="haircare">Haircare</a>
+            <a href="#" class="c-category__item" id="bodycare">Bodycare</a>
+            <a href="#" class="c-category__item" id="others">Others</a>
         </div>
     </header>
 
@@ -196,6 +198,7 @@
 
     <dialog class="c-modal" id="modal"></dialog>
 
+    <script src="./js/validaciones.js"></script>
     <script src="./js/peticiones.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/user.js"></script>

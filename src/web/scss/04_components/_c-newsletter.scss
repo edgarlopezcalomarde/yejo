@@ -7,7 +7,8 @@
     gap: getGap(5);
 
     &__title{
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-size: getFontSize("m");
         font-weight: getFontWeight(7);
     }

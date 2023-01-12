@@ -24,16 +24,28 @@
     }
 
     &__name {
-        font-family: 'Libre Baskerville', serif;
+        // font-family: 'Libre Baskerville', serif;
+        font-family: 'Outfit', sans-serif;
         font-weight: getFontWeight(7);
         font-size: getFontSize("xl");
+
+        text-overflow: clip;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
 
     &__description {
         font-family: 'Nunito', sans-serif;
         font-size: getFontSize("m");
         height: 90px;
-        
+
+        text-overflow: clip;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 
     &__price {
