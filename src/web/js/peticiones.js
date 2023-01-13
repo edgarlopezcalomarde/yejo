@@ -39,7 +39,6 @@ const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + us
 
 
 /*Operaciones*/
-  
 const checkUser = (data, user, password) => {
    
     if (data[0].nickname == user && data[0].pass == password) {
@@ -90,6 +89,7 @@ const almacenarCarritoPagado = () =>{
     getCarrito(cart.cartid)
     .then(res =>{
         cart.status = "pagado"
+        cart.totalprice = cart.total
         updatePedido(res[0].id,cart)
         .then(res => {
             console.log(res)

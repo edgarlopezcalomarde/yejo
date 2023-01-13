@@ -1619,6 +1619,13 @@ table {
   object-fit: cover;
 }
 
+.c-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #EFF6F6;
+}
+
 .c-input {
   border: 0;
   outline: none;
