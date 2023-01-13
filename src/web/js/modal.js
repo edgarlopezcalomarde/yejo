@@ -6,24 +6,25 @@ const btnHistory = document.querySelector("#btnHistory");
 function closeModal() {
     const btnCloseModal = document.querySelector("#btnCloseModal");
     btnCloseModal.addEventListener("click", () => {
-        modal.style.backgroundColor = "#FFFFFF";
+        modal.classList.remove("g--background-color-alternativo-6")
         modal.close()
     });
 }
+
 modal.addEventListener("close", () => {
     document.body.style.overflow = "auto"
-    modal.style.backgroundColor = "#FFFFFF";
+    
 })
 
 modal.addEventListener("keydown", (e) => {
     if (e.key == "Escape") {
-        modal.style.backgroundColor = "#FFFFFF";
+        modal.classList.remove("g--background-color-alternativo-6")
     }
 })
 
-if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
+if (localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null) {
     const nicknameBox = document.querySelector("#currentUserNick")
-    let currentUser =JSON.parse(localStorage.getItem("currentuser"))
+    let currentUser = JSON.parse(localStorage.getItem("currentuser"))
     nicknameBox.innerHTML = currentUser.nick
     btnHistory.parentNode.classList.remove("g--oculto")
 }
@@ -80,7 +81,7 @@ const productModal = (productos) => {
 
 /* ---------- Carrito Modal -------------- */
 
-const pintarCarrito  = () =>{
+const pintarCarrito = () => {
     document.body.style.overflow = "hidden"
 
     let cartBox = `
@@ -107,8 +108,8 @@ const pintarCarrito  = () =>{
 
         let articulos = ""
 
-        cart.cart.forEach(art=>{
-            articulos +=`
+        cart.cart.forEach(art => {
+            articulos += `
             <div class="c-article" artId="${art.id}"> 
                 <img src="./assets/img/${art.id}sort.png" alt="articleimg" class="c-article__img">
                 <div class="c-article__info">
@@ -149,27 +150,27 @@ const pintarCarrito  = () =>{
 
 
     if (!cart.cart.length < 1) {
-     
+
         const btnsAddOne = document.querySelectorAll(".btnAddOne")
         const btnsRemoveOne = document.querySelectorAll(".btnRemoveOne")
         const btnsDelete = document.querySelectorAll(".btnDelete")
 
-        btnsAddOne.forEach(btn=>{
-            btn.addEventListener("click", ()=>{
-                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"),"+")
-                pintarCarrito()  
-            })
-        })
-
-        btnsRemoveOne.forEach(btn=>{
-            btn.addEventListener("click", ()=>{
-                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"),"-")
+        btnsAddOne.forEach(btn => {
+            btn.addEventListener("click", () => {
+                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"), "+")
                 pintarCarrito()
             })
         })
 
-        btnsDelete.forEach(btn=>{
-            btn.addEventListener("click", ()=>{
+        btnsRemoveOne.forEach(btn => {
+            btn.addEventListener("click", () => {
+                cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"), "-")
+                pintarCarrito()
+            })
+        })
+
+        btnsDelete.forEach(btn => {
+            btn.addEventListener("click", () => {
                 cart.removeItem(btn.parentNode.parentNode.getAttribute("artId"))
                 pintarCarrito()
             })
@@ -177,12 +178,12 @@ const pintarCarrito  = () =>{
 
 
         const btnPagar = document.querySelector("#btnTramitar")
-        btnPagar.addEventListener("click", () => { almacenarCarritoPendiente()})
+        btnPagar.addEventListener("click", () => { almacenarCarritoPendiente() })
 
     }
 
     closeModal()
-    
+
 }
 
 
@@ -196,7 +197,7 @@ btnCart.addEventListener("click", () => {
 
 /* ---------- History Modal -------------- */
 
-const pintarOrders = (orders) =>{
+const pintarOrders = (orders) => {
     document.body.style.overflow = "hidden"
     let ordersBox = ""
 
@@ -210,8 +211,8 @@ const pintarOrders = (orders) =>{
             <td class="c-table__item c-table__item--status-pay">${order.status}</td>    
             <td class="c-table__item c-table__item--status-pending g--oculto">${order.status}</td>    
             <td class="c-table__item c-table__item--btns">
-                <a href="#" class="c-button c-button--primario-normal">Recuperar</a>
-                <a href="#" class="c-button c-button--primario-peligroso">Eliminar</a>
+                <a href="#" id="${order.id}_recuperar" class="c-button c-button--primario-normal">Recuperar</a>
+                <a href="#" id="${order.id}_eliminar" class="c-button c-button--primario-peligroso">Eliminar</a>
             </td>
         </tr>
         `
@@ -239,23 +240,31 @@ const pintarOrders = (orders) =>{
         </tbody>
         </table>
     </div>
-    `
- 
+    `;
+    orders.forEach(e => {
+        document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
+        // document.getElementById(e.id+"_eliminar").addEventListener("click", () => {recuperarPedido(e)});
+    })
 }
 
+function recuperarPedido(order) {
+    cart.cartid = order.cartid;
+    cart.cart = order.cart;
+    pintarCarrito()
+}
 
 btnHistory.addEventListener("click", () => {
     getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
-    .then(orders =>{
-        pintarOrders(orders)
-        closeModal()
-    })
+        .then(orders => {
+            pintarOrders(orders)
+            closeModal()
+        })
 
     modal.showModal();
 });
 
 
-/* ---------- User, Login y Register Modal --------------*/ 
+/* ---------- User, Login y Register Modal --------------*/
 
 let loginRegisterBox = `
 <div class="c-modal__header">
@@ -338,60 +347,60 @@ let loginRegisterBox = `
 </div>
 `
 
-function loginRegister(){
+function loginRegister() {
     modal.innerHTML = loginRegisterBox
 
     const btnIrRegister = document.querySelector("#btnIrRegister");
     const btnIrLogin = document.querySelector("#btnIrLogin");
-    const loginBox =  document.querySelector("#loginBox");
+    const loginBox = document.querySelector("#loginBox");
     const registerBox = document.querySelector("#registerBox");
     const userBox = document.querySelector("#userBox");
     const btnCerrarSesion = document.querySelector("#btnCerrarSesion");
 
-    const usernickname  = document.querySelector("#usernickname");
-    const usermail  = document.querySelector("#usermail");
+    const usernickname = document.querySelector("#usernickname");
+    const usermail = document.querySelector("#usermail");
     const nicknameBox = document.querySelector("#currentUserNick")
 
-    btnIrRegister.addEventListener("click", ()=>{
-        loginBox.classList.add("g--oculto")  
-        registerBox.classList.remove("g--oculto")   
+    btnIrRegister.addEventListener("click", () => {
+        loginBox.classList.add("g--oculto")
+        registerBox.classList.remove("g--oculto")
     })
 
-    btnIrLogin.addEventListener("click", ()=>{
-        loginBox.classList.remove("g--oculto")  
-        registerBox.classList.add("g--oculto")  
+    btnIrLogin.addEventListener("click", () => {
+        loginBox.classList.remove("g--oculto")
+        registerBox.classList.add("g--oculto")
     })
 
     /*BTN INICIAR SESION*/
 
     const btnIniciarSesion = document.querySelector("#btnIniciarSesion")
-    btnIniciarSesion.addEventListener("click", ()=>{
+    btnIniciarSesion.addEventListener("click", () => {
         let loginData = {}
         Array.from(document.forms.login).forEach(input => loginData[input.name] = input.value)
 
-        try{
+        try {
             let response = isEmpty(loginData)
-        
+
             findUser(response.user, response.password)
-            .then(response => {
+                .then(response => {
 
-                loginBox.classList.add("g--oculto")  
-                registerBox.classList.add("g--oculto")   
-                userBox.classList.remove("g--oculto")   
+                    loginBox.classList.add("g--oculto")
+                    registerBox.classList.add("g--oculto")
+                    userBox.classList.remove("g--oculto")
 
-                checkUser(response, loginData.user, loginData.password)
-                
-                let currentUser =JSON.parse(localStorage.getItem("currentuser"))
+                    checkUser(response, loginData.user, loginData.password)
 
-                usernickname.innerHTML = currentUser.nick
-                usermail.innerHTML = currentUser.mail
-                nicknameBox.innerHTML = currentUser.nick
-                btnHistory.parentNode.classList.remove("g--oculto")
-                
-            })
-            .catch(response => console.log(response));
-            
-        }catch(err){
+                    let currentUser = JSON.parse(localStorage.getItem("currentuser"))
+
+                    usernickname.innerHTML = currentUser.nick
+                    usermail.innerHTML = currentUser.mail
+                    nicknameBox.innerHTML = currentUser.nick
+                    btnHistory.parentNode.classList.remove("g--oculto")
+
+                })
+                .catch(response => console.log(response));
+
+        } catch (err) {
             console.log(err.msg)
         }
 
@@ -402,33 +411,33 @@ function loginRegister(){
 
 
     /*BTN CERRAR SESION*/
-    
-    btnCerrarSesion.addEventListener("click", ()=> {
+
+    btnCerrarSesion.addEventListener("click", () => {
         localStorage.setItem("currentuser", "")
-        loginBox.classList.remove("g--oculto")     
-        userBox.classList.add("g--oculto")   
+        loginBox.classList.remove("g--oculto")
+        userBox.classList.add("g--oculto")
         nicknameBox.innerHTML = ""
         btnHistory.parentNode.classList.add("g--oculto")
     })
 
 
-    if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
-        loginBox.classList.add("g--oculto")  
-        registerBox.classList.add("g--oculto")   
-        userBox.classList.remove("g--oculto")  
-        
+    if (localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null) {
+        loginBox.classList.add("g--oculto")
+        registerBox.classList.add("g--oculto")
+        userBox.classList.remove("g--oculto")
 
-        let currentUser =JSON.parse(localStorage.getItem("currentuser"))
+
+        let currentUser = JSON.parse(localStorage.getItem("currentuser"))
         usernickname.innerHTML = currentUser.nick
         usermail.innerHTML = currentUser.mail
         nicknameBox.innerHTML = currentUser.nick
-        
-       
 
-    }else{
-        loginBox.classList.remove("g--oculto")  
-        registerBox.classList.add("g--oculto")   
-        userBox.classList.add("g--oculto")  
+
+
+    } else {
+        loginBox.classList.remove("g--oculto")
+        registerBox.classList.add("g--oculto")
+        userBox.classList.add("g--oculto")
     }
 
     closeModal()
@@ -440,10 +449,10 @@ function loginRegister(){
 const btnLogin = document.querySelector("#btnLogin");
 
 
-    btnLogin.addEventListener("click", () => {
-        loginRegister()
-       
-    });
+btnLogin.addEventListener("click", () => {
+    loginRegister()
+
+});
 
 
 
@@ -454,7 +463,7 @@ const btnPagar = document.querySelector("#boton2");
 
 const modalPagar = () => {
 
-    modal.style.backgroundColor = "#FDEAA5";
+
 
     modal.innerHTML = `
     <div class="c-modal__header">
@@ -504,7 +513,7 @@ const modalPagar = () => {
     </div>
     `;
 
-   
+
     let imagen = document.getElementById("imagenTarjeta");
     let metodoPago = document.getElementsByName("pago");
     for (let post = 0; post < metodoPago.length; post++) {
@@ -514,12 +523,12 @@ const modalPagar = () => {
     }
 
     const btnRealizarCompra = document.getElementById("btnPagar")
-    btnRealizarCompra.addEventListener("click", ()=>{
+    btnRealizarCompra.addEventListener("click", () => {
         almacenarCarritoPagado()
     })
 
-    closeModal()
-
+    closeModal();
+    modal.classList.add("g--background-color-alternativo-6");
     modal.showModal();
 }
 

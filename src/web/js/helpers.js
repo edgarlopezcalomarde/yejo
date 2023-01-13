@@ -7,8 +7,8 @@ Date.prototype.fecha = function () {
 }
 
 
-const isEmpty = (data) =>{
-    if(Object.values(data).some(v => v === "")){
+const isEmpty = (data) => {
+    if (Object.values(data).some(v => v === "")) {
         field = Object.keys(data).findIndex(it => data[it] == "")
 
         throw {
@@ -20,9 +20,35 @@ const isEmpty = (data) =>{
 }
 
 
-const passMatches = (pass1, pass2) =>{
-    if(pass1 !== pass2) throw{ msg: `El campo ${Object.keys(data)[field]} no puede estar vacio`}
+const passMatches = (pass1, pass2) => {
+    if (pass1 !== pass2) throw { msg: `El campo ${Object.keys(data)[field]} no puede estar vacio` }
 }
+
+// window.addEventListener("scroll", rular);
+
+
+// function rular() {
+
+//     let banner = document.querySelector("#banner").getBoundingClientRect().top;
+//     if (banner > 0) {
+
+//         Array.from(document.querySelectorAll("c-menu__item")).forEach(
+//             e => {e.style.backgroundColor="black"}
+//         )
+//         Array.from(document.querySelectorAll(".c-category__item")).forEach(
+//             e => e.style.transition = "ease-in-out 1s"
+//         )
+
+//     } else {
+        // Array.from(document.querySelectorAll("c-menu__item")).forEach(
+        //     e => e.style
+        // )
+        // Array.from(document.querySelectorAll(".c-category__item")).forEach(
+        //     e => e.style
+        // )
+//     }
+// }
+
 
 
 
