@@ -1,30 +1,17 @@
-.c-login {
+.c-entry {
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
     min-width: 400px;
 
-    &__body{
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        margin-bottom: getMargin(6);
-    }
-
-    &__input{
-        display: flex;
-        flex-direction: column; 
-        margin-top: getMargin(5);
-    }
 
     &__label{
-        // font-family: 'Libre Baskerville', serif;
         font-family: 'Outfit', sans-serif;
         font-weight: getFontWeight(7);
         font-size: getFontSize("m");
         color: getColor("negro", 5);
+        margin-top: getMargin(5);
         margin-bottom: getMargin(2);
     }
 

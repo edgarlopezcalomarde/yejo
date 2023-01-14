@@ -31,6 +31,7 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
 /*Peticiones*/ 
 const loadAllProducts = () => request("GET", cosmeticsUrl, "json")
 const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
+const registerUser = (user) =>  request("POST", usersUrl, "json", user)
 const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
 const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
 const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
@@ -39,18 +40,6 @@ const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + us
 
 
 /*Operaciones*/
-const checkUser = (data, user, password) => {
-   
-    if (data[0].nickname == user && data[0].pass == password) {
-        localStorage.setItem("currentuser", 
-            JSON.stringify({
-                id: data[0].id,
-                nick: data[0].nickname,
-                mail: data[0].mail
-            })
-        )
-    }
-}
 
 const almacenarCarritoPendiente = () =>{
 

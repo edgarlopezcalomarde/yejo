@@ -266,89 +266,68 @@ btnHistory.addEventListener("click", () => {
 
 /* ---------- User, Login y Register Modal --------------*/
 
-let loginRegisterBox = `
+let entry = `
 <div class="c-modal__header">
     <div class="c-modal__title"></div>
     <div class="c-modal__close"  id="btnCloseModal">&times;</div>
 </div>
-<div id="loginBox">
-    <div class="c-login">
-        <div class="c-login__header">
-            <img src="./assets/img/img_login.png" alt="login" id="login" class="c-img c-img--login">
-        </div>
-        <div class="c-login__body">
 
-            <form name="login">
+<div class="c-entry" id="loginBox">
 
-                <div class="c-login__input">
-                    <label for="user" class="c-login__label" >Correo electrónico: </label>
-                    <input type="text" name="user" class="c-input c-input--login" placeholder="pepe@gmail.com">
-                </div>
-                
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" placeholder="Tú contraseña">
-                </div>
+    <h2 class="c-title c-title--xl">Iniciar Sesion</h2>
 
-            </form>
+    <form name="login" class="l-flex l-flex--direction-column" style="width:80%;">
+        <label for="user" class="c-entry__label" >Usuario: </label>
+        <input type="text" name="user" class="c-input c-input--entry" placeholder="pepe@gmail.com">
+            
+        <label for="password" class="c-entry__label">Contraseña: </label>
+        <input type="password" name="password" class="c-input c-input--entry" placeholder="Tú contraseña">
+    </form>
 
-        </div>
-        <button id="btnIniciarSesion" class="c-button c-button--primario-normal">Login</button>
-        <p id="btnIrRegister" class="c-button g--margin-top-5">¿No tienes cuenta? Registrate</p>
-    </div>
+    <div class="g--margin-vertical-5"></div>
+
+    <button id="btnIniciarSesion" class="c-button c-button--primario-normal" style="width:80%;">Inicia Sesion</button>
+    <p id="btnIrRegister" class="c-button g--margin-top-5">¿No tienes cuenta? Registrate</p>
 </div>
 
-<div id="registerBox" class="g--oculto">
-    <div class="c-login">
-        <div class="c-login__header">
-            <img src="./assets/img/img_login.png" alt="login" id="login" class="c-img c-img--login">
-        </div>
-        <div class="c-login__body">
+<div class="c-entry g--oculto" id="registerBox">
 
-            <form name="register">
-                <div class="c-login__input">
-                    <label for="email" class="c-login__label" >Correo electrónico: </label>
-                    <input type="text" name="correo" class="c-input c-input--login" placeholder="pepe@gmail.com">
-                </div>
-                
-                <div class="c-login__input">
-                    <label for="user" class="c-login__label">Usuario: </label>
-                    <input type="password" name="user" class="c-input c-input--login" placeholder="pepe15">
-                </div>
+    <h2 class="c-title c-title--xl">Crea tu Cuenta</h2>
 
-                <div class="c-login__input">
-                    <label for="password" class="c-login__label">Contraseña: </label>
-                    <input type="password" name="password" class="c-input c-input--login" placeholder="Escribe una contraseña">
-                </div>
+    <form name="register" class="l-flex l-flex--direction-column" style="width:80%;">
+        <label for="email" class="c-entry__label" >Correo electrónico: </label>
+        <input type="text" name="mail" class="c-input c-input--entry" placeholder="pepe@gmail.com">
 
-                <div class="c-login__input">
-                    <label for="repassword" class="c-login__label">Repetir Contraseña: </label>
-                    <input type="password" name="repassword" class="c-input c-input--login" placeholder="Repite la contraaseña">
-                </div>
-            </form>
+        <label for="user" class="c-entry__label">Usuario: </label>
+        <input type="text" name="nickname" class="c-input c-input--entry" placeholder="pepe15">
 
-        </div>
-        <button id="btnRegister" class="c-button c-button--primario-normal">Register</button>
-        <p id="btnIrLogin" class="c-button g--margin-top-5">¿Ya tienes cuenta? Inicia Sesion</p>
-    </div>
+        <label for="password" class="c-entry__label">Contraseña: </label>
+        <input type="password" name="password" class="c-input c-input--entry" placeholder="Escribe una contraseña">
+
+        <label for="repassword" class="c-entry__label">Repetir Contraseña: </label>
+        <input type="password" name="repassword" class="c-input c-input--entry" placeholder="Repite la contraaseña">
+
+    </form>
+
+    <div class="g--margin-vertical-5"></div>
+    <button id="btnRegister" class="c-button c-button--primario-normal" style="width:80%;">Registrate</button>
+    <p id="btnIrLogin" class="c-button g--margin-top-5">¿Ya tienes cuenta? Inicia Sesion</p>
+
 </div>
 
 <div id="userBox" class="g--oculto">
 
-    <div class="c-login">
+    <div class="c-entry">
         <div class="c-title">User Info</div>
-        <div id="usernickname"></div>
-        <br>
-        <div id="usermail"></div>
-        <br>
-        <br>
+        <div id="usernickname" class="g--margin-vertical-5"></div>
+        <div id="usermail" class="g--margin-vertical-5"></div>
         <button id="btnCerrarSesion" class="c-button c-button--primario-normal">Cerrar Sesion</button>
     </div>
 </div>
 `
 
 function loginRegister() {
-    modal.innerHTML = loginRegisterBox
+    modal.innerHTML = entry
 
     const btnIrRegister = document.querySelector("#btnIrRegister");
     const btnIrLogin = document.querySelector("#btnIrLogin");
@@ -374,7 +353,7 @@ function loginRegister() {
     /*BTN INICIAR SESION*/
 
     const btnIniciarSesion = document.querySelector("#btnIniciarSesion")
-    btnIniciarSesion.addEventListener("click", () => {
+    btnIniciarSesion.addEventListener("click", (e) => {
         let loginData = {}
         Array.from(document.forms.login).forEach(input => loginData[input.name] = input.value)
 
@@ -382,32 +361,74 @@ function loginRegister() {
             let response = isEmpty(loginData)
 
             findUser(response.user, response.password)
-                .then(response => {
+                .then(data => {
 
-                    loginBox.classList.add("g--oculto")
-                    registerBox.classList.add("g--oculto")
-                    userBox.classList.remove("g--oculto")
+                    if(data.length > 0){
+                        if (data[0].nickname == response.user && data[0].pass == response.password) {
 
-                    checkUser(response, loginData.user, loginData.password)
+                            console.log("uwu")
+    
+                            loginBox.classList.add("g--oculto")
+                            registerBox.classList.add("g--oculto")
+                            userBox.classList.remove("g--oculto")
+            
+                            localStorage.setItem("currentuser", 
+                                JSON.stringify({
+                                    id: data[0].id,
+                                    nick: data[0].nickname,
+                                    mail: data[0].mail
+                                })
+                            )
+    
+                            let currentUser = JSON.parse(localStorage.getItem("currentuser"))
+    
+                            usernickname.innerHTML = currentUser.nick
+                            usermail.innerHTML = currentUser.mail
+                            nicknameBox.innerHTML = currentUser.nick
+                            btnHistory.parentNode.classList.remove("g--oculto")
+    
+                            modal.close() 
+                        }else{
+                            alert("Nombre de usuario o contraseña incorrectos")
+                        }
 
-                    let currentUser = JSON.parse(localStorage.getItem("currentuser"))
+                    }else{
+                        alert("Nombre de usuario o contraseña incorrectos")
+                    }
 
-                    usernickname.innerHTML = currentUser.nick
-                    usermail.innerHTML = currentUser.mail
-                    nicknameBox.innerHTML = currentUser.nick
-                    btnHistory.parentNode.classList.remove("g--oculto")
-
+                     
                 })
                 .catch(response => console.log(response));
 
         } catch (err) {
-            console.log(err.msg)
+            alert(err.msg)
         }
 
     })
 
 
     /*BTN REGISTRARSE*/
+    const btnRegister = document.querySelector("#btnRegister")
+    btnRegister.addEventListener("click", ()=>{
+        let registerData = {}
+        Array.from(document.forms.register).forEach(input => registerData[input.name] = input.value);
+
+        try {
+            let data = isEmpty(registerData);
+            passMatches(data.password, data.repassword);
+         
+        
+            registerUser( {nickname:data.nickname,mail:data.mail,pass:data.password} )
+            .then(response => {
+                console.log(response)
+                
+            }).catch(err => console.log(err));
+
+        } catch (err) {
+            alert(err.msg)
+        }
+       
+    })
 
 
     /*BTN CERRAR SESION*/
@@ -418,6 +439,7 @@ function loginRegister() {
         userBox.classList.add("g--oculto")
         nicknameBox.innerHTML = ""
         btnHistory.parentNode.classList.add("g--oculto")
+        modal.close()
     })
 
 
@@ -451,7 +473,6 @@ const btnLogin = document.querySelector("#btnLogin");
 
 btnLogin.addEventListener("click", () => {
     loginRegister()
-
 });
 
 

@@ -1051,6 +1051,9 @@ table {
   color: #047756;
   border-radius: 0px;
 }
+.c-button--entry {
+  width: 100%;
+}
 
 .c-modal {
   border-radius: 6px;
@@ -1369,6 +1372,9 @@ table {
   margin-bottom: 24px;
   font-family: "Outfit", sans-serif;
 }
+.c-title--xl {
+  font-size: 36px;
+}
 
 .c-formulario {
   width: 600px;
@@ -1526,28 +1532,18 @@ table {
   text-decoration: underline;
 }
 
-.c-login {
+.c-entry {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 400px;
 }
-.c-login__body {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin-bottom: 16px;
-}
-.c-login__input {
-  display: flex;
-  flex-direction: column;
-  margin-top: 12px;
-}
-.c-login__label {
+.c-entry__label {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #352938;
+  margin-top: 12px;
   margin-bottom: 6px;
 }
 
@@ -1635,7 +1631,7 @@ table {
   padding: 4px;
   color: black;
 }
-.c-input--login {
+.c-input--entry {
   border-radius: 4px;
   padding: 10px 20px;
   background-color: #EBE9E5;

@@ -6,4 +6,10 @@
 
     // font-family: 'Libre Baskerville', serif;
     font-family: 'Outfit', sans-serif;
+
+
+
+    &--xl{
+        font-size: getFontSize("4xl");
+    }
 }
