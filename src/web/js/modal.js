@@ -243,7 +243,7 @@ const pintarOrders = (orders) => {
     `;
     orders.forEach(e => {
         document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
-        // document.getElementById(e.id+"_eliminar").addEventListener("click", () => {recuperarPedido(e)});
+        document.getElementById(e.id+"_eliminar").addEventListener("click", () => {eliminarPedido(e.id)});
     })
 }
 
@@ -254,14 +254,18 @@ function recuperarPedido(order) {
 }
 
 btnHistory.addEventListener("click", () => {
-    getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
-        .then(orders => {
-            pintarOrders(orders)
-            closeModal()
-        })
-
-    modal.showModal();
+obtenerPedidos();
 });
+
+const obtenerPedidos = () =>{
+    getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
+    .then(orders => {
+        pintarOrders(orders)
+        closeModal()
+    })
+
+modal.showModal();
+}
 
 
 /* ---------- User, Login y Register Modal --------------*/
