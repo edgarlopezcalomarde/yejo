@@ -4492,4 +4492,7 @@ table {
   margin-right: auto;
 }
 
+.g--transition-ease{
+  transition: ease-in-out 0.8s;
+}
 /*# sourceMappingURL=main.css.map */

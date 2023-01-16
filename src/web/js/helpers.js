@@ -24,30 +24,20 @@ const passMatches = (pass1, pass2) => {
     if (pass1 !== pass2) throw { msg: `El campo ${Object.keys(data)[field]} no puede estar vacio` }
 }
 
-// window.addEventListener("scroll", rular);
+window.addEventListener("scroll", rular);
 
 
-// function rular() {
+function rular() {
 
-//     let banner = document.querySelector("#banner").getBoundingClientRect().top;
-//     if (banner > 0) {
-
-//         Array.from(document.querySelectorAll("c-menu__item")).forEach(
-//             e => {e.style.backgroundColor="black"}
-//         )
-//         Array.from(document.querySelectorAll(".c-category__item")).forEach(
-//             e => e.style.transition = "ease-in-out 1s"
-//         )
-
-//     } else {
-        // Array.from(document.querySelectorAll("c-menu__item")).forEach(
-        //     e => e.style
-        // )
-        // Array.from(document.querySelectorAll(".c-category__item")).forEach(
-        //     e => e.style
-        // )
-//     }
-// }
+    let banner = document.querySelector("#banner").getBoundingClientRect().top;
+    if (banner < 0) {
+        document.querySelector(".c-menu").classList.add("g--padding-vertical-0")
+        document.querySelector(".c-category").classList.add("g--padding-vertical-1")        
+    } else {
+        document.querySelector(".c-menu").classList.remove("g--padding-vertical-0")
+        document.querySelector(".c-category").classList.remove("g--padding-vertical-1")
+    }
+}
 
 
 
