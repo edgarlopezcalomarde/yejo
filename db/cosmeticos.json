@@ -271,6 +271,31 @@
       "date": "16/01/2023",
       "totalprice": 42,
       "id": 2
+    },
+    {
+      "cartid": "1kee78cchs2led5q1m9b5gd",
+      "cart": [
+        {
+          "id": "5",
+          "category": "bodycare",
+          "name": "Hyaluronic Energy Serum",
+          "sortDescription": "Sérum corporal piernas cansadas",
+          "bigDescription": "Sérum en formato de gel. Su fórmula aporta una sensación de alivio y confort inmediatos gracias a 8 activos vegetales: goldenrod, el alga roja, ácido hialurónico vegano, potentes activos naturales marinos.\n    \n    Contribuye al biensestar de la piel, con efecto calmante inmediato, acción antiséptica y antiinflamatoria y además activa la microcirculación y el flujo sanguíneo.\n    Aporta máxima suavidad, firmeza y elasticidad en la piel, sin dejarla pegajosa gracias a su rápida absorción.\n    \n    96% ingredientes de origen natural / Apto para pieles sensibles y atópicas / Apto para embarazadas\n    ",
+          "efficacy": "El 100% de los consumidores confirma que el producto refresca y restaura la sensación de confort de la piel en cualquier momento del día, dejándola suave e hidratada. ",
+          "efficacyAbout": "*Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.",
+          "ingredients": "VEGAN, PARABEN FREE, NON TOXIC, PEG FREE, PEG FREE, MEA FREE, TEA FREE,  SILICONE FREE, ALCOHOL FREE, MINERAL OILS FREE",
+          "quantityType": "ml",
+          "company": "KenzaOil",
+          "quantity": 200,
+          "price": 38,
+          "unidades": 13
+        }
+      ],
+      "userId": 2,
+      "status": "pendiente",
+      "date": "16/01/2023",
+      "totalprice": 494,
+      "id": 3
     }
   ],
   "usuarios": [

@@ -46,25 +46,37 @@ const productModal = (productos) => {
             </div>
 
             <div class="c-modal__body">
-                <div class="c-preview">
-                <img class="c-preview__img" src="./assets/img/${productData.id}.png" alt="productimg" class="c-preview">
-                <div class="c-preview__body">
-                    <div class="c-preview__name">${productData.name}</div>
-                    <div class="c-preview__category">${productData.category}</div>
-                    <div class="c-preview__company">${productData.company}</div>
-                    <div class="c-preview__refs">
-                        <div class="c-preview__price">${productData.price}€</div>
-                        <div class="c-preview__quantity">${productData.quantity + " " + productData.quantityType}</div>
-                    </div>
+                <div class="c-preview" >
+                    <img class="c-preview__img" src="./assets/img/${productData.id}.png" alt="productimg" class="c-preview">
+                    <div class="c-preview__body">
+                        <div class="c-preview__name">${productData.name}</div>
+                        <div class="c-preview__category">${productData.category}</div>
+                        <div class="c-preview__company">${productData.company}</div>
+                        <div class="c-preview__refs">
+                            <div class="c-preview__price">${productData.price}€</div>
+                            <div class="c-preview__quantity">${productData.quantity + " " + productData.quantityType}</div>
+                        </div>
                     <div class="c-preview__description"> ${productData.bigDescription}</div>
                 </div>
             </div>
 
             <div class="c-modal__footer">
-                <div class="c-modal__btn"><a class="c-button c-button--primario-normal">Añadir a la cesta</a></div>
+                <div class="c-modal__btn" artId = "${productData.id}"><a class="c-button c-button--primario-normal addToTheCart">Añadir a la cesta</a></div>
             </div>`
 
             modal.innerHTML = preview
+
+
+            const btnsAddCart = document.querySelectorAll(".addToTheCart")
+            btnsAddCart.forEach(btn =>{
+                btn.addEventListener("click",()=>{
+
+                    const item = listaproductos.find(it => it.id == btn.parentNode.getAttribute("artId"))
+                    cart.addItem(item)
+                  
+                })
+            })
+
 
             const cpreview = document.querySelector(".c-preview")
             cpreview.style.overflowY = "hidden"
