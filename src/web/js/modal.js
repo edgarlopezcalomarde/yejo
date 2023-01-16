@@ -73,6 +73,7 @@ const productModal = (productos) => {
 
                     const item = listaproductos.find(it => it.id == btn.parentNode.getAttribute("artId"))
                     cart.addItem(item)
+                    counter.innerHTML = cart.items;
                   
                 })
             })
@@ -170,6 +171,7 @@ const pintarCarrito = () => {
         btnsAddOne.forEach(btn => {
             btn.addEventListener("click", () => {
                 cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"), "+")
+                counter.innerHTML = cart.items;
                 pintarCarrito()
             })
         })
@@ -177,6 +179,7 @@ const pintarCarrito = () => {
         btnsRemoveOne.forEach(btn => {
             btn.addEventListener("click", () => {
                 cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"), "-")
+                counter.innerHTML = cart.items;
                 pintarCarrito()
             })
         })
@@ -184,6 +187,7 @@ const pintarCarrito = () => {
         btnsDelete.forEach(btn => {
             btn.addEventListener("click", () => {
                 cart.removeItem(btn.parentNode.parentNode.getAttribute("artId"))
+                counter.innerHTML = cart.items;
                 pintarCarrito()
             })
         })

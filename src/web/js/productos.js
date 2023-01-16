@@ -7,6 +7,7 @@ const btnHaircare = document.getElementById("haircare")
 const btnBodycare = document.getElementById("bodycare")
 const btnOthers = document.getElementById("others")
 const btnSkincare = document.getElementById("skincare")
+const counter = document.getElementById("counterProduct")
 
 const randomProductsSection = document.getElementById("moreProducts")
 let listaproductos;
@@ -51,6 +52,8 @@ const generarCartas = (category) =>{
             e.preventDefault()
             e.stopPropagation()
             cart.addItem(item)
+            counter.innerHTML = cart.items;
+
         })
         
     })
@@ -97,6 +100,7 @@ const generarCartasBestSeller = (productos) =>{
             e.preventDefault()
             e.stopPropagation()
             cart.addItem(item)
+            counter.innerHTML = cart.items;
         })
     })
 
