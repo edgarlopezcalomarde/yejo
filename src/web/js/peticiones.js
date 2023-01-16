@@ -36,6 +36,7 @@ const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
 const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
 const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
 const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + user, "json")
+const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
 
 
 
@@ -88,7 +89,5 @@ const almacenarCarritoPagado = () =>{
     })
 
 }
-
-
 
 

@@ -113,13 +113,12 @@ const generarTarjetasMore = (productos) =>{
     let listProducts = ''
 
     productsRandom.forEach(product =>{
-
         listProducts+=`
         <div class="c-product">
             <img class="c-product__img" src="./assets/img/${product.id}.png">
             <div class="c-product__body">
                 <div class="c-product__name">${product.name}</div>
-                <div class="c-card__btn"><button class="c-button c-button--primario-normal btnMore">Más info</button></div>
+                <div class="c-card__btn"><button id class="c-button c-button--primario-normal btnMore">Más info</button></div>
             </div>
         </div>
         `

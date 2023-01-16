@@ -259,8 +259,15 @@ const pintarOrders = (orders) => {
     orders.forEach(e => {
         document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
         document.getElementById(e.id+"_eliminar").addEventListener("click", () => {eliminarPedido(e.id)});
-        document.getElementById(e.id+"_eliminar").addEventListener("click", () => {eliminarPedido(e.id)});
     })
+}
+
+const eliminarPedido = (id) => {
+    deletePedido(id)
+        .then(res => {
+            obtenerPedidos();
+        })
+        .catch(err => console.log(err))
 }
 
 function recuperarPedido(order) {
