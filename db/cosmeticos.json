@@ -231,7 +231,48 @@
       "id": "others"
     }
   ],
-  "pedidos": [],
+  "pedidos": [
+    {
+      "cartid": "128eftjqmdrgd0dpmcjpmhh",
+      "cart": [
+        {
+          "id": "2",
+          "category": "skincare",
+          "name": "Urban face mist",
+          "sortDescription": "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día.",
+          "bigDescription": "Bruma facial que aporta sensación de hidratación, frescura y protección a la piel a cualquier hora del día. Suave bruma facial a base de agua de Cannabis Sativa combinada con un polisacárido de  alto peso molecular, que ejerce de escudo protector, invisible y transpirable frente a la polución ambiental debida a la contaminación atmosférica. Además, contiene Niacinamida, que refuerza el efecto protector de la piel al ayudar a reducir los efectos producidos por la luz azul.\n        \n        95% ingredientes de origen natural / Apto para todo tipo de pieles / Testado dermatológicamente y oftalmológicamente\n        ",
+          "efficacy": "El 100% de los consumidores confirma que el producto reequilibra el bienestar de la piel en cualquier momento del día y el 95%, además, confirma que lo hace mientras la protege de factores externos ambientales.",
+          "efficacyAbout": "*Eficacia subjetiva en 22 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica y oftalmológica.\n        ",
+          "ingredients": "VEGAN, PEG FREE, PARABEN FREE, ALCOHOL FREE, NATURAL ORIGIN FRAGRANCE, SILICONE FREE",
+          "quantityType": "ml",
+          "company": "Secretos del agua",
+          "quantity": 200,
+          "price": 21,
+          "unidades": 1
+        },
+        {
+          "id": "1",
+          "category": "skincare",
+          "name": "Super green concentrated",
+          "sortDescription": "Sérum super nutritivo que ayuda a equilibrar pieles con rojeces o acné.",
+          "bigDescription": "Suero anhidro que contiene Hechy Complex combinado con aceite de semilla de cáñamo combinado con aceite de chía, considerado un “superalimento” antioxidante rico en omega-3 y omega-6, y escualano, un emoliente protector obtenido a través del aceite de oliva. Es una inyección de fitonutrientes naturales para la piel, que le da una extraordinaria sensación de confort, elasticidad, protección, hidratación y suavidad. Se absorbe rápidamente y no deja rastros grasientos.",
+          "efficacy": " El 95%* de los consumidores confirman que el producto aporta suavidad, luminosidad y sensación de confort a la piel.",
+          "efficacyAbout": "*Eficacia subjetiva en 20 consumidores, 2 veces al día durante 4 semanas de uso. Test de uso en laboratorio bajo supervisión dermatológica.",
+          "ingredients": "VEGAN, PARABEN FREE, NATURAL ORIGIN FRAGRANCE, PEG-FREE, NON TOXIC",
+          "quantityType": "ml",
+          "company": "Amapola",
+          "quantity": 100,
+          "price": 21,
+          "unidades": 1
+        }
+      ],
+      "userId": 4,
+      "status": "pendiente",
+      "date": "16/01/2023",
+      "totalprice": 42,
+      "id": 2
+    }
+  ],
   "usuarios": [
     {
       "id": 1,

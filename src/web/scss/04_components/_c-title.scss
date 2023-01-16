@@ -8,6 +8,9 @@
     font-family: 'Outfit', sans-serif;
 
 
+    &--s{
+        font-size: getFontSize("xl");
+    }
 
     &--xl{
         font-size: getFontSize("4xl");

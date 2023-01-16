@@ -61,7 +61,7 @@ const productModal = (productos) => {
             </div>
 
             <div class="c-modal__footer">
-                <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal">Añadir a la cesta</a></div>
+                <div class="c-modal__btn"><a class="c-button c-button--primario-normal">Añadir a la cesta</a></div>
             </div>`
 
             modal.innerHTML = preview
@@ -141,7 +141,7 @@ const pintarCarrito = () => {
         </div>
         <div class="c-modal__footer">
             <div class="c-modal__total">Total: ${cart.total} €</div>
-            <div class="c-modal__btn"><a href="#" class="c-button c-button--primario-normal" id="btnTramitar">Tramitar pedido</a></div>
+            <div class="c-modal__btn"><a  class="c-button c-button--primario-normal" id="btnTramitar">Tramitar pedido</a></div>
         </div>
         `
     }
@@ -199,7 +199,25 @@ btnCart.addEventListener("click", () => {
 
 const pintarOrders = (orders) => {
     document.body.style.overflow = "hidden"
-    let ordersBox = ""
+    let ordersBox = `
+    <div class="c-modal__header">
+    <div class="c-modal__title"></div>
+    <div class="c-modal__close"  id="btnCloseModal">&times;</div>
+</div>
+    
+<div class="c-modal__body">
+    <table class="c-table">
+    <thead class="c-table__header">
+        <tr>
+            <th class="c-table__head">ID pedido</th>
+            <th class="c-table__head">Fecha</th>
+            <th class="c-table__head">Total</th>
+            <th class="c-table__head">Estado</th>
+            <th class="c-table__head">Operaciones</th>
+        </tr>
+    </thead>
+    <tbody class="c-table__body">`
+    
 
     orders.forEach(order => {
 
@@ -211,36 +229,21 @@ const pintarOrders = (orders) => {
             <td class="c-table__item c-table__item--status-pay">${order.status}</td>    
             <td class="c-table__item c-table__item--status-pending g--oculto">${order.status}</td>    
             <td class="c-table__item c-table__item--btns">
-                <a href="#" id="${order.id}_recuperar" class="c-button c-button--primario-normal">Recuperar</a>
-                <a href="#" id="${order.id}_eliminar" class="c-button c-button--primario-peligroso">Eliminar</a>
+                <a id="${order.id}_recuperar" class="c-button c-button--primario-normal">Recuperar</a>
+                <a id="${order.id}_eliminar" class="c-button c-button--primario-peligroso">Eliminar</a>
             </td>
         </tr>
         `
     })
 
-    modal.innerHTML = `
-    <div class="c-modal__header">
-        <div class="c-modal__title"></div>
-        <div class="c-modal__close"  id="btnCloseModal">&times;</div>
-    </div>
-        
-    <div class="c-modal__body">
-        <table class="c-table">
-        <thead class="c-table__header">
-            <tr>
-                <th class="c-table__head">ID pedido</th>
-                <th class="c-table__head">Fecha</th>
-                <th class="c-table__head">Total</th>
-                <th class="c-table__head">Estado</th>
-                <th class="c-table__head">Operaciones</th>
-            </tr>
-        </thead>
-        <tbody class="c-table__body">
-            ${ordersBox}
-        </tbody>
-        </table>
-    </div>
-    `;
+    ordersBox += `
+    </tbody>
+    </table>
+</div>
+    `
+
+    modal.innerHTML = ordersBox
+       
     orders.forEach(e => {
         document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
         document.getElementById(e.id+"_eliminar").addEventListener("click", () => {eliminarPedido(e.id)});
@@ -262,9 +265,8 @@ const obtenerPedidos = () =>{
     .then(orders => {
         pintarOrders(orders)
         closeModal()
+        modal.showModal();
     })
-
-modal.showModal();
 }
 
 

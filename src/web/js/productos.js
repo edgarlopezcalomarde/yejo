@@ -119,7 +119,7 @@ const generarTarjetasMore = (productos) =>{
             <img class="c-product__img" src="./assets/img/${product.id}.png">
             <div class="c-product__body">
                 <div class="c-product__name">${product.name}</div>
-                <div class="c-card__btn"><button class="c-button c-button--primario-normal">Más info</button></div>
+                <div class="c-card__btn"><button class="c-button c-button--primario-normal btnMore">Más info</button></div>
             </div>
         </div>
         `
@@ -127,10 +127,11 @@ const generarTarjetasMore = (productos) =>{
 
     randomProductsSection.innerHTML = listProducts
 
-    const btnsMasInfo = document.querySelectorAll(".c-button--more")
+    const btnsMasInfo = Array.from(document.querySelectorAll(".btnMore"))
 
     btnsMasInfo.forEach(btn=>{
         btn.addEventListener("click", ()=>{
+            console.log("uwu")
             productModal(productos)
         })
     })
