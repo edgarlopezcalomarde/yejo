@@ -13,7 +13,7 @@ function closeModal() {
 
 modal.addEventListener("close", () => {
     document.body.style.overflow = "auto"
-    
+
 })
 
 modal.addEventListener("keydown", (e) => {
@@ -68,13 +68,13 @@ const productModal = (productos) => {
 
 
             const btnsAddCart = document.querySelectorAll(".addToTheCart")
-            btnsAddCart.forEach(btn =>{
-                btn.addEventListener("click",()=>{
+            btnsAddCart.forEach(btn => {
+                btn.addEventListener("click", () => {
 
                     const item = listaproductos.find(it => it.id == btn.parentNode.getAttribute("artId"))
                     cart.addItem(item)
                     counter.innerHTML = cart.items;
-                  
+
                 })
             })
 
@@ -233,7 +233,7 @@ const pintarOrders = (orders) => {
         </tr>
     </thead>
     <tbody class="c-table__body">`
-    
+
 
     orders.forEach(order => {
 
@@ -259,10 +259,10 @@ const pintarOrders = (orders) => {
     `
 
     modal.innerHTML = ordersBox
-       
+
     orders.forEach(e => {
         document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
-        document.getElementById(e.id+"_eliminar").addEventListener("click", () => {eliminarPedido(e.id)});
+        document.getElementById(e.id + "_eliminar").addEventListener("click", () => { eliminarPedido(e.id) });
     })
 }
 
@@ -281,16 +281,16 @@ function recuperarPedido(order) {
 }
 
 btnHistory.addEventListener("click", () => {
-obtenerPedidos();
+    obtenerPedidos();
 });
 
-const obtenerPedidos = () =>{
+const obtenerPedidos = () => {
     getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
-    .then(orders => {
-        pintarOrders(orders)
-        closeModal()
-        modal.showModal();
-    })
+        .then(orders => {
+            pintarOrders(orders)
+            closeModal()
+            modal.showModal();
+        })
 }
 
 
@@ -393,40 +393,40 @@ function loginRegister() {
             findUser(response.user, response.password)
                 .then(data => {
 
-                    if(data.length > 0){
+                    if (data.length > 0) {
                         if (data[0].nickname == response.user && data[0].pass == response.password) {
 
                             console.log("uwu")
-    
+
                             loginBox.classList.add("g--oculto")
                             registerBox.classList.add("g--oculto")
                             userBox.classList.remove("g--oculto")
-            
-                            localStorage.setItem("currentuser", 
+
+                            localStorage.setItem("currentuser",
                                 JSON.stringify({
                                     id: data[0].id,
                                     nick: data[0].nickname,
                                     mail: data[0].mail
                                 })
                             )
-    
+
                             let currentUser = JSON.parse(localStorage.getItem("currentuser"))
-    
+
                             usernickname.innerHTML = currentUser.nick
                             usermail.innerHTML = currentUser.mail
                             nicknameBox.innerHTML = currentUser.nick
                             btnHistory.parentNode.classList.remove("g--oculto")
-    
-                            modal.close() 
-                        }else{
+
+                            modal.close()
+                        } else {
                             alert("Nombre de usuario o contraseña incorrectos")
                         }
 
-                    }else{
+                    } else {
                         alert("Nombre de usuario o contraseña incorrectos")
                     }
 
-                     
+
                 })
                 .catch(response => console.log(response));
 
@@ -439,25 +439,25 @@ function loginRegister() {
 
     /*BTN REGISTRARSE*/
     const btnRegister = document.querySelector("#btnRegister")
-    btnRegister.addEventListener("click", ()=>{
+    btnRegister.addEventListener("click", () => {
         let registerData = {}
         Array.from(document.forms.register).forEach(input => registerData[input.name] = input.value);
 
         try {
             let data = isEmpty(registerData);
             passMatches(data.password, data.repassword);
-         
-        
-            registerUser( {nickname:data.nickname,mail:data.mail,pass:data.password} )
-            .then(response => {
-                console.log(response)
-                
-            }).catch(err => console.log(err));
+
+
+            registerUser({ nickname: data.nickname, mail: data.mail, pass: data.password })
+                .then(response => {
+                    console.log(response)
+
+                }).catch(err => console.log(err));
 
         } catch (err) {
             alert(err.msg)
         }
-       
+
     })
 
 
@@ -583,3 +583,29 @@ const modalPagar = () => {
     modal.showModal();
 }
 
+/* ---------- Modal more --------------*/
+const modalProductMore = (producto) => {
+
+            let preview = `
+            <div class="c-modal__header">
+                <div class="c-modal__title"></div>
+                <div class="c-modal__close" id="btnCloseModal">&times;</div>
+            </div>
+
+            <div class="c-modal__body">
+                <div class="c-preview" >
+                    <img class="c-preview__img" src="./assets/img/${producto.id}.png" alt="productimg" class="c-preview">
+                    <div class="c-preview__body">
+                        <div class="c-preview__name">${producto.name}</div>
+                        <div class="c-preview__description">${producto.bigDescription}</div> 
+                        <div class="c-preview__company">${producto.efficacyAbout}</div>         
+                </div>
+            </div>`;
+
+            modal.innerHTML = preview;
+            const cpreview = document.querySelector(".c-preview")
+            cpreview.style.overflowY = "hidden"
+
+            closeModal()
+            modal.showModal();    
+}
