@@ -5,6 +5,10 @@ Date.prototype.fecha = function () {
     let mes = this.getMonth() + 1 < 10 ? "0" + (this.getMonth() + 1) : (this.getMonth() + 1);
     return dia + "/" + mes + "/" + this.getFullYear()
 }
+Date.prototype.fechaSinDias = function () {
+    let mes = this.getMonth() + 1 < 10 ? "0" + (this.getMonth() + 1) : (this.getMonth() + 1);
+    return mes + "/" + this.getFullYear()
+}
 
 
 const isEmpty = (data) => {

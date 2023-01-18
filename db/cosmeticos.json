@@ -372,7 +372,7 @@
         }
       ],
       "userId": 1,
-      "status": "pendiente",
+      "status": "pagado",
       "date": "18/01/2023",
       "totalprice": 42,
       "id": 5
@@ -393,13 +393,13 @@
           "company": "KenzaOil",
           "quantity": 125,
           "price": 8,
-          "unidades": 2
+          "unidades": 3
         }
       ],
       "userId": 1,
       "status": "pendiente",
       "date": "18/01/2023",
-      "totalprice": 16,
+      "totalprice": 24,
       "id": 6
     }
   ],

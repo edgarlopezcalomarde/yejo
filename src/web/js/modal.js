@@ -1,5 +1,5 @@
 /* ---------- General references -------------- */
-
+let mensajeError="";
 const modal = document.querySelector("#modal");
 const btnHistory = document.querySelector("#btnHistory");
 
@@ -167,7 +167,7 @@ const pintarCarrito = () => {
         const btnsAddOne = document.querySelectorAll(".btnAddOne")
         const btnsRemoveOne = document.querySelectorAll(".btnRemoveOne")
         const btnsDelete = document.querySelectorAll(".btnDelete")
-
+        
         btnsAddOne.forEach(btn => {
             btn.addEventListener("click", () => {
                 cart.modifyItem(btn.parentNode.parentNode.getAttribute("artId"), "+")
@@ -278,6 +278,7 @@ function recuperarPedido(order) {
     cart.cartid = order.cartid;
     cart.cart = order.cart;
     pintarCarrito()
+    counter.innerHTML = cart.items;
 }
 
 btnHistory.addEventListener("click", () => {
@@ -370,6 +371,7 @@ function loginRegister() {
     const usermail = document.querySelector("#usermail");
     const nicknameBox = document.querySelector("#currentUserNick")
 
+
     btnIrRegister.addEventListener("click", () => {
         loginBox.classList.add("g--oculto")
         registerBox.classList.remove("g--oculto")
@@ -395,8 +397,6 @@ function loginRegister() {
 
                     if (data.length > 0) {
                         if (data[0].nickname == response.user && data[0].pass == response.password) {
-
-                            console.log("uwu")
 
                             loginBox.classList.add("g--oculto")
                             registerBox.classList.add("g--oculto")
@@ -435,7 +435,12 @@ function loginRegister() {
         }
 
     })
-
+//arreglar
+    // document.addEventListener("keyup", function(event) {
+    //     if (event.keyCode === 13) {
+    //         alert('Enter is pressed!');
+    //     }
+    // });
 
     /*BTN REGISTRARSE*/
     const btnRegister = document.querySelector("#btnRegister")
@@ -473,12 +478,12 @@ function loginRegister() {
 
 
 
-        cart.cart = localCart.cart
-        cart.cartid = localCart.cartid
-        cart.date = localCart.date
-        cart.status = localCart.status
-        cart.totalprice = localCart.totalprice
-        cart.userId = localCart.userId
+        // cart.cart = localCart.cart
+        // cart.cartid = localCart.cartid
+        // cart.date = localCart.date
+        // cart.status = localCart.status
+        // cart.totalprice = localCart.totalprice
+        // cart.userId = localCart.userId
         counter.innerHTML = cart.items
 
 
@@ -507,7 +512,7 @@ function loginRegister() {
 
     closeModal()
     modal.showModal();
-
+    
 }
 
 
@@ -524,7 +529,6 @@ btnLogin.addEventListener("click", () => {
 
 /* ---------- Pagar Modal --------------*/
 const btnPagar = document.querySelector("#boton2");
-
 const modalPagar = () => {
 
 
@@ -549,7 +553,7 @@ const modalPagar = () => {
             <img id="imagenTarjeta" name="imagenTarjeta" class="c-formulario__img" src="./assets/img/visa.png" alt="icono tarjeta">
             
             <label for="numeroTarjeta" class="c-formulario__texto">Número de tarjeta</label>
-            <input type="text" maxlength="16" name="numeroTarjeta" id="numeroTarjeta" class="c-input c-input--creditcard" placeholder="1234 6969 8400 6755">
+            <input type="text" maxlength="16" name="numeroTarjeta" id="numeroTarjeta" class="c-input c-input--creditcard" placeholder="1234696984006755">
             
             <label for="titular" class="c-formulario__texto">Titular de la tarjeta</label>
             <input type="text" name="titular" id="titular" class="c-input c-input--creditcard" placeholder="Paolo Mongez">
@@ -558,8 +562,9 @@ const modalPagar = () => {
 
                 <div class="l-flex l-flex--direction-column">
                     <label for="mes" class="c-formulario__texto">Fecha de expiración</label>
-                    <input type="date" name="expirar" id="expirar" class="c-input c-input--creditcard">
+                    <input type="text" name="expirar" id="expirar" placeholder="05/2027" class="c-input c-input--creditcard">
                 </div>
+
                 <div class="l-flex l-flex--direction-column g--padding-left-10">
                     <label for="cvc" class="c-formulario__texto">CVC</label>
                     <input type="password" name="cvc" id="cvc" class="c-input c-input--creditcard" placeholder="***"  maxlength="3">
@@ -586,10 +591,11 @@ const modalPagar = () => {
             imagen.src = "./assets/img/" + this.value;
         }
     }
-
+    
     const btnRealizarCompra = document.getElementById("btnPagar")
     btnRealizarCompra.addEventListener("click", () => {
-        almacenarCarritoPagado()
+        comprobarFormulario();
+        mensajeError="";
     })
     const btnVolverCompra = document.getElementById("btnVolver")
     btnVolverCompra.addEventListener("click",()=>{
@@ -600,7 +606,55 @@ const modalPagar = () => {
     modal.classList.add("g--background-color-alternativo-6");
     modal.showModal();
 }
+function comprobarFormulario() {
+    comprobarNumero();
+    comprobarNombre();
+    comprobarFecha();
+    comprobarCvc();
+    if(mensajeError!=0){
+        alert(mensajeError);
+    }else{
+        almacenarCarritoPagado();
+    }
+}
+//  COMPROBAR CAMPOS FORMULARIO
+            //*NOMBRE*
+function comprobarNombre(){
+    // let regExpNombre = /[\p{L} \-]+/;
+    let regExpNombre = /^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)(\s+([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+))*$/;
+    let titular = document.getElementById("titular").value;
+    if(titular.isEmpty || !titular.match(regExpNombre)){
+        mensajeError+="El nombre del debe ser válido.\n";
+    }
+}
+        //*número*
+function comprobarNumero(){
+    //ExpReg: general, visa y mastercard.
+    let regExpCard = /[\d ]{16}/;
+    let regExpVisa = /^4\d{3}-?\d{4}-?\d{4}-?\d{4}$/;
+    let regExpMaster = /^5[1-5]\d{2}-?\d{4}-?\d{4}-?\d{4}$/;
 
+    let numTarjeta = document.getElementById("numeroTarjeta").value;
+    if(numTarjeta.isEmpty || !numTarjeta.match(regExpCard)){
+        mensajeError+="El número de tarjeta debe ser válido.\n";
+    }
+}
+        //*FECHA*
+ function comprobarFecha(){
+    let fechaExp = document.getElementById("expirar").value;
+    if(fechaExp.isEmpty || fechaExp<(new Date()).fechaSinDias()){
+        mensajeError+="La fecha introducida es erronea o la tarjeta esta caducada.\n";
+    }
+ }
+            //*CVC
+ function comprobarCvc(){
+    let regExpcvc = /^[0-9]{3}$/;
+    let cvc = document.getElementById("cvc").value;
+    
+    if(cvc.isEmpty || !cvc.match(regExpcvc)){
+        mensajeError+="CVC incorrecto.\n";
+    }
+ }
 /* ---------- Modal more --------------*/
 const modalProductMore = (producto) => {
 

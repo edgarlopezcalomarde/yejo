@@ -52,14 +52,13 @@ const almacenarCarritoPendiente = () =>{
         cart.status = "pendiente"
 
         getCarrito(cart.cartid).then(response =>{
-            console.log(response)
             if(response.length <= 0){
                 saveCart({...cart})
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             }else{
                 updatePedido(response[0].id,cart)
-                .then(res => console.log(res))
+                
             }
         })
 
@@ -82,7 +81,6 @@ const almacenarCarritoPagado = () =>{
         cart.totalprice = cart.total
         updatePedido(res[0].id,cart)
         .then(res => {
-            console.log(res)
             cart = new Cart() //Vaciar el carrito
         })
         .catch(err => console.log(err))
