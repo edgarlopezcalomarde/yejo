@@ -39,7 +39,6 @@ const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + us
 const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
 
 
-
 /*Operaciones*/
 
 const almacenarCarritoPendiente = () =>{
@@ -72,7 +71,6 @@ const almacenarCarritoPendiente = () =>{
     }
 
 }
-
 
 const almacenarCarritoPagado = () =>{
 

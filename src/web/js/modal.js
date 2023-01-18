@@ -465,10 +465,23 @@ function loginRegister() {
 
     btnCerrarSesion.addEventListener("click", () => {
         localStorage.setItem("currentuser", "")
+        localStorage.setItem("carrito", "")
         loginBox.classList.remove("g--oculto")
         userBox.classList.add("g--oculto")
         nicknameBox.innerHTML = ""
         btnHistory.parentNode.classList.add("g--oculto")
+
+
+       
+            cart.cart =localCart.cart
+            cart.cartid=localCart.cartid
+            cart.date = localCart.date
+            cart.status = localCart.status
+            cart.totalprice = localCart.totalprice
+            cart.userId = localCart.userId
+            counter.innerHTML =  cart.items
+        
+
         modal.close()
     })
 

@@ -9,8 +9,7 @@ class Cart{
 		this.totalprice = 0
     }
 
-    addItem(item){
-        
+    addItem(item){     
         if(this.cart.includes(item)){
 			this.cart.find(art=> art.id == item.id).unidades +=1
 		}else{
@@ -18,11 +17,15 @@ class Cart{
 			this.cart.push(item)	
 		}
 
+		localStorage.setItem("carrito", JSON.stringify(this))
     }
 
     removeItem(id){
         const index = this.cart.findIndex(item=> item.id == id)
         this.cart.splice(index, 1)
+
+	
+		localStorage.setItem("carrito", JSON.stringify(this))
     }
 
     modifyItem(id,n){	
@@ -39,6 +42,9 @@ class Cart{
 				this.removeItem(articulo.id)
 			}
 		}
+
+
+		localStorage.setItem("carrito", JSON.stringify(this))
 	}	
 			
 	get total(){

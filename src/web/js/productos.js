@@ -17,6 +17,8 @@ let cart = new Cart()
 const generarCartas = (category) => {
     modal.innerHTML = ``;
 
+    ocultarVistaPrincipal()
+    
     let productsFilterByCategory = listaproductos.filter(product => product.category == category)
 
     let cartas = ""
@@ -56,8 +58,6 @@ const generarCartas = (category) => {
     productModal(listaproductos)
 
 }
-
-
 
 const generarCartasBestSeller = (productos) => {
     const productsCopy = [...productos].sort((a, b) => 0.5 - Math.random());
@@ -113,7 +113,6 @@ const generarCartasBestSeller = (productos) => {
 
 }
 
-
 const generarTarjetasMore = (productos) => {
     const productsCopy = [...productos].sort((a, b) => 0.5 - Math.random());
     const productsRandom = productsCopy.slice(0, 6)
@@ -137,42 +136,35 @@ const generarTarjetasMore = (productos) => {
     })
 }
 
-
-
-btnSkincare.addEventListener("click", () => {
+const ocultarVistaPrincipal = () =>{
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
-    generarCartas("skincare")
-})
+}
 
-btnBodycare.addEventListener("click", () => {
-    bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.parentNode.style.display = 'none'
-    generarCartas("bodycare")
-})
-
-
-btnOthers.addEventListener("click", () => {
-    bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.parentNode.style.display = 'none'
-    generarCartas("others")
-})
-
-
-btnHaircare.addEventListener("click", () => {
-    bannerSection.style.display = 'none'
-    randomProductsSection.parentNode.parentNode.style.display = 'none'
-    generarCartas("haircare")
-})
+/*Filtrar por categoria*/ 
+btnSkincare.addEventListener("click",()=>{ generarCartas("skincare")})
+btnBodycare.addEventListener("click",()=>{ generarCartas("bodycare")})
+btnOthers.addEventListener("click",()=>{ generarCartas("others")})
+btnHaircare.addEventListener("click",()=>{ generarCartas("haircare")})
 
 
 /*Al cargar la pagina*/
-
-window.onload = () => {
+window.onload = ()=>{
 
     const logo = document.querySelector("#logo")
-    logo.addEventListener("click", () => { location.href = location.pathname })
-
+    logo.addEventListener("click", ()=>{location.href = location.pathname})
+    
+    /*Carrito session*/
+    if(localStorage.getItem("carrito") != "" && localStorage.getItem("carrito") != undefined){
+        const localCart = JSON.parse(localStorage.getItem("carrito"))
+        cart.cart =localCart.cart
+        cart.cartid=localCart.cartid
+        cart.date = localCart.date
+        cart.status = localCart.status
+        cart.totalprice = localCart.totalprice
+        cart.userId = localCart.userId
+        counter.innerHTML =  cart.items
+    }
 
     loadAllProducts()
         .then(response => {
