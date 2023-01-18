@@ -1,35 +1,51 @@
-@each $key in getMarginKeys(){
+@each $key in getMarginKeys() {
 
-    .g--margin-#{$key}{
+    .g--margin-#{$key} {
         margin: getMargin($key);
     }
-    
-    .g--margin-horizontal-#{$key}{
+
+    .g--margin-horizontal-#{$key} {
         margin-left: getMargin($key);
         margin-right: getMargin($key);
     }
 
-    .g--margin-vertical-#{$key}{
+    .g--margin-vertical-#{$key} {
         margin-top: getMargin($key);
         margin-bottom: getMargin($key);
     }
 
-    .g--margin-top-#{$key}{
+    .g--margin-top-#{$key} {
         margin-top: getMargin($key);
     }
 
-    .g--margin-bottom-#{$key}{
+    .g--margin-bottom-#{$key} {
         margin-bottom: getMargin($key);
     }
 
-    .g--margin-left-#{$key}{
+    .g--margin-left-#{$key} {
         margin-left: getMargin($key);
     }
 
-    .g--margin-right-#{$key}{
+    .g--margin-right-#{$key} {
         margin-right: getMargin($key);
     }
 
+}
+
+.g--margin-right-auto {
+    margin-right: auto;
+}
+
+.g--margin-left-auto {
+    margin-left: auto;
+}
+
+.g--margin-top-auto {
+    margin-top: auto;
+}
+
+.g--margin-bottom-auto {
+    margin-bottom: auto;
 }
 
 

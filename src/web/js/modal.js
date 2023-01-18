@@ -5,8 +5,8 @@ const btnHistory = document.querySelector("#btnHistory");
 
 function closeModal() {
     const btnCloseModal = document.querySelector("#btnCloseModal");
+    modal.classList.remove("g--background-color-alternativo-6")
     btnCloseModal.addEventListener("click", () => {
-        modal.classList.remove("g--background-color-alternativo-6")
         modal.close()
     });
 }
@@ -472,15 +472,15 @@ function loginRegister() {
         btnHistory.parentNode.classList.add("g--oculto")
 
 
-       
-            cart.cart =localCart.cart
-            cart.cartid=localCart.cartid
-            cart.date = localCart.date
-            cart.status = localCart.status
-            cart.totalprice = localCart.totalprice
-            cart.userId = localCart.userId
-            counter.innerHTML =  cart.items
-        
+
+        cart.cart = localCart.cart
+        cart.cartid = localCart.cartid
+        cart.date = localCart.date
+        cart.status = localCart.status
+        cart.totalprice = localCart.totalprice
+        cart.userId = localCart.userId
+        counter.innerHTML = cart.items
+
 
         modal.close()
     })
@@ -572,7 +572,8 @@ const modalPagar = () => {
 
     <div class="c-modal__footer">
         <div class="l-flex l-flex--justify-content-end">
-            <button id="btnPagar" class="c-button c-button--primario-normal g--margin-top-2">Realizar Pago ( 1500€ )</button>
+            <button id="btnVolver" class="c-button c-button--primario-alternativo g--margin-top-2 g--margin-right-auto">Volver al pedido</button>   
+            <button id="btnPagar" class="c-button c-button--primario-normal g--margin-top-2">Realizar Pago ( ${cart.total}€ )</button>
         </div>
     </div>
     `;
@@ -590,7 +591,11 @@ const modalPagar = () => {
     btnRealizarCompra.addEventListener("click", () => {
         almacenarCarritoPagado()
     })
-
+    const btnVolverCompra = document.getElementById("btnVolver")
+    btnVolverCompra.addEventListener("click",()=>{
+        closeModal()
+        pintarCarrito()
+    })
     closeModal();
     modal.classList.add("g--background-color-alternativo-6");
     modal.showModal();
@@ -599,7 +604,7 @@ const modalPagar = () => {
 /* ---------- Modal more --------------*/
 const modalProductMore = (producto) => {
 
-            let preview = `
+    let preview = `
             <div class="c-modal__header">
                 <div class="c-modal__title"></div>
                 <div class="c-modal__close" id="btnCloseModal">&times;</div>
@@ -615,10 +620,10 @@ const modalProductMore = (producto) => {
                 </div>
             </div>`;
 
-            modal.innerHTML = preview;
-            const cpreview = document.querySelector(".c-preview")
-            cpreview.style.overflowY = "hidden"
+    modal.innerHTML = preview;
+    const cpreview = document.querySelector(".c-preview")
+    cpreview.style.overflowY = "hidden"
 
-            closeModal()
-            modal.showModal();    
+    closeModal()
+    modal.showModal();
 }

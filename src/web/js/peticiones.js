@@ -68,6 +68,8 @@ const almacenarCarritoPendiente = () =>{
 
     }else{
         alert("Debes registrarte primero")
+        modal.close()
+        loginRegister()
     }
 
 }
