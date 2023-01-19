@@ -82,6 +82,7 @@ const almacenarCarritoPagado = () =>{
         updatePedido(res[0].id,cart)
         .then(res => {
             cart = new Cart() //Vaciar el carrito
+            counter.innerHTML = cart.items;
         })
         .catch(err => console.log(err))
     })

@@ -468,25 +468,13 @@ function loginRegister() {
 
     /*BTN CERRAR SESION*/
 
+
     btnCerrarSesion.addEventListener("click", () => {
         localStorage.setItem("currentuser", "")
-        localStorage.setItem("carrito", "")
         loginBox.classList.remove("g--oculto")
         userBox.classList.add("g--oculto")
         nicknameBox.innerHTML = ""
         btnHistory.parentNode.classList.add("g--oculto")
-
-
-
-        // cart.cart = localCart.cart
-        // cart.cartid = localCart.cartid
-        // cart.date = localCart.date
-        // cart.status = localCart.status
-        // cart.totalprice = localCart.totalprice
-        // cart.userId = localCart.userId
-        counter.innerHTML = cart.items
-
-
         modal.close()
     })
 
@@ -512,7 +500,7 @@ function loginRegister() {
 
     closeModal()
     modal.showModal();
-    
+
 }
 
 
@@ -524,11 +512,7 @@ btnLogin.addEventListener("click", () => {
 });
 
 
-
-
-
 /* ---------- Pagar Modal --------------*/
-const btnPagar = document.querySelector("#boton2");
 const modalPagar = () => {
 
 
@@ -615,6 +599,8 @@ function comprobarFormulario() {
         alert(mensajeError);
     }else{
         almacenarCarritoPagado();
+        alert("La compra se realizo con exito!!!")
+        modal.close();
     }
 }
 //  COMPROBAR CAMPOS FORMULARIO
