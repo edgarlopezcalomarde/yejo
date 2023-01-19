@@ -148,6 +148,18 @@ btnOthers.addEventListener("click",()=>{ generarCartas("others")})
 btnHaircare.addEventListener("click",()=>{ generarCartas("haircare")})
 
 
+async function  allproductos(){
+
+    let response = await loadAllProducts()
+    let data = await response.json()
+
+    listaproductos = data;
+    generarCartasBestSeller(data)
+    generarTarjetasMore(data)
+
+}
+
+
 /*Al cargar la pagina*/
 window.onload = ()=>{
 
@@ -166,13 +178,19 @@ window.onload = ()=>{
         counter.innerHTML =  cart.items
     }
 
-    loadAllProducts()
-        .then(response => {
-            listaproductos = response;
-            generarCartasBestSeller(response)
-            generarTarjetasMore(response)
-        })
-        .catch(error => { console.log(error) })
+    allproductos()
+
+    // loadAllProducts()
+    //     .then(response => response.json())
+    //     .then(response =>{
+    //         listaproductos = response;
+    //         generarCartasBestSeller(response)
+    //         generarTarjetasMore(response)
+    //     })
+    //     .catch(error => { console.log(error) }) 
 }
+
+
+
 
 
