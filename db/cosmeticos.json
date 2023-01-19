@@ -433,6 +433,24 @@
       "mail": "ivang@gmail.com",
       "pass": "12345",
       "id": 5
+    },
+    {
+      "nickname": "pepe",
+      "mail": "pepe@gmail.com",
+      "pass": "1234",
+      "id": 6
+    },
+    {
+      "nickname": "pepe",
+      "mail": "pepe@gmail.com",
+      "pass": "1234",
+      "id": 7
+    },
+    {
+      "nickname": "jose",
+      "mail": "jose@gmail.com",
+      "pass": "1234",
+      "id": 8
     }
   ]
 }

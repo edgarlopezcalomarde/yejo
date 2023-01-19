@@ -25,7 +25,7 @@ modal.addEventListener("keydown", (e) => {
 if (localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null) {
     const nicknameBox = document.querySelector("#currentUserNick")
     let currentUser = JSON.parse(localStorage.getItem("currentuser"))
-    nicknameBox.innerHTML = currentUser.nick
+    nicknameBox.innerHTML = "Hola, "+currentUser.nick
     btnHistory.parentNode.classList.remove("g--oculto")
 }
 
@@ -305,7 +305,7 @@ let entry = `
 
 <div class="c-entry" id="loginBox">
 
-    <h2 class="c-title c-title--xl">Iniciar Sesion</h2>
+    <h2 class="c-title c-title--xl">Iniciar Sesión</h2>
 
     <form name="login" class="l-flex l-flex--direction-column" style="width:80%;">
         <label for="user" class="c-entry__label" >Usuario: </label>
@@ -316,9 +316,10 @@ let entry = `
     </form>
 
     <div class="g--margin-vertical-5"></div>
-
-    <button id="btnIniciarSesion" class="c-button c-button--primario-normal" style="width:80%;">Inicia Sesion</button>
-    <p id="btnIrRegister" class="c-button g--margin-top-5">¿No tienes cuenta? Registrate</p>
+    <button id="btnIniciarSesion" class="c-button c-button--primario-normal" style="width:80%;">Inicia Sesión</button>
+    <div class="l-flex l-flex--direction-row" style="font-family:nunito">
+    <div class="g--font-size:m g--margin-top-5" style="font-weight:600">¿No tienes cuenta?</div>&nbsp;&nbsp;&nbsp;<div id="btnIrRegister" class="c-button g--margin-top-5" style="text-decoration: underline;"> Regístrate</div>
+    </div>
 </div>
 
 <div class="c-entry g--oculto" id="registerBox">
@@ -341,18 +342,23 @@ let entry = `
     </form>
 
     <div class="g--margin-vertical-5"></div>
-    <button id="btnRegister" class="c-button c-button--primario-normal" style="width:80%;">Registrate</button>
-    <p id="btnIrLogin" class="c-button g--margin-top-5">¿Ya tienes cuenta? Inicia Sesion</p>
+    <button id="btnRegister" class="c-button c-button--primario-normal" style="width:80%;">Regístrate</button>
+    <div class="l-flex l-flex--direction-row" style="font-family:nunito">
+    <div class="g--font-size:m g--margin-top-5" style="font-weight:600">¿Ya tienes cuenta?</div>&nbsp;&nbsp;&nbsp;<div id="btnIrLogin" class="c-button g--margin-top-5" style="text-decoration: underline;"> Inicia Sesión</div>
+    </div>
 
 </div>
 
 <div id="userBox" class="g--oculto">
 
     <div class="c-entry">
-        <div class="c-title">User Info</div>
-        <div id="usernickname" class="g--margin-vertical-5"></div>
-        <div id="usermail" class="g--margin-vertical-5"></div>
-        <button id="btnCerrarSesion" class="c-button c-button--primario-normal">Cerrar Sesion</button>
+        
+        <div class="l-flex l-flex--direction-column">
+        <div class="c-title">Información del usuario</div>
+        <div id="usernickname" class="g--margin-vertical-5 g--font-size-l g--color-negro-7" style='font-weight:600;font-family:nunito;'></div>
+        <div id="usermail" class="g--margin-vertical-5 g--font-size-l g--color-negro-7" style='font-weight:600;font-family:nunito;'></div>
+        </div>
+        <button id="btnCerrarSesion" class="c-button c-button--primario-normal g--margin-top-10">Cerrar Sesión</button>
     </div>
 </div>
 `
@@ -414,7 +420,7 @@ function loginRegister() {
 
                             usernickname.innerHTML = currentUser.nick
                             usermail.innerHTML = currentUser.mail
-                            nicknameBox.innerHTML = currentUser.nick
+                            nicknameBox.innerHTML = "Hola, "+currentUser.nick
                             btnHistory.parentNode.classList.remove("g--oculto")
 
                             modal.close()
@@ -455,7 +461,8 @@ function loginRegister() {
 
             registerUser({ nickname: data.nickname, mail: data.mail, pass: data.password })
                 .then(response => {
-                    console.log(response)
+                    modal.close();
+                    loginRegister();
 
                 }).catch(err => console.log(err));
 
@@ -486,9 +493,9 @@ function loginRegister() {
 
 
         let currentUser = JSON.parse(localStorage.getItem("currentuser"))
-        usernickname.innerHTML = currentUser.nick
-        usermail.innerHTML = currentUser.mail
-        nicknameBox.innerHTML = currentUser.nick
+        usernickname.innerHTML = "Usuario: "+currentUser.nick
+        usermail.innerHTML = "E-mail: "+currentUser.mail
+        nicknameBox.innerHTML = "Hola, "+currentUser.nick
 
 
 
