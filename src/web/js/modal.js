@@ -54,9 +54,9 @@ const productModal = (productos) => {
                         <div class="c-preview__company">${productData.company}</div>
                         <div class="c-preview__refs">
                             <div class="c-preview__price">${productData.price}€</div>
-                            <div class="c-preview__quantity">${productData.quantity + " " + productData.quantityType}</div>
+                            <div class="c-preview__quantity">${productData.quantity + " " + productData.quantity_type}</div>
                         </div>
-                    <div class="c-preview__description"> ${productData.bigDescription}</div>
+                    <div class="c-preview__description"> ${productData.big_description}</div>
                 </div>
             </div>
 
@@ -128,7 +128,7 @@ const pintarCarrito = () => {
                 <div class="c-article__info">
                     <div class="c-article__name">${art.name}</div>
                     <div class="c-article__category">${art.category}</div>
-                    <div class="c-article__description">${art.sortDescription}</div>
+                    <div class="c-article__description">${art.sort_description}</div>
                 </div>
 
                 <div class="c-article__quantity">
@@ -662,8 +662,8 @@ const modalProductMore = (producto) => {
                     <img class="c-preview__img" src="./assets/img/${producto.id}.png" alt="productimg" class="c-preview">
                     <div class="c-preview__body">
                         <div class="c-preview__name">${producto.name}</div>
-                        <div class="c-preview__description">${producto.bigDescription}</div> 
-                        <div class="c-preview__company">${producto.efficacyAbout}</div>         
+                        <div class="c-preview__description">${producto.big_description}</div> 
+                        <div class="c-preview__company">${producto.efficacy_about}</div>         
                 </div>
             </div>`;
 

@@ -1,4 +1,5 @@
-const cosmeticsUrl = "http://localhost:3000/cosmeticos"
+const cosmeticsUrl = "http://127.0.0.1:8000/api/cosmetico"
+const categoriesUrl = "http://127.0.0.1:8000/api/categoria"
 const usersUrl = "http://localhost:3000/usuarios"
 const ordersUrl = "http://localhost:3000/pedidos"
 
@@ -29,9 +30,8 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
 
 
 /*Peticiones*/ 
-// const loadAllProducts = () => request("GET", cosmeticsUrl, "json")
-// const loadAllProducts = () => fetch("GET",cosmeticsUrl)
-const loadAllProducts = () => fetch(cosmeticsUrl)
+const loadAllProducts = () => request("GET", cosmeticsUrl, "json")
+const loadAllCategories = () => request("GET", categoriesUrl, "json")
 const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
 const registerUser = (user) =>  request("POST", usersUrl, "json", user)
 const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")

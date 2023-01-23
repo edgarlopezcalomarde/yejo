@@ -35,7 +35,7 @@ const generarCartas = (category) => {
             <div class="c-card__body">
                 <div class="c-card__name">${product.name}</div>
                 <div class="c-card__company">${product.company}</div>
-                <div class="c-card__description">${product.sortDescription}</div>
+                <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
                 <div class="c-card__btn"><button id="${product.id}_gnrCartas" class="c-button c-button--primario-normal category">Añadir a la bolsa</button></div>
             </div>
@@ -76,7 +76,7 @@ const generarCartasBestSeller = (productos) => {
             <div class="c-card__body">
                 <div class="c-card__name">${product.name}</div>
                 <div class="c-card__category">${product.category}</div>
-                <div class="c-card__description">${product.sortDescription}</div>
+                <div class="c-card__description">${product.sort_description}</div>
                 <div class="c-card__price">${product.price}€</div>
                 <div class="c-card__btn"><button  id="${product.id}_btnBest" class="c-button c-button--primario-normal top">Añadir a la bolsa</button></div>
             </div>
