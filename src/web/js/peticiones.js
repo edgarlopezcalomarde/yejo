@@ -1,7 +1,10 @@
-const cosmeticsUrl = "http://127.0.0.1:8000/api/cosmetico"
-const categoriesUrl = "http://127.0.0.1:8000/api/categoria"
-const usersUrl = "http://localhost:3000/usuarios"
-const ordersUrl = "http://localhost:3000/pedidos"
+const cosmeticsUrl = "http://127.0.0.1:8000/api/cosmeticos"
+const categoriesUrl = "http://127.0.0.1:8000/api/categorias"
+const ordersUrl = "http://127.0.0.1:8000/api/pedidos"
+const registerUrl = "http://127.0.0.1:8000/api/register"
+const loginUrl = "http://127.0.0.1:8000/api/login"
+
+
 
 /*Funcion auxiliar para ahorrar codigo a la hora de realizar una peticion*/
 const request = (method, url, responsetype, body) =>  new Promise((resolve, reject) => {
@@ -20,7 +23,11 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
     }
 
     result.addEventListener("load", () => {
-        resolve(result.response)
+        if (result.status < 400){
+            resolve(result.response)
+        }else{
+            reject(result.response)
+        }
     })
 
     result.addEventListener("error", () => {
@@ -33,18 +40,20 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
 const loadAllProducts = () => request("GET", cosmeticsUrl, "json")
 const loadAllCategories = () => request("GET", categoriesUrl, "json")
 const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
-const registerUser = (user) =>  request("POST", usersUrl, "json", user)
+const registerUser = (user) =>  request("POST", registerUrl, "json", user)
+const logIn = (user) => request("POST", loginUrl , "json", user)
+
+
 const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
 const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
 const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
-const findUser = (user, password) => request("GET", usersUrl + "?nickname=" + user, "json")
 const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
 
 
 /*Operaciones*/
 
 const almacenarCarritoPendiente = () =>{
-
+  
     if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
         
         const currentUser = JSON.parse(localStorage.getItem("currentuser"))

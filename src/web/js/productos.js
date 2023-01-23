@@ -136,27 +136,39 @@ const generarTarjetasMore = (productos) => {
     })
 }
 
+
+const generarCategorias = (data) =>{
+    const categoriasBox = document.getElementById("categorias");
+
+    data.forEach(cat => {
+        const categoriaItem = document.createElement("a");
+        categoriaItem.classList.add("c-category__item")
+        categoriaItem.id = cat.nombre
+        categoriaItem.appendChild(document.createTextNode(cat.nombre))
+
+        categoriaItem.addEventListener("click", () => {generarCartas(cat.nombre)})
+
+        categoriasBox.appendChild(categoriaItem)
+    })
+  
+}
+
+
 const ocultarVistaPrincipal = () =>{
     bannerSection.style.display = 'none'
     randomProductsSection.parentNode.parentNode.style.display = 'none'
 }
 
-/*Filtrar por categoria*/ 
-btnSkincare.addEventListener("click",()=>{ generarCartas("skincare")})
-btnBodycare.addEventListener("click",()=>{ generarCartas("bodycare")})
-btnOthers.addEventListener("click",()=>{ generarCartas("others")})
-btnHaircare.addEventListener("click",()=>{ generarCartas("haircare")})
 
+async function  allProductosAndCategories(){
 
-async function  allproductos(){
+    let cosmetics = await loadAllProducts()
+    let categories = await loadAllCategories();
 
-    let response = await loadAllProducts()
-    let data = await response.json()
-
-    listaproductos = data;
-    generarCartasBestSeller(data)
-    generarTarjetasMore(data)
-
+    listaproductos = cosmetics;
+    generarCategorias(categories);
+    generarCartasBestSeller(cosmetics)
+    generarTarjetasMore(cosmetics)
 }
 
 
@@ -178,16 +190,9 @@ window.onload = ()=>{
         counter.innerHTML =  cart.items
     }
 
-    allproductos()
 
-    // loadAllProducts()
-    //     .then(response => response.json())
-    //     .then(response =>{
-    //         listaproductos = response;
-    //         generarCartasBestSeller(response)
-    //         generarTarjetasMore(response)
-    //     })
-    //     .catch(error => { console.log(error) }) 
+    /*Cargar Productos y Categorias desde la BBDD*/
+    allProductosAndCategories()
 }
 
 

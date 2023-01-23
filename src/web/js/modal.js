@@ -398,55 +398,37 @@ function loginRegister() {
         try {
             let response = isEmpty(loginData)
 
-            findUser(response.user, response.password)
-                .then(data => {
+            logIn({"nick":response.user, "password":response.password})
+            .then(data =>{
+                loginBox.classList.add("g--oculto")
+                registerBox.classList.add("g--oculto")
+                userBox.classList.remove("g--oculto")
 
-                    if (data.length > 0) {
-                        if (data[0].nickname == response.user && data[0].pass == response.password) {
+                localStorage.setItem("currentuser",
+                    JSON.stringify({
+                        id: data.id,
+                        nick: data.nick,
+                        mail: data.mail,
+                        token: data.token
+                    })
+                )
 
-                            loginBox.classList.add("g--oculto")
-                            registerBox.classList.add("g--oculto")
-                            userBox.classList.remove("g--oculto")
+                let currentUser = JSON.parse(localStorage.getItem("currentuser"))
 
-                            localStorage.setItem("currentuser",
-                                JSON.stringify({
-                                    id: data[0].id,
-                                    nick: data[0].nickname,
-                                    mail: data[0].mail
-                                })
-                            )
+                usernickname.innerHTML = currentUser.nick
+                usermail.innerHTML = currentUser.mail
+                nicknameBox.innerHTML = "Hola, "+currentUser.nick
+                btnHistory.parentNode.classList.remove("g--oculto")
 
-                            let currentUser = JSON.parse(localStorage.getItem("currentuser"))
-
-                            usernickname.innerHTML = currentUser.nick
-                            usermail.innerHTML = currentUser.mail
-                            nicknameBox.innerHTML = "Hola, "+currentUser.nick
-                            btnHistory.parentNode.classList.remove("g--oculto")
-
-                            modal.close()
-                        } else {
-                            alert("Nombre de usuario o contraseña incorrectos")
-                        }
-
-                    } else {
-                        alert("Nombre de usuario o contraseña incorrectos")
-                    }
-
-
-                })
-                .catch(response => console.log(response));
+                modal.close()
+            })
+            .catch(response => console.log(response));
 
         } catch (err) {
             alert(err.msg)
         }
 
     })
-//arreglar
-    // document.addEventListener("keyup", function(event) {
-    //     if (event.keyCode === 13) {
-    //         alert('Enter is pressed!');
-    //     }
-    // });
 
     /*BTN REGISTRARSE*/
     const btnRegister = document.querySelector("#btnRegister")
@@ -459,7 +441,7 @@ function loginRegister() {
             passMatches(data.password, data.repassword);
 
 
-            registerUser({ nickname: data.nickname, mail: data.mail, pass: data.password })
+            registerUser({ nick: data.nickname, mail: data.mail, password: data.password })
                 .then(response => {
                     modal.close();
                     loginRegister();
