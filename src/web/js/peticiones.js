@@ -11,6 +11,8 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
 
     const result = new XMLHttpRequest()
     result.open(method, url)
+
+    console.log( url)
     result.responseType = responsetype
 
     if (method === "GET" || method === "DELETE") {
@@ -46,13 +48,10 @@ const logIn = (user) => request("POST", loginUrl , "json", user)
 const getCarrito = (id) => request("GET", ordersUrl + "/cartid/" + id, "json")
 const getOrdersByUser = (userid) => request("GET", ordersUrl + "/userid/" + userid, "json")
 const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
-
 const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
 
 
-
 /*Operaciones*/
-
 const almacenarCarritoPendiente = () =>{
   
     if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
@@ -64,13 +63,13 @@ const almacenarCarritoPendiente = () =>{
         cart.status = "pendiente"
 
         getCarrito(cart.cartid).then(response =>{
+
             if(response.length <= 0){
                 saveCart({...cart})
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             }else{
-                updatePedido(response[0].id,cart)
-                
+                updatePedido(Object.values(response)[0]._id,cart)
             }
         })
 
@@ -91,8 +90,10 @@ const almacenarCarritoPagado = () =>{
     .then(res =>{
         cart.status = "pagado"
         cart.totalprice = cart.total
-        updatePedido(res[0].id,cart)
+        
+        updatePedido(Object.values(res)[0]._id,cart)
         .then(res => {
+            console.log(res)
             cart = new Cart() //Vaciar el carrito
             counter.innerHTML = cart.items;
         })
