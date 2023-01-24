@@ -18,6 +18,7 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
+        console.log(body)
         result.setRequestHeader('Content-type', 'application/json; charset=utf-8')
         result.send(JSON.stringify(body))
     }
@@ -42,12 +43,12 @@ const loadAllCategories = () => request("GET", categoriesUrl, "json")
 const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
 const registerUser = (user) =>  request("POST", registerUrl, "json", user)
 const logIn = (user) => request("POST", loginUrl , "json", user)
-
-
-const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
-const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
-const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
+const getCarrito = (id) => request("GET", ordersUrl + "/cartid/" + id, "json")
+const getOrdersByUser = (userid) => request("GET", ordersUrl + "/userid/" + userid, "json")
 const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
+
+const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
+
 
 
 /*Operaciones*/

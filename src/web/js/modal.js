@@ -214,6 +214,7 @@ btnCart.addEventListener("click", () => {
 /* ---------- History Modal -------------- */
 
 const pintarOrders = (orders) => {
+    
     document.body.style.overflow = "hidden"
     let ordersBox = `
     <div class="c-modal__header">
@@ -236,17 +237,16 @@ const pintarOrders = (orders) => {
 
 
     orders.forEach(order => {
-
         ordersBox += `
         <tr class="c-table__row">
-            <td class="c-table__item">${order.id}</td>
+            <td class="c-table__item">${order._id}</td>
             <td class="c-table__item">${order.date}</td>
             <td class="c-table__item">${order.totalprice}€</td>
             <td class="c-table__item c-table__item--status-pay">${order.status}</td>    
             <td class="c-table__item c-table__item--status-pending g--oculto">${order.status}</td>    
             <td class="c-table__item c-table__item--btns">
-                <a id="${order.id}_recuperar" class="c-button c-button--primario-normal">Recuperar</a>
-                <a id="${order.id}_eliminar" class="c-button c-button--primario-peligroso">Eliminar</a>
+                <a id="${order._id}_recuperar" class="c-button c-button--primario-normal">Recuperar</a>
+                <a id="${order._id}_eliminar" class="c-button c-button--primario-peligroso">Eliminar</a>
             </td>
         </tr>
         `
@@ -261,8 +261,8 @@ const pintarOrders = (orders) => {
     modal.innerHTML = ordersBox
 
     orders.forEach(e => {
-        document.getElementById(e.id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
-        document.getElementById(e.id + "_eliminar").addEventListener("click", () => { eliminarPedido(e.id) });
+        document.getElementById(e._id + "_recuperar").addEventListener("click", () => { recuperarPedido(e) });
+        document.getElementById(e._id + "_eliminar").addEventListener("click", () => { eliminarPedido(e._id) });
     })
 }
 
@@ -288,7 +288,7 @@ btnHistory.addEventListener("click", () => {
 const obtenerPedidos = () => {
     getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
         .then(orders => {
-            pintarOrders(orders)
+            pintarOrders(Object.values(orders))
             closeModal()
             modal.showModal();
         })
