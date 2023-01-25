@@ -20,6 +20,7 @@ const request = (method, url, responsetype, body) =>  new Promise((resolve, reje
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
+        console.log("Aqui esta el body")   
         console.log(body)
         result.setRequestHeader('Content-type', 'application/json; charset=utf-8')
         result.send(JSON.stringify(body))
@@ -69,7 +70,10 @@ const almacenarCarritoPendiente = () =>{
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             }else{
-                updatePedido(Object.values(response)[0]._id,cart)
+                updatePedido(Object.values(response)[0]._id,cart).then(res=>{
+                    console.log("Lo que im`porta")
+                    console.log(res)
+                })
             }
         })
 
