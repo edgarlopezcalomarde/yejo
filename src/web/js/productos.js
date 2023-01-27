@@ -143,10 +143,10 @@ const generarCategorias = (data) =>{
     data.forEach(cat => {
         const categoriaItem = document.createElement("a");
         categoriaItem.classList.add("c-category__item")
-        categoriaItem.id = cat.nombre
-        categoriaItem.appendChild(document.createTextNode(cat.nombre))
+        categoriaItem.id = cat.category
+        categoriaItem.appendChild(document.createTextNode(cat.category))
 
-        categoriaItem.addEventListener("click", () => {generarCartas(cat.nombre)})
+        categoriaItem.addEventListener("click", () => {generarCartas(cat.category)})
 
         categoriasBox.appendChild(categoriaItem)
     })
@@ -164,6 +164,7 @@ async function  allProductosAndCategories(){
 
     let cosmetics = await loadAllProducts()
     let categories = await loadAllCategories();
+
 
     listaproductos = cosmetics;
     generarCategorias(categories);

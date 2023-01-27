@@ -4,12 +4,13 @@ const modal = document.querySelector("#modal");
 const btnHistory = document.querySelector("#btnHistory");
 
 function closeModal() {
-    const btnCloseModal = document.querySelector("#btnCloseModal");
     modal.classList.remove("g--background-color-alternativo-6")
+    const btnCloseModal = document.querySelector("#btnCloseModal");
     btnCloseModal.addEventListener("click", () => {
         modal.close()
     });
 }
+
 
 modal.addEventListener("close", () => {
     document.body.style.overflow = "auto"
@@ -214,6 +215,8 @@ btnCart.addEventListener("click", () => {
 /* ---------- History Modal -------------- */
 
 const pintarOrders = (orders) => {
+
+    
     
     document.body.style.overflow = "hidden"
     let ordersBox = `
@@ -235,8 +238,9 @@ const pintarOrders = (orders) => {
     </thead>
     <tbody class="c-table__body">`
 
-
+   
     orders.forEach(order => {
+
         ordersBox += `
         <tr class="c-table__row">
             <td class="c-table__item">${order._id}</td>
@@ -250,6 +254,8 @@ const pintarOrders = (orders) => {
             </td>
         </tr>
         `
+
+       
     })
 
     ordersBox += `
@@ -286,12 +292,21 @@ btnHistory.addEventListener("click", () => {
 });
 
 const obtenerPedidos = () => {
+
+    // console.log(JSON.parse(localStorage.getItem("currentuser")).id);
+
     getOrdersByUser(JSON.parse(localStorage.getItem("currentuser")).id)
         .then(orders => {
-            pintarOrders(Object.values(orders))
+            console.log(orders)
+
+            // pintarOrders(Object.values(orders))
+            pintarOrders(orders)
             closeModal()
+            modal.close();
+
             modal.showModal();
         })
+       
 }
 
 

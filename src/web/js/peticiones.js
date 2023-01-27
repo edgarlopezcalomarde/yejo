@@ -63,18 +63,32 @@ const almacenarCarritoPendiente = () =>{
         cart.totalprice = cart.total
         cart.status = "pendiente"
 
+
         getCarrito(cart.cartid).then(response =>{
+     
 
             if(response.length <= 0){
                 saveCart({...cart})
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             }else{
-                updatePedido(Object.values(response)[0]._id,cart).then(res=>{
-                    console.log("Lo que im`porta")
+                
+               
+
+                updatePedido(response._id,cart).then(res=>{
+                    console.log("Lo que importa")
                     console.log(res)
                 })
             }
+        })
+        .catch(err =>{
+
+            //Si no devuelve repuesta lo guarda
+
+
+            saveCart({...cart})
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
         })
 
         modal.close()
@@ -95,7 +109,7 @@ const almacenarCarritoPagado = () =>{
         cart.status = "pagado"
         cart.totalprice = cart.total
         
-        updatePedido(Object.values(res)[0]._id,cart)
+        updatePedido(res._id,cart)
         .then(res => {
             console.log(res)
             cart = new Cart() //Vaciar el carrito
