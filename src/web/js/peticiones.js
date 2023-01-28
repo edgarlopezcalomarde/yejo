@@ -9,33 +9,41 @@ const loginUrl = "http://127.0.0.1:8000/api/login"
 /*Funcion auxiliar para ahorrar codigo a la hora de realizar una peticion*/
 const request = (method, url, responsetype, body) =>  new Promise((resolve, reject) => {
 
-    const result = new XMLHttpRequest()
-    result.open(method, url)
+    const xhr = new XMLHttpRequest()
+    xhr.open(method, url)
 
-    console.log( url)
-    result.responseType = responsetype
+    console.log(url)
+    xhr.responseType = responsetype
+
+    let currentUser = localStorage.getItem("currentuser")
+
+    if(currentUser != ""){
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+        xhr.setRequestHeader('Authorization', 'Bearer ' + JSON.parse(currentUser).token);
+    }
+
 
     if (method === "GET" || method === "DELETE") {
-        result.send()
+        xhr.send()
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
-        console.log("Aqui esta el body")   
-        console.log(body)
-        result.setRequestHeader('Content-type', 'application/json; charset=utf-8')
-        result.send(JSON.stringify(body))
+        
+       
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+        xhr.send(JSON.stringify(body))
     }
 
-    result.addEventListener("load", () => {
-        if (result.status < 400){
-            resolve(result.response)
+    xhr.addEventListener("load", () => {
+        if (xhr.status < 400){
+            resolve(xhr.response)
         }else{
-            reject(result.response)
+            reject(xhr.response)
         }
     })
 
-    result.addEventListener("error", () => {
-        reject(result.response)
+    xhr.addEventListener("error", () => {
+        reject(xhr.response)
     })
 })
 
