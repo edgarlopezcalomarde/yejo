@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "63cef4bda797399f1ace0688"
+  },
+  "id": 1,
+  "nombre": "skincare"
+},{
+  "_id": {
+    "$oid": "63cef4d6a797399f1ace0689"
+  },
+  "id": 2,
+  "nombre": "haircare"
+},{
+  "_id": {
+    "$oid": "63cef4e7a797399f1ace068b"
+  },
+  "id": 3,
+  "nombre": "bodycare"
+},{
+  "_id": {
+    "$oid": "63cef4f3a797399f1ace068c"
+  },
+  "id": 4,
+  "nombre": "others"
+}]

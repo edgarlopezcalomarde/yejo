@@ -9,29 +9,41 @@ const loginUrl = "http://127.0.0.1:8000/api/login"
 /*Funcion auxiliar para ahorrar codigo a la hora de realizar una peticion*/
 const request = (method, url, responsetype, body) =>  new Promise((resolve, reject) => {
 
-    const result = new XMLHttpRequest()
-    result.open(method, url)
-    result.responseType = responsetype
+    const xhr = new XMLHttpRequest()
+    xhr.open(method, url)
+
+    console.log(url)
+    xhr.responseType = responsetype
+
+    let currentUser = localStorage.getItem("currentuser")
+
+    if(currentUser != ""){
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+        xhr.setRequestHeader('Authorization', 'Bearer ' + JSON.parse(currentUser).token);
+    }
+
 
     if (method === "GET" || method === "DELETE") {
-        result.send()
+        xhr.send()
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
-        result.setRequestHeader('Content-type', 'application/json; charset=utf-8')
-        result.send(JSON.stringify(body))
+        
+       
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+        xhr.send(JSON.stringify(body))
     }
 
-    result.addEventListener("load", () => {
-        if (result.status < 400){
-            resolve(result.response)
+    xhr.addEventListener("load", () => {
+        if (xhr.status < 400){
+            resolve(xhr.response)
         }else{
-            reject(result.response)
+            reject(xhr.response)
         }
     })
 
-    result.addEventListener("error", () => {
-        reject(result.response)
+    xhr.addEventListener("error", () => {
+        reject(xhr.response)
     })
 })
 
@@ -42,16 +54,13 @@ const loadAllCategories = () => request("GET", categoriesUrl, "json")
 const saveCart = (cart) =>  request("POST", ordersUrl, "json", cart)
 const registerUser = (user) =>  request("POST", registerUrl, "json", user)
 const logIn = (user) => request("POST", loginUrl , "json", user)
-
-
-const getCarrito = (id) => request("GET", ordersUrl + "?cartid=" + id, "json")
-const getOrdersByUser = (userid) => request("GET", ordersUrl + "?userId=" + userid, "json")
-const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
+const getCarrito = (id) => request("GET", ordersUrl + "/cartid/" + id, "json")
+const getOrdersByUser = (userid) => request("GET", ordersUrl + "/userid/" + userid, "json")
 const deletePedido = (id) => request("DELETE", ordersUrl + "/" + id, "json")
+const updatePedido = (id,cart) => request("PATCH", ordersUrl + "/" + id, "json", cart)
 
 
 /*Operaciones*/
-
 const almacenarCarritoPendiente = () =>{
   
     if(localStorage.getItem("currentuser") != "" && localStorage.getItem("currentuser") != null){
@@ -62,15 +71,32 @@ const almacenarCarritoPendiente = () =>{
         cart.totalprice = cart.total
         cart.status = "pendiente"
 
+
         getCarrito(cart.cartid).then(response =>{
+     
+
             if(response.length <= 0){
                 saveCart({...cart})
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             }else{
-                updatePedido(response[0].id,cart)
                 
+               
+
+                updatePedido(response._id,cart).then(res=>{
+                    console.log("Lo que importa")
+                    console.log(res)
+                })
             }
+        })
+        .catch(err =>{
+
+            //Si no devuelve repuesta lo guarda
+
+
+            saveCart({...cart})
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
         })
 
         modal.close()
@@ -90,8 +116,10 @@ const almacenarCarritoPagado = () =>{
     .then(res =>{
         cart.status = "pagado"
         cart.totalprice = cart.total
-        updatePedido(res[0].id,cart)
+        
+        updatePedido(res._id,cart)
         .then(res => {
+            console.log(res)
             cart = new Cart() //Vaciar el carrito
             counter.innerHTML = cart.items;
         })
